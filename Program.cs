@@ -16,7 +16,7 @@ namespace CS19_P06_mini_DCS
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			Application.Run(new Main());
 		}
 	}
 }
