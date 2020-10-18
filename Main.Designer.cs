@@ -36,6 +36,10 @@
 			this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripStatusLabel_status = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel_X = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel_Y = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripStatusLabel_czas = new System.Windows.Forms.ToolStripStatusLabel();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.toolStripMenuItem_Plik = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,6 +84,7 @@
 			this.panel_wysylanie = new System.Windows.Forms.Panel();
 			this.panel_odbieranie = new System.Windows.Forms.Panel();
 			this.tabPage_DCS = new System.Windows.Forms.TabPage();
+			this.panel_scada = new System.Windows.Forms.Panel();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -101,11 +106,6 @@
 			this.button_pole_bajt = new System.Windows.Forms.Button();
 			this.button_dodaj_bit = new System.Windows.Forms.Button();
 			this.richTextBox_tekst = new System.Windows.Forms.RichTextBox();
-			this.panel_scada = new System.Windows.Forms.Panel();
-			this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.toolStripStatusLabel_X = new System.Windows.Forms.ToolStripStatusLabel();
-			this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.toolStripStatusLabel_Y = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl_okna.SuspendLayout();
@@ -159,6 +159,26 @@
 			this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
 			resources.ApplyResources(this.toolStripStatusLabel5, "toolStripStatusLabel5");
 			this.toolStripStatusLabel5.Spring = true;
+			// 
+			// toolStripStatusLabel4
+			// 
+			this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+			resources.ApplyResources(this.toolStripStatusLabel4, "toolStripStatusLabel4");
+			// 
+			// toolStripStatusLabel_X
+			// 
+			resources.ApplyResources(this.toolStripStatusLabel_X, "toolStripStatusLabel_X");
+			this.toolStripStatusLabel_X.Name = "toolStripStatusLabel_X";
+			// 
+			// toolStripStatusLabel7
+			// 
+			this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
+			resources.ApplyResources(this.toolStripStatusLabel7, "toolStripStatusLabel7");
+			// 
+			// toolStripStatusLabel_Y
+			// 
+			resources.ApplyResources(this.toolStripStatusLabel_Y, "toolStripStatusLabel_Y");
+			this.toolStripStatusLabel_Y.Name = "toolStripStatusLabel_Y";
 			// 
 			// toolStripStatusLabel_czas
 			// 
@@ -442,6 +462,14 @@
 			this.tabPage_DCS.Name = "tabPage_DCS";
 			this.tabPage_DCS.UseVisualStyleBackColor = true;
 			// 
+			// panel_scada
+			// 
+			this.panel_scada.BackColor = System.Drawing.Color.Silver;
+			resources.ApplyResources(this.panel_scada, "panel_scada");
+			this.panel_scada.Name = "panel_scada";
+			this.panel_scada.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_scada_MouseMove);
+			this.panel_scada.MouseUp += new System.Windows.Forms.MouseEventHandler(this.kontrolka_scada_MouseDown);
+			// 
 			// tabControl1
 			// 
 			this.tabControl1.Controls.Add(this.tabPage1);
@@ -590,34 +618,6 @@
 			resources.ApplyResources(this.richTextBox_tekst, "richTextBox_tekst");
 			this.richTextBox_tekst.Name = "richTextBox_tekst";
 			this.richTextBox_tekst.ReadOnly = true;
-			// 
-			// panel_scada
-			// 
-			this.panel_scada.BackColor = System.Drawing.Color.Silver;
-			resources.ApplyResources(this.panel_scada, "panel_scada");
-			this.panel_scada.Name = "panel_scada";
-			this.panel_scada.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_scada_MouseMove);
-			this.panel_scada.MouseUp += new System.Windows.Forms.MouseEventHandler(this.kontrolka_scada_MouseDown);
-			// 
-			// toolStripStatusLabel4
-			// 
-			this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-			resources.ApplyResources(this.toolStripStatusLabel4, "toolStripStatusLabel4");
-			// 
-			// toolStripStatusLabel_X
-			// 
-			resources.ApplyResources(this.toolStripStatusLabel_X, "toolStripStatusLabel_X");
-			this.toolStripStatusLabel_X.Name = "toolStripStatusLabel_X";
-			// 
-			// toolStripStatusLabel7
-			// 
-			this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-			resources.ApplyResources(this.toolStripStatusLabel7, "toolStripStatusLabel7");
-			// 
-			// toolStripStatusLabel_Y
-			// 
-			resources.ApplyResources(this.toolStripStatusLabel_Y, "toolStripStatusLabel_Y");
-			this.toolStripStatusLabel_Y.Name = "toolStripStatusLabel_Y";
 			// 
 			// Main
 			// 
