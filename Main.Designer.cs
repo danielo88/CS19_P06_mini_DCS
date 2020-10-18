@@ -564,6 +564,7 @@
 			// 
 			resources.ApplyResources(this.wlasciwosci_textBox_nazwa, "wlasciwosci_textBox_nazwa");
 			this.wlasciwosci_textBox_nazwa.Name = "wlasciwosci_textBox_nazwa";
+			this.wlasciwosci_textBox_nazwa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.wlasciwosci_nazwa_KeyPress);
 			// 
 			// label3
 			// 

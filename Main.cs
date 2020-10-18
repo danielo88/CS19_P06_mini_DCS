@@ -52,7 +52,8 @@ namespace CS19_P06_mini_DCS
 
 		struct scada
 		{
-			public object obiekt;			//wskaźnik do obiektu
+			public object obiekt;           //wskaźnik do obiektu
+			public object opis;				//wskaźnik do opisy (label)
 			public Int32 nr_obiektu;		//nr porządkowy obiektu
 			public Int32 pozycja_x;			//pozycja x na ekranie
 			public Int32 pozycja_y;			//pozycja y na ekranie
@@ -67,11 +68,38 @@ namespace CS19_P06_mini_DCS
 		Int32 scada_nr=0;
 
 		object kontrolka_zmiana;
+		Int32 kontrolka_nr_parametry;
 
 		public Main()
 		{
 			InitializeComponent();
 		}
+
+		private void kontrolka_parametry_MouseDown(object sender, MouseEventArgs e)
+		{
+			if(sender.GetType() == typeof(Label))
+			{
+				string[] podzial = (sender as Label).Name.Split('_');
+				kontrolka_nr_parametry = Convert.ToInt32(podzial[2]);
+
+			}else if (sender.GetType() == typeof(Button))
+			{
+				string[] podzial = (sender as Button).Name.Split('_');
+				kontrolka_nr_parametry = Convert.ToInt32(podzial[2]);
+
+			}
+			else if (sender.GetType() == typeof(TextBox))
+			{
+				string[] podzial = (sender as TextBox).Name.Split('_');
+				kontrolka_nr_parametry = Convert.ToInt32(podzial[2]);
+				
+			}
+
+
+			wlasciwosci_textBox_nazwa.Text = (ekran_scada[kontrolka_nr_parametry].opis as Label).Text;
+
+		}
+
 
 		private void kontrolka_scada_MouseDown(object sender, MouseEventArgs e)
 		{
@@ -339,6 +367,7 @@ namespace CS19_P06_mini_DCS
 			scada_button.Size = new System.Drawing.Size(50, 20);
 			//zdarzenie od przycisku myszą
 			scada_button.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_scada_MouseDown);
+			scada_button.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
 
 			//dodanie opisu kontrolki do kontenera
 			scada_panel.Controls.Add(scada_label);
@@ -348,6 +377,8 @@ namespace CS19_P06_mini_DCS
 			scada_label.Size = new System.Drawing.Size(41, 30);
 			//auto doposaowanie do zawartości
 			scada_label.AutoSize = true;
+			//zdarzenie od przycisku myszą
+			scada_label.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
 
 			//przypisanie nazwy danej kontrolce
 			scada_button.Name = "scada_button_" + scada_nr.ToString();
@@ -357,6 +388,7 @@ namespace CS19_P06_mini_DCS
 			//przypisanie zawartości opisu
 			scada_label.Text = "opis kontrolki";
 
+			ekran_scada[scada_nr].opis = scada_label;
 			ekran_scada[scada_nr++].obiekt = scada_panel;
 
 
@@ -390,6 +422,7 @@ namespace CS19_P06_mini_DCS
 			scada_textbox.Size = new System.Drawing.Size(50, 20);
 			//zdarzenie od przycisku myszą
 			scada_textbox.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_scada_MouseDown);
+			scada_textbox.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
 
 			//dodanie opisu kontrolki do kontenera
 			scada_panel.Controls.Add(scada_label);
@@ -399,6 +432,8 @@ namespace CS19_P06_mini_DCS
 			scada_label.Size = new System.Drawing.Size(41, 30);
 			//auto doposaowanie do zawartości
 			scada_label.AutoSize = true;
+			//zdarzenie od przycisku myszą
+			scada_label.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
 
 			//przypisanie nazwy danej kontrolce
 			scada_textbox.Name = "scada_box_" + scada_nr.ToString();
@@ -408,6 +443,8 @@ namespace CS19_P06_mini_DCS
 			//przypisanie zawartości opisu
 			scada_label.Text = "opis kontrolki";
 
+
+			ekran_scada[scada_nr].opis = scada_label;
 			ekran_scada[scada_nr++].obiekt = scada_panel;
 
 			
@@ -433,6 +470,14 @@ namespace CS19_P06_mini_DCS
 					(kontrolka_zmiana as Panel).Location = new System.Drawing.Point(e.X, e.Y);
 				}
 
+			}
+		}
+
+		private void wlasciwosci_nazwa_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if(e.KeyChar == Convert.ToChar(Keys.Enter))
+			{
+				(ekran_scada[kontrolka_nr_parametry].opis as Label).Text = wlasciwosci_textBox_nazwa.Text;
 			}
 		}
 
