@@ -31,6 +31,12 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel_status = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel_czas = new System.Windows.Forms.ToolStripStatusLabel();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.toolStripMenuItem_Plik = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_otworz = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,25 +49,9 @@
 			this.toolStripMenuItem_Edycja = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_Pomoc = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_about = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.toolStripStatusLabel_czas = new System.Windows.Forms.ToolStripStatusLabel();
-			this.toolStripStatusLabel_status = new System.Windows.Forms.ToolStripStatusLabel();
-			this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.timer_1s = new System.Windows.Forms.Timer(this.components);
 			this.tabControl_okna = new System.Windows.Forms.TabControl();
 			this.tabPage_polaczenie = new System.Windows.Forms.TabPage();
-			this.tabPage_mapa = new System.Windows.Forms.TabPage();
-			this.tabPage_DCS = new System.Windows.Forms.TabPage();
-			this.button_polacz_modbus = new System.Windows.Forms.Button();
-			this.button_rozlacz_modbus = new System.Windows.Forms.Button();
-			this.label_adres_ip = new System.Windows.Forms.Label();
-			this.label_port = new System.Windows.Forms.Label();
-			this.label_ID = new System.Windows.Forms.Label();
-			this.textBox_adres_ip = new System.Windows.Forms.TextBox();
-			this.textBox_port = new System.Windows.Forms.TextBox();
-			this.textBox_id = new System.Windows.Forms.TextBox();
 			this.button_ustaw_wysylanie = new System.Windows.Forms.Button();
 			this.button_wyczysc_wysylanie = new System.Windows.Forms.Button();
 			this.button_ustaw_odbieranie = new System.Windows.Forms.Button();
@@ -76,19 +66,25 @@
 			this.textBox_odbieranie_poczatek = new System.Windows.Forms.TextBox();
 			this.textBox_odbieranie_liczba_danych = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
+			this.textBox_id = new System.Windows.Forms.TextBox();
+			this.textBox_port = new System.Windows.Forms.TextBox();
+			this.textBox_adres_ip = new System.Windows.Forms.TextBox();
+			this.label_ID = new System.Windows.Forms.Label();
+			this.label_port = new System.Windows.Forms.Label();
+			this.label_adres_ip = new System.Windows.Forms.Label();
+			this.button_rozlacz_modbus = new System.Windows.Forms.Button();
+			this.button_polacz_modbus = new System.Windows.Forms.Button();
+			this.tabPage_mapa = new System.Windows.Forms.TabPage();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.panel_wysylanie = new System.Windows.Forms.Panel();
 			this.panel_odbieranie = new System.Windows.Forms.Panel();
-			this.richTextBox_tekst = new System.Windows.Forms.RichTextBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.button_dodaj_bit = new System.Windows.Forms.Button();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.button_pole_bajt = new System.Windows.Forms.Button();
-			this.button_kreska_pion = new System.Windows.Forms.Button();
-			this.button_kreska_poz = new System.Windows.Forms.Button();
+			this.tabPage_DCS = new System.Windows.Forms.TabPage();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.label14 = new System.Windows.Forms.Label();
 			this.wlasciwosci_textBox_bit = new System.Windows.Forms.TextBox();
 			this.label13 = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
@@ -98,18 +94,27 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this.wlasciwosci_textBox_nazwa = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.label14 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.button_kreska_poz = new System.Windows.Forms.Button();
+			this.button_kreska_pion = new System.Windows.Forms.Button();
+			this.button_pole_bajt = new System.Windows.Forms.Button();
+			this.button_dodaj_bit = new System.Windows.Forms.Button();
+			this.richTextBox_tekst = new System.Windows.Forms.RichTextBox();
+			this.panel_scada = new System.Windows.Forms.Panel();
+			this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel_X = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel_Y = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl_okna.SuspendLayout();
 			this.tabPage_polaczenie.SuspendLayout();
 			this.tabPage_mapa.SuspendLayout();
 			this.tabPage_DCS.SuspendLayout();
-			this.groupBox1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// statusStrip1
@@ -120,10 +125,45 @@
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel_status,
             this.toolStripStatusLabel5,
+            this.toolStripStatusLabel4,
+            this.toolStripStatusLabel_X,
+            this.toolStripStatusLabel7,
+            this.toolStripStatusLabel_Y,
             this.toolStripStatusLabel_czas});
 			resources.ApplyResources(this.statusStrip1, "statusStrip1");
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.SizingGrip = false;
+			// 
+			// toolStripStatusLabel1
+			// 
+			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+			resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
+			// 
+			// toolStripStatusLabel2
+			// 
+			resources.ApplyResources(this.toolStripStatusLabel2, "toolStripStatusLabel2");
+			this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+			// 
+			// toolStripStatusLabel3
+			// 
+			this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+			resources.ApplyResources(this.toolStripStatusLabel3, "toolStripStatusLabel3");
+			// 
+			// toolStripStatusLabel_status
+			// 
+			resources.ApplyResources(this.toolStripStatusLabel_status, "toolStripStatusLabel_status");
+			this.toolStripStatusLabel_status.Name = "toolStripStatusLabel_status";
+			// 
+			// toolStripStatusLabel5
+			// 
+			this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+			resources.ApplyResources(this.toolStripStatusLabel5, "toolStripStatusLabel5");
+			this.toolStripStatusLabel5.Spring = true;
+			// 
+			// toolStripStatusLabel_czas
+			// 
+			resources.ApplyResources(this.toolStripStatusLabel_czas, "toolStripStatusLabel_czas");
+			this.toolStripStatusLabel_czas.Name = "toolStripStatusLabel_czas";
 			// 
 			// menuStrip1
 			// 
@@ -200,37 +240,6 @@
 			this.toolStripMenuItem_about.Name = "toolStripMenuItem_about";
 			resources.ApplyResources(this.toolStripMenuItem_about, "toolStripMenuItem_about");
 			// 
-			// toolStripStatusLabel1
-			// 
-			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-			resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
-			// 
-			// toolStripStatusLabel2
-			// 
-			resources.ApplyResources(this.toolStripStatusLabel2, "toolStripStatusLabel2");
-			this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-			// 
-			// toolStripStatusLabel3
-			// 
-			this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-			resources.ApplyResources(this.toolStripStatusLabel3, "toolStripStatusLabel3");
-			// 
-			// toolStripStatusLabel_czas
-			// 
-			resources.ApplyResources(this.toolStripStatusLabel_czas, "toolStripStatusLabel_czas");
-			this.toolStripStatusLabel_czas.Name = "toolStripStatusLabel_czas";
-			// 
-			// toolStripStatusLabel_status
-			// 
-			resources.ApplyResources(this.toolStripStatusLabel_status, "toolStripStatusLabel_status");
-			this.toolStripStatusLabel_status.Name = "toolStripStatusLabel_status";
-			// 
-			// toolStripStatusLabel5
-			// 
-			this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-			resources.ApplyResources(this.toolStripStatusLabel5, "toolStripStatusLabel5");
-			this.toolStripStatusLabel5.Spring = true;
-			// 
 			// timer_1s
 			// 
 			this.timer_1s.Enabled = true;
@@ -273,66 +282,6 @@
 			resources.ApplyResources(this.tabPage_polaczenie, "tabPage_polaczenie");
 			this.tabPage_polaczenie.Name = "tabPage_polaczenie";
 			this.tabPage_polaczenie.UseVisualStyleBackColor = true;
-			// 
-			// tabPage_mapa
-			// 
-			this.tabPage_mapa.Controls.Add(this.label2);
-			this.tabPage_mapa.Controls.Add(this.label1);
-			this.tabPage_mapa.Controls.Add(this.panel_wysylanie);
-			this.tabPage_mapa.Controls.Add(this.panel_odbieranie);
-			resources.ApplyResources(this.tabPage_mapa, "tabPage_mapa");
-			this.tabPage_mapa.Name = "tabPage_mapa";
-			this.tabPage_mapa.UseVisualStyleBackColor = true;
-			// 
-			// tabPage_DCS
-			// 
-			this.tabPage_DCS.Controls.Add(this.tabControl1);
-			this.tabPage_DCS.Controls.Add(this.groupBox1);
-			resources.ApplyResources(this.tabPage_DCS, "tabPage_DCS");
-			this.tabPage_DCS.Name = "tabPage_DCS";
-			this.tabPage_DCS.UseVisualStyleBackColor = true;
-			// 
-			// button_polacz_modbus
-			// 
-			resources.ApplyResources(this.button_polacz_modbus, "button_polacz_modbus");
-			this.button_polacz_modbus.Name = "button_polacz_modbus";
-			this.button_polacz_modbus.UseVisualStyleBackColor = true;
-			// 
-			// button_rozlacz_modbus
-			// 
-			resources.ApplyResources(this.button_rozlacz_modbus, "button_rozlacz_modbus");
-			this.button_rozlacz_modbus.Name = "button_rozlacz_modbus";
-			this.button_rozlacz_modbus.UseVisualStyleBackColor = true;
-			// 
-			// label_adres_ip
-			// 
-			resources.ApplyResources(this.label_adres_ip, "label_adres_ip");
-			this.label_adres_ip.Name = "label_adres_ip";
-			// 
-			// label_port
-			// 
-			resources.ApplyResources(this.label_port, "label_port");
-			this.label_port.Name = "label_port";
-			// 
-			// label_ID
-			// 
-			resources.ApplyResources(this.label_ID, "label_ID");
-			this.label_ID.Name = "label_ID";
-			// 
-			// textBox_adres_ip
-			// 
-			resources.ApplyResources(this.textBox_adres_ip, "textBox_adres_ip");
-			this.textBox_adres_ip.Name = "textBox_adres_ip";
-			// 
-			// textBox_port
-			// 
-			resources.ApplyResources(this.textBox_port, "textBox_port");
-			this.textBox_port.Name = "textBox_port";
-			// 
-			// textBox_id
-			// 
-			resources.ApplyResources(this.textBox_id, "textBox_id");
-			this.textBox_id.Name = "textBox_id";
 			// 
 			// button_ustaw_wysylanie
 			// 
@@ -412,6 +361,68 @@
 			resources.ApplyResources(this.label4, "label4");
 			this.label4.Name = "label4";
 			// 
+			// textBox_id
+			// 
+			resources.ApplyResources(this.textBox_id, "textBox_id");
+			this.textBox_id.Name = "textBox_id";
+			// 
+			// textBox_port
+			// 
+			resources.ApplyResources(this.textBox_port, "textBox_port");
+			this.textBox_port.Name = "textBox_port";
+			// 
+			// textBox_adres_ip
+			// 
+			resources.ApplyResources(this.textBox_adres_ip, "textBox_adres_ip");
+			this.textBox_adres_ip.Name = "textBox_adres_ip";
+			// 
+			// label_ID
+			// 
+			resources.ApplyResources(this.label_ID, "label_ID");
+			this.label_ID.Name = "label_ID";
+			// 
+			// label_port
+			// 
+			resources.ApplyResources(this.label_port, "label_port");
+			this.label_port.Name = "label_port";
+			// 
+			// label_adres_ip
+			// 
+			resources.ApplyResources(this.label_adres_ip, "label_adres_ip");
+			this.label_adres_ip.Name = "label_adres_ip";
+			// 
+			// button_rozlacz_modbus
+			// 
+			resources.ApplyResources(this.button_rozlacz_modbus, "button_rozlacz_modbus");
+			this.button_rozlacz_modbus.Name = "button_rozlacz_modbus";
+			this.button_rozlacz_modbus.UseVisualStyleBackColor = true;
+			// 
+			// button_polacz_modbus
+			// 
+			resources.ApplyResources(this.button_polacz_modbus, "button_polacz_modbus");
+			this.button_polacz_modbus.Name = "button_polacz_modbus";
+			this.button_polacz_modbus.UseVisualStyleBackColor = true;
+			// 
+			// tabPage_mapa
+			// 
+			this.tabPage_mapa.Controls.Add(this.label2);
+			this.tabPage_mapa.Controls.Add(this.label1);
+			this.tabPage_mapa.Controls.Add(this.panel_wysylanie);
+			this.tabPage_mapa.Controls.Add(this.panel_odbieranie);
+			resources.ApplyResources(this.tabPage_mapa, "tabPage_mapa");
+			this.tabPage_mapa.Name = "tabPage_mapa";
+			this.tabPage_mapa.UseVisualStyleBackColor = true;
+			// 
+			// label2
+			// 
+			resources.ApplyResources(this.label2, "label2");
+			this.label2.Name = "label2";
+			// 
+			// label1
+			// 
+			resources.ApplyResources(this.label1, "label1");
+			this.label1.Name = "label1";
+			// 
 			// panel_wysylanie
 			// 
 			resources.ApplyResources(this.panel_wysylanie, "panel_wysylanie");
@@ -422,56 +433,14 @@
 			resources.ApplyResources(this.panel_odbieranie, "panel_odbieranie");
 			this.panel_odbieranie.Name = "panel_odbieranie";
 			// 
-			// richTextBox_tekst
+			// tabPage_DCS
 			// 
-			this.richTextBox_tekst.BackColor = System.Drawing.SystemColors.Window;
-			resources.ApplyResources(this.richTextBox_tekst, "richTextBox_tekst");
-			this.richTextBox_tekst.Name = "richTextBox_tekst";
-			this.richTextBox_tekst.ReadOnly = true;
-			// 
-			// label1
-			// 
-			resources.ApplyResources(this.label1, "label1");
-			this.label1.Name = "label1";
-			// 
-			// label2
-			// 
-			resources.ApplyResources(this.label2, "label2");
-			this.label2.Name = "label2";
-			// 
-			// button_dodaj_bit
-			// 
-			resources.ApplyResources(this.button_dodaj_bit, "button_dodaj_bit");
-			this.button_dodaj_bit.Name = "button_dodaj_bit";
-			this.button_dodaj_bit.UseVisualStyleBackColor = true;
-			// 
-			// groupBox1
-			// 
-			this.groupBox1.Controls.Add(this.button_kreska_poz);
-			this.groupBox1.Controls.Add(this.button_kreska_pion);
-			this.groupBox1.Controls.Add(this.button_pole_bajt);
-			this.groupBox1.Controls.Add(this.button_dodaj_bit);
-			resources.ApplyResources(this.groupBox1, "groupBox1");
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.TabStop = false;
-			// 
-			// button_pole_bajt
-			// 
-			resources.ApplyResources(this.button_pole_bajt, "button_pole_bajt");
-			this.button_pole_bajt.Name = "button_pole_bajt";
-			this.button_pole_bajt.UseVisualStyleBackColor = true;
-			// 
-			// button_kreska_pion
-			// 
-			resources.ApplyResources(this.button_kreska_pion, "button_kreska_pion");
-			this.button_kreska_pion.Name = "button_kreska_pion";
-			this.button_kreska_pion.UseVisualStyleBackColor = true;
-			// 
-			// button_kreska_poz
-			// 
-			resources.ApplyResources(this.button_kreska_poz, "button_kreska_poz");
-			this.button_kreska_poz.Name = "button_kreska_poz";
-			this.button_kreska_poz.UseVisualStyleBackColor = true;
+			this.tabPage_DCS.Controls.Add(this.panel_scada);
+			this.tabPage_DCS.Controls.Add(this.tabControl1);
+			this.tabPage_DCS.Controls.Add(this.groupBox1);
+			resources.ApplyResources(this.tabPage_DCS, "tabPage_DCS");
+			this.tabPage_DCS.Name = "tabPage_DCS";
+			this.tabPage_DCS.UseVisualStyleBackColor = true;
 			// 
 			// tabControl1
 			// 
@@ -499,11 +468,30 @@
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
-			// tabPage2
+			// comboBox2
 			// 
-			resources.ApplyResources(this.tabPage2, "tabPage2");
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.UseVisualStyleBackColor = true;
+			this.comboBox2.FormattingEnabled = true;
+			this.comboBox2.Items.AddRange(new object[] {
+            resources.GetString("comboBox2.Items"),
+            resources.GetString("comboBox2.Items1")});
+			resources.ApplyResources(this.comboBox2, "comboBox2");
+			this.comboBox2.Name = "comboBox2";
+			// 
+			// comboBox1
+			// 
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Items.AddRange(new object[] {
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1"),
+            resources.GetString("comboBox1.Items2"),
+            resources.GetString("comboBox1.Items3")});
+			resources.ApplyResources(this.comboBox1, "comboBox1");
+			this.comboBox1.Name = "comboBox1";
+			// 
+			// label14
+			// 
+			resources.ApplyResources(this.label14, "label14");
+			this.label14.Name = "label14";
 			// 
 			// wlasciwosci_textBox_bit
 			// 
@@ -554,30 +542,82 @@
 			resources.ApplyResources(this.label3, "label3");
 			this.label3.Name = "label3";
 			// 
-			// label14
+			// tabPage2
 			// 
-			resources.ApplyResources(this.label14, "label14");
-			this.label14.Name = "label14";
+			resources.ApplyResources(this.tabPage2, "tabPage2");
+			this.tabPage2.Name = "tabPage2";
+			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
-			// comboBox1
+			// groupBox1
 			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Items.AddRange(new object[] {
-            resources.GetString("comboBox1.Items"),
-            resources.GetString("comboBox1.Items1"),
-            resources.GetString("comboBox1.Items2"),
-            resources.GetString("comboBox1.Items3")});
-			resources.ApplyResources(this.comboBox1, "comboBox1");
-			this.comboBox1.Name = "comboBox1";
+			this.groupBox1.Controls.Add(this.button_kreska_poz);
+			this.groupBox1.Controls.Add(this.button_kreska_pion);
+			this.groupBox1.Controls.Add(this.button_pole_bajt);
+			this.groupBox1.Controls.Add(this.button_dodaj_bit);
+			resources.ApplyResources(this.groupBox1, "groupBox1");
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.TabStop = false;
 			// 
-			// comboBox2
+			// button_kreska_poz
 			// 
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Items.AddRange(new object[] {
-            resources.GetString("comboBox2.Items"),
-            resources.GetString("comboBox2.Items1")});
-			resources.ApplyResources(this.comboBox2, "comboBox2");
-			this.comboBox2.Name = "comboBox2";
+			resources.ApplyResources(this.button_kreska_poz, "button_kreska_poz");
+			this.button_kreska_poz.Name = "button_kreska_poz";
+			this.button_kreska_poz.UseVisualStyleBackColor = true;
+			// 
+			// button_kreska_pion
+			// 
+			resources.ApplyResources(this.button_kreska_pion, "button_kreska_pion");
+			this.button_kreska_pion.Name = "button_kreska_pion";
+			this.button_kreska_pion.UseVisualStyleBackColor = true;
+			// 
+			// button_pole_bajt
+			// 
+			resources.ApplyResources(this.button_pole_bajt, "button_pole_bajt");
+			this.button_pole_bajt.Name = "button_pole_bajt";
+			this.button_pole_bajt.UseVisualStyleBackColor = true;
+			this.button_pole_bajt.Click += new System.EventHandler(this.button_pole_bajt_Click);
+			// 
+			// button_dodaj_bit
+			// 
+			resources.ApplyResources(this.button_dodaj_bit, "button_dodaj_bit");
+			this.button_dodaj_bit.Name = "button_dodaj_bit";
+			this.button_dodaj_bit.UseVisualStyleBackColor = true;
+			this.button_dodaj_bit.Click += new System.EventHandler(this.button_dodaj_bit_Click);
+			// 
+			// richTextBox_tekst
+			// 
+			this.richTextBox_tekst.BackColor = System.Drawing.SystemColors.Window;
+			resources.ApplyResources(this.richTextBox_tekst, "richTextBox_tekst");
+			this.richTextBox_tekst.Name = "richTextBox_tekst";
+			this.richTextBox_tekst.ReadOnly = true;
+			// 
+			// panel_scada
+			// 
+			this.panel_scada.BackColor = System.Drawing.Color.Silver;
+			resources.ApplyResources(this.panel_scada, "panel_scada");
+			this.panel_scada.Name = "panel_scada";
+			this.panel_scada.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_scada_MouseMove);
+			this.panel_scada.MouseUp += new System.Windows.Forms.MouseEventHandler(this.kontrolka_scada_MouseDown);
+			// 
+			// toolStripStatusLabel4
+			// 
+			this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+			resources.ApplyResources(this.toolStripStatusLabel4, "toolStripStatusLabel4");
+			// 
+			// toolStripStatusLabel_X
+			// 
+			resources.ApplyResources(this.toolStripStatusLabel_X, "toolStripStatusLabel_X");
+			this.toolStripStatusLabel_X.Name = "toolStripStatusLabel_X";
+			// 
+			// toolStripStatusLabel7
+			// 
+			this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
+			resources.ApplyResources(this.toolStripStatusLabel7, "toolStripStatusLabel7");
+			// 
+			// toolStripStatusLabel_Y
+			// 
+			resources.ApplyResources(this.toolStripStatusLabel_Y, "toolStripStatusLabel_Y");
+			this.toolStripStatusLabel_Y.Name = "toolStripStatusLabel_Y";
 			// 
 			// Main
 			// 
@@ -599,10 +639,10 @@
 			this.tabPage_mapa.ResumeLayout(false);
 			this.tabPage_mapa.PerformLayout();
 			this.tabPage_DCS.ResumeLayout(false);
-			this.groupBox1.ResumeLayout(false);
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
+			this.groupBox1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -681,6 +721,11 @@
 		private System.Windows.Forms.TextBox wlasciwosci_textBox_nazwa;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TabPage tabPage2;
+		private System.Windows.Forms.Panel panel_scada;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_X;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_Y;
 	}
 }
 
