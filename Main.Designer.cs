@@ -87,8 +87,8 @@
 			this.panel_scada = new System.Windows.Forms.Panel();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.comboBox2 = new System.Windows.Forms.ComboBox();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.wlasciwosci_comboBox_format = new System.Windows.Forms.ComboBox();
+			this.wlasciwosci_comboBox_wielkosc = new System.Windows.Forms.ComboBox();
 			this.label14 = new System.Windows.Forms.Label();
 			this.wlasciwosci_textBox_bit = new System.Windows.Forms.TextBox();
 			this.label13 = new System.Windows.Forms.Label();
@@ -480,8 +480,8 @@
 			// 
 			// tabPage1
 			// 
-			this.tabPage1.Controls.Add(this.comboBox2);
-			this.tabPage1.Controls.Add(this.comboBox1);
+			this.tabPage1.Controls.Add(this.wlasciwosci_comboBox_format);
+			this.tabPage1.Controls.Add(this.wlasciwosci_comboBox_wielkosc);
 			this.tabPage1.Controls.Add(this.label14);
 			this.tabPage1.Controls.Add(this.wlasciwosci_textBox_bit);
 			this.tabPage1.Controls.Add(this.label13);
@@ -496,25 +496,27 @@
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
-			// comboBox2
+			// wlasciwosci_comboBox_format
 			// 
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Items.AddRange(new object[] {
-            resources.GetString("comboBox2.Items"),
-            resources.GetString("comboBox2.Items1")});
-			resources.ApplyResources(this.comboBox2, "comboBox2");
-			this.comboBox2.Name = "comboBox2";
+			this.wlasciwosci_comboBox_format.FormattingEnabled = true;
+			this.wlasciwosci_comboBox_format.Items.AddRange(new object[] {
+            resources.GetString("wlasciwosci_comboBox_format.Items"),
+            resources.GetString("wlasciwosci_comboBox_format.Items1")});
+			resources.ApplyResources(this.wlasciwosci_comboBox_format, "wlasciwosci_comboBox_format");
+			this.wlasciwosci_comboBox_format.Name = "wlasciwosci_comboBox_format";
+			this.wlasciwosci_comboBox_format.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.wlasciwosci_format_KeyPress);
 			// 
-			// comboBox1
+			// wlasciwosci_comboBox_wielkosc
 			// 
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Items.AddRange(new object[] {
-            resources.GetString("comboBox1.Items"),
-            resources.GetString("comboBox1.Items1"),
-            resources.GetString("comboBox1.Items2"),
-            resources.GetString("comboBox1.Items3")});
-			resources.ApplyResources(this.comboBox1, "comboBox1");
-			this.comboBox1.Name = "comboBox1";
+			this.wlasciwosci_comboBox_wielkosc.FormattingEnabled = true;
+			this.wlasciwosci_comboBox_wielkosc.Items.AddRange(new object[] {
+            resources.GetString("wlasciwosci_comboBox_wielkosc.Items"),
+            resources.GetString("wlasciwosci_comboBox_wielkosc.Items1"),
+            resources.GetString("wlasciwosci_comboBox_wielkosc.Items2"),
+            resources.GetString("wlasciwosci_comboBox_wielkosc.Items3")});
+			resources.ApplyResources(this.wlasciwosci_comboBox_wielkosc, "wlasciwosci_comboBox_wielkosc");
+			this.wlasciwosci_comboBox_wielkosc.Name = "wlasciwosci_comboBox_wielkosc";
+			this.wlasciwosci_comboBox_wielkosc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.wlasciwosci_wielkosc_KeyPress);
 			// 
 			// label14
 			// 
@@ -525,6 +527,7 @@
 			// 
 			resources.ApplyResources(this.wlasciwosci_textBox_bit, "wlasciwosci_textBox_bit");
 			this.wlasciwosci_textBox_bit.Name = "wlasciwosci_textBox_bit";
+			this.wlasciwosci_textBox_bit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.wlasciwosci_bit_KeyPress);
 			// 
 			// label13
 			// 
@@ -540,6 +543,7 @@
 			// 
 			resources.ApplyResources(this.wlasciwosci_textBox_bajt, "wlasciwosci_textBox_bajt");
 			this.wlasciwosci_textBox_bajt.Name = "wlasciwosci_textBox_bajt";
+			this.wlasciwosci_textBox_bajt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.wlasciwosci_bajt_KeyPress);
 			// 
 			// label11
 			// 
@@ -554,6 +558,7 @@
             resources.GetString("wlasciwosci_comboBox_typ.Items1")});
 			resources.ApplyResources(this.wlasciwosci_comboBox_typ, "wlasciwosci_comboBox_typ");
 			this.wlasciwosci_comboBox_typ.Name = "wlasciwosci_comboBox_typ";
+			this.wlasciwosci_comboBox_typ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.wlasciwosci_typ_KeyPress);
 			// 
 			// label10
 			// 
@@ -709,8 +714,8 @@
 		private System.Windows.Forms.Button button_dodaj_bit;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage1;
-		private System.Windows.Forms.ComboBox comboBox2;
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.ComboBox wlasciwosci_comboBox_format;
+		private System.Windows.Forms.ComboBox wlasciwosci_comboBox_wielkosc;
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.TextBox wlasciwosci_textBox_bit;
 		private System.Windows.Forms.Label label13;

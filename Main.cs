@@ -50,6 +50,15 @@ namespace CS19_P06_mini_DCS
 		liczydlo[] licz_odbieranie;
 		liczydlo[] licz_wysylanie;
 
+		enum MyEnum
+		{
+			_bit=0,
+			_bajt=8,
+			_word=16,
+			_dword_32,
+			_qword=64
+		}
+
 		struct scada
 		{
 			public object obiekt;           //wskaźnik do obiektu
@@ -57,11 +66,11 @@ namespace CS19_P06_mini_DCS
 			public Int32 nr_obiektu;		//nr porządkowy obiektu
 			public Int32 pozycja_x;			//pozycja x na ekranie
 			public Int32 pozycja_y;			//pozycja y na ekranie
-			public Int32 typ;				//wejście czy wyjście
+			public Int32 typ;				//0-wejście (z plc) czy 1-wyjście (do plc)
 			public Int32 adres_bajt;		//który adres w mapie modbus (word)
 			public Int32 adres_bit;			//od 0 do 15
-			public Int32 wielkosc;          //bit, bajt, word, dword, qword
-			public Int32 format;			//bigendian litendiand
+			public Int32 wielkosc;          //0=bit, 1-bajt, 2-word, 3-dword, 4-qword
+			public Int32 format;			//0-bigendian 1-litendiand
 		}
 
 		scada[] ekran_scada = new scada[100];
@@ -75,6 +84,7 @@ namespace CS19_P06_mini_DCS
 			InitializeComponent();
 		}
 
+		//wybranie danej kontrolki w celu m.in. określenia ich właściwości
 		private void kontrolka_parametry_MouseDown(object sender, MouseEventArgs e)
 		{
 			if(sender.GetType() == typeof(Label))
@@ -97,6 +107,33 @@ namespace CS19_P06_mini_DCS
 
 
 			wlasciwosci_textBox_nazwa.Text = (ekran_scada[kontrolka_nr_parametry].opis as Label).Text;
+			
+			wlasciwosci_textBox_bajt.Text = ekran_scada[kontrolka_nr_parametry].adres_bajt.ToString();
+			
+			if (ekran_scada[kontrolka_nr_parametry].wielkosc == 0)
+			{
+				wlasciwosci_textBox_bit.Enabled = true;
+				wlasciwosci_comboBox_wielkosc.Enabled = false;
+				wlasciwosci_comboBox_format.Enabled = false;
+				wlasciwosci_textBox_bit.Text = ekran_scada[kontrolka_nr_parametry].adres_bit.ToString();
+				wlasciwosci_comboBox_wielkosc.SelectedItem = null;
+				wlasciwosci_comboBox_format.SelectedItem = null;
+
+			}
+			else
+			{
+				wlasciwosci_textBox_bit.Enabled = false;
+				wlasciwosci_comboBox_wielkosc.Enabled = true;
+				wlasciwosci_comboBox_format.Enabled = true;
+				wlasciwosci_textBox_bit.Text = "";
+				wlasciwosci_comboBox_wielkosc.SelectedIndex = ekran_scada[kontrolka_nr_parametry].wielkosc-1;
+				wlasciwosci_comboBox_format.SelectedIndex = ekran_scada[kontrolka_nr_parametry].format;
+
+			}
+
+			wlasciwosci_comboBox_typ.SelectedIndex = ekran_scada[kontrolka_nr_parametry].typ;
+
+
 
 		}
 
@@ -388,6 +425,9 @@ namespace CS19_P06_mini_DCS
 			//przypisanie zawartości opisu
 			scada_label.Text = "opis kontrolki";
 
+			ekran_scada[scada_nr].typ = 0;
+			ekran_scada[scada_nr].wielkosc = 0;
+
 			ekran_scada[scada_nr].opis = scada_label;
 			ekran_scada[scada_nr++].obiekt = scada_panel;
 
@@ -444,6 +484,9 @@ namespace CS19_P06_mini_DCS
 			scada_label.Text = "opis kontrolki";
 
 
+			ekran_scada[scada_nr].typ = 0;
+			ekran_scada[scada_nr].wielkosc = 1;
+
 			ekran_scada[scada_nr].opis = scada_label;
 			ekran_scada[scada_nr++].obiekt = scada_panel;
 
@@ -473,6 +516,7 @@ namespace CS19_P06_mini_DCS
 			}
 		}
 
+		//w oknie właściwości wciśnięcie enter potwierdza wpisane dane
 		private void wlasciwosci_nazwa_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if(e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -481,6 +525,47 @@ namespace CS19_P06_mini_DCS
 			}
 		}
 
+		private void wlasciwosci_typ_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar == Convert.ToChar(Keys.Enter))
+			{
+				ekran_scada[kontrolka_nr_parametry].typ = wlasciwosci_comboBox_typ.SelectedIndex;
+			}
+		}
+
+		private void wlasciwosci_bajt_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar == Convert.ToChar(Keys.Enter))
+			{
+				ekran_scada[kontrolka_nr_parametry].adres_bajt = Convert.ToInt32(wlasciwosci_textBox_bajt.Text);
+			}
+		}
+
+		private void wlasciwosci_bit_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar == Convert.ToChar(Keys.Enter))
+			{
+				ekran_scada[kontrolka_nr_parametry].adres_bit = Convert.ToInt32(wlasciwosci_textBox_bit.Text);
+			}
+		}
+
+		private void wlasciwosci_wielkosc_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar == Convert.ToChar(Keys.Enter))
+			{
+				ekran_scada[kontrolka_nr_parametry].wielkosc = wlasciwosci_comboBox_wielkosc.SelectedIndex+1;
+			}
+		}
+
+		private void wlasciwosci_format_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar == Convert.ToChar(Keys.Enter))
+			{
+				ekran_scada[kontrolka_nr_parametry].format = wlasciwosci_comboBox_format.SelectedIndex;
+			}
+		}
+
+		//-----
 		private void button_ustaw_odbieranie_Click(object sender, EventArgs e)
 		{
 			liczba_komorek_odbieranie = Convert.ToInt32(textBox_odbieranie_liczba_danych.Text);
