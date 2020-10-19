@@ -106,6 +106,7 @@
 			this.button_pole_bajt = new System.Windows.Forms.Button();
 			this.button_dodaj_bit = new System.Windows.Forms.Button();
 			this.richTextBox_tekst = new System.Windows.Forms.RichTextBox();
+			this.timer_client = new System.Windows.Forms.Timer(this.components);
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl_okna.SuspendLayout();
@@ -416,12 +417,14 @@
 			resources.ApplyResources(this.button_rozlacz_modbus, "button_rozlacz_modbus");
 			this.button_rozlacz_modbus.Name = "button_rozlacz_modbus";
 			this.button_rozlacz_modbus.UseVisualStyleBackColor = true;
+			this.button_rozlacz_modbus.Click += new System.EventHandler(this.button_rozlacz_modbus_Click);
 			// 
 			// button_polacz_modbus
 			// 
 			resources.ApplyResources(this.button_polacz_modbus, "button_polacz_modbus");
 			this.button_polacz_modbus.Name = "button_polacz_modbus";
 			this.button_polacz_modbus.UseVisualStyleBackColor = true;
+			this.button_polacz_modbus.Click += new System.EventHandler(this.button_polacz_modbus_Click);
 			// 
 			// tabPage_mapa
 			// 
@@ -625,6 +628,10 @@
 			this.richTextBox_tekst.Name = "richTextBox_tekst";
 			this.richTextBox_tekst.ReadOnly = true;
 			// 
+			// timer_client
+			// 
+			this.timer_client.Tick += new System.EventHandler(this.timer_client_Tick);
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -635,6 +642,7 @@
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "Main";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
 			this.menuStrip1.ResumeLayout(false);
@@ -732,6 +740,7 @@
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_X;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_Y;
+		private System.Windows.Forms.Timer timer_client;
 	}
 }
 

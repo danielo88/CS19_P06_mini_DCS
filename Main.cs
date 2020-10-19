@@ -79,6 +79,9 @@ namespace CS19_P06_mini_DCS
 		object kontrolka_zmiana;
 		Int32 kontrolka_nr_parametry;
 
+		EasyModbus.ModbusServer modbus_server;
+		EasyModbus.ModbusClient modbus_client;
+
 		public Main()
 		{
 			InitializeComponent();
@@ -562,6 +565,119 @@ namespace CS19_P06_mini_DCS
 			if (e.KeyChar == Convert.ToChar(Keys.Enter))
 			{
 				ekran_scada[kontrolka_nr_parametry].format = wlasciwosci_comboBox_format.SelectedIndex;
+			}
+		}
+
+		private void button_polacz_modbus_Click(object sender, EventArgs e)
+		{
+			//praca jako klient
+
+			try
+			{
+				modbus_client = new EasyModbus.ModbusClient(textBox_adres_ip.Text, Convert.ToInt16(textBox_port.Text));
+				modbus_client.UnitIdentifier = Convert.ToByte(textBox_id.Text);
+				modbus_client.Connect();
+				timer_client.Enabled = true;
+			}
+			catch (Exception ex)
+			{
+				richTextBox_tekst.AppendText(ex.Message + "\n");
+				richTextBox_tekst.AppendText(ex.ToString() + "\n");
+				//throw;
+			}
+		}
+
+		private void button_rozlacz_modbus_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if(modbus_client != null)
+				{
+					modbus_client.Disconnect();
+				}
+
+				timer_client.Enabled = false;
+				
+			}
+			catch (Exception ex)
+			{
+				richTextBox_tekst.AppendText(ex.ToString() + "\n");
+				throw;
+			}
+		}
+
+		private void timer_client_Tick(object sender, EventArgs e)
+		{
+			timer_client.Enabled = false;
+
+			try
+			{
+				int[] tab = new int[liczba_komorek_wysylanie];
+				// tab[Convert.ToInt16(textBox_odczyt_liczba_danych.Text)] = { 10, 32, 0, 1, 2, 3, 4, 5, 6, 7 };
+
+				for (int i = 0; i < liczba_komorek_wysylanie; i++)
+				{
+					//sprawdzanie czy przesyłana jest nastawa
+					if (licz_wysylanie[i].nastawa == false)
+					{
+						tab[i] = Convert.ToInt16((licz_wysylanie[i].cells as TextBox).Text);
+
+					}
+					else if (licz_wysylanie[i].nastawa == true)
+					{
+						//sprawdzanie czy zmianie uległa nastawa
+						if (licz_wysylanie[i].zmiana_nastawy == true)
+						{
+							tab[i] = Convert.ToInt16((licz_wysylanie[i].cells as TextBox).Text);
+
+						}
+						else
+						{
+							tab[i] = 9999;// Convert.ToInt16(textBox_nastawa.Text);
+						}
+					}
+
+
+				}
+				int poczatek = (Convert.ToInt16(textBox_wysylanie_poczatek.Text) - 1);
+				modbus_client.WriteMultipleRegisters(poczatek, tab);
+
+				int[] readHoldingRegisters = modbus_client.ReadHoldingRegisters((Convert.ToInt16(textBox_odbieranie_poczatek.Text) - 1), liczba_komorek_odbieranie);    //Read 10 Holding Registers from Server, starting with Address 1
+
+				for (int i = 0; i < liczba_komorek_odbieranie; i++)
+				{
+					(licz_odbieranie[i].cells as TextBox).Text = readHoldingRegisters[i].ToString();
+				}
+			}
+			catch (Exception ex)
+			{
+				richTextBox_tekst.AppendText(ex.ToString() + "\n");
+				button_rozlacz_modbus_Click(null, null);
+				return;
+				//throw;
+			}
+
+
+
+			timer_client.Enabled = true;
+		}
+
+		private void Main_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			try
+			{
+				if (modbus_client != null)
+				{
+					modbus_client.Disconnect();
+				}
+				
+				timer_client.Enabled = false;
+
+			}
+			catch (Exception ex)
+			{
+				richTextBox_tekst.AppendText(ex.ToString() + "\n");
+				throw;
 			}
 		}
 
