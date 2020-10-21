@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using System.Xml;
 
 namespace CS19_P06_mini_DCS
 {
@@ -732,6 +733,157 @@ namespace CS19_P06_mini_DCS
 			{
 				richTextBox_tekst.AppendText(ex.ToString() + "\n");
 				throw;
+			}
+		}
+
+		private void toolStripMenuItem_zapisz_Click(object sender, EventArgs e)
+		{
+			if (saveFileDialog_1.ShowDialog() == DialogResult.OK)
+			{
+				string plik = saveFileDialog_1.FileName;
+
+				XmlWriterSettings xml_settings = new XmlWriterSettings();
+				xml_settings.NewLineOnAttributes = true;
+				xml_settings.Indent = true;
+
+				XmlWriter xml_write = XmlWriter.Create(plik, xml_settings);
+
+				xml_write.WriteStartDocument();
+				xml_write.WriteStartElement("mini_SCADA");
+
+				//parametry modbusa
+				xml_write.WriteStartElement("modbus");
+
+				xml_write.WriteStartElement("ip_address");
+				xml_write.WriteString(textBox_adres_ip.Text);
+				xml_write.WriteEndElement();
+
+				xml_write.WriteStartElement("port");
+				xml_write.WriteString(textBox_port.Text);
+				xml_write.WriteEndElement();
+
+				xml_write.WriteStartElement("ID");
+				xml_write.WriteString(textBox_id.Text);
+				xml_write.WriteEndElement();
+
+				xml_write.WriteStartElement("liczba_odebranych");
+				xml_write.WriteString(textBox_odbieranie_liczba_danych.Text);
+				xml_write.WriteEndElement();
+
+				xml_write.WriteStartElement("liczba_wysylanych");
+				xml_write.WriteString(textBox_wysylanie_liczba_danych.Text);
+				xml_write.WriteEndElement();
+
+				xml_write.WriteStartElement("odbieranie_poczatek");
+				xml_write.WriteString(textBox_odbieranie_poczatek.Text);
+				xml_write.WriteEndElement();
+
+				xml_write.WriteStartElement("wysylanie_poczatek");
+				xml_write.WriteString(textBox_wysylanie_poczatek.Text);
+				xml_write.WriteEndElement();
+
+				xml_write.WriteEndElement(); //modbus
+
+				//parametry scada
+
+				for(int i=0; i < scada_nr; i++)
+				{
+					xml_write.WriteStartElement("scada");
+
+					xml_write.WriteStartElement("opis");
+					xml_write.WriteString(ekran_scada[i].opis_text);
+					xml_write.WriteEndElement();
+
+					xml_write.WriteStartElement("nr_obiektu");
+					xml_write.WriteString(ekran_scada[i].nr_obiektu.ToString());
+					xml_write.WriteEndElement();
+
+					xml_write.WriteStartElement("pozycja_x");
+					xml_write.WriteString(ekran_scada[i].pozycja_x.ToString());
+					xml_write.WriteEndElement();
+
+					xml_write.WriteStartElement("pozycja_y");
+					xml_write.WriteString(ekran_scada[i].pozycja_y.ToString());
+					xml_write.WriteEndElement();
+
+					xml_write.WriteStartElement("typ");
+					xml_write.WriteString(ekran_scada[i].typ.ToString());
+					xml_write.WriteEndElement();
+
+					xml_write.WriteStartElement("format");
+					xml_write.WriteString(ekran_scada[i].format.ToString());
+					xml_write.WriteEndElement();
+
+					xml_write.WriteStartElement("wielkosc");
+					xml_write.WriteString(ekran_scada[i].wielkosc.ToString());
+					xml_write.WriteEndElement();
+
+					xml_write.WriteStartElement("adres_bajt");
+					xml_write.WriteString(ekran_scada[i].adres_bajt.ToString());
+					xml_write.WriteEndElement();
+
+					xml_write.WriteStartElement("adres_bit");
+					xml_write.WriteString(ekran_scada[i].adres_bit.ToString());
+					xml_write.WriteEndElement();
+
+					xml_write.WriteEndElement();
+				}
+
+				xml_write.WriteEndElement();    //mini_scada
+				xml_write.WriteEndDocument();
+				xml_write.Close();
+
+			}
+		}
+
+		private void toolStripMenuItem_otworz_Click(object sender, EventArgs e)
+		{
+			if(openFileDialog_1.ShowDialog() == DialogResult.OK)
+			{
+				string plik = openFileDialog_1.FileName;
+				XmlDocument xml_doc = new XmlDocument();
+
+				try
+				{
+
+					xml_doc.Load(plik);
+
+					//ustawienia modbus
+
+					textBox_adres_ip.Text = xml_doc.GetElementsByTagName("ip_address").Item(0).InnerText;
+					textBox_port.Text = xml_doc.GetElementsByTagName("port").Item(0).InnerText;
+					textBox_id.Text = xml_doc.GetElementsByTagName("ID").Item(0).InnerText;
+					textBox_odbieranie_liczba_danych.Text = xml_doc.GetElementsByTagName("liczba_odebranych").Item(0).InnerText;
+					textBox_wysylanie_liczba_danych.Text = xml_doc.GetElementsByTagName("liczba_wysylanych").Item(0).InnerText;
+					textBox_odbieranie_poczatek.Text = xml_doc.GetElementsByTagName("odbieranie_poczatek").Item(0).InnerText;
+					textBox_wysylanie_poczatek.Text = xml_doc.GetElementsByTagName("wysylanie_poczatek").Item(0).InnerText;
+
+
+					//ustawienia scada
+					scada_nr = xml_doc.GetElementsByTagName("scada").Count;
+
+					for(int i = 0; i < scada_nr; i++)
+					{
+						ekran_scada[i].opis_text = xml_doc.GetElementsByTagName("opis").Item(i).InnerText;
+						ekran_scada[i].nr_obiektu = Convert.ToInt32(xml_doc.GetElementsByTagName("nr_obiektu").Item(i).InnerText);
+						ekran_scada[i].pozycja_x = Convert.ToInt32(xml_doc.GetElementsByTagName("pozycja_x").Item(i).InnerText);
+						ekran_scada[i].pozycja_y = Convert.ToInt32(xml_doc.GetElementsByTagName("pozycja_y").Item(i).InnerText);
+						ekran_scada[i].typ = Convert.ToInt32(xml_doc.GetElementsByTagName("typ").Item(i).InnerText);
+						ekran_scada[i].format = Convert.ToInt32(xml_doc.GetElementsByTagName("format").Item(i).InnerText);
+						ekran_scada[i].wielkosc = Convert.ToInt32(xml_doc.GetElementsByTagName("wielkosc").Item(i).InnerText);
+						ekran_scada[i].adres_bajt = Convert.ToInt32(xml_doc.GetElementsByTagName("adres_bajt").Item(i).InnerText);
+						ekran_scada[i].adres_bit = Convert.ToInt32(xml_doc.GetElementsByTagName("adres_bit").Item(i).InnerText);
+
+					}
+					scada_nr++;
+
+				}
+				catch(XmlException ex)
+				{
+					MessageBox.Show(ex.Message);
+				}
+
+
 			}
 		}
 

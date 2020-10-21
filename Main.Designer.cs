@@ -107,6 +107,8 @@
 			this.button_dodaj_bit = new System.Windows.Forms.Button();
 			this.richTextBox_tekst = new System.Windows.Forms.RichTextBox();
 			this.timer_client = new System.Windows.Forms.Timer(this.components);
+			this.saveFileDialog_1 = new System.Windows.Forms.SaveFileDialog();
+			this.openFileDialog_1 = new System.Windows.Forms.OpenFileDialog();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl_okna.SuspendLayout();
@@ -212,11 +214,13 @@
 			// 
 			this.toolStripMenuItem_otworz.Name = "toolStripMenuItem_otworz";
 			resources.ApplyResources(this.toolStripMenuItem_otworz, "toolStripMenuItem_otworz");
+			this.toolStripMenuItem_otworz.Click += new System.EventHandler(this.toolStripMenuItem_otworz_Click);
 			// 
 			// toolStripMenuItem_zapisz
 			// 
 			this.toolStripMenuItem_zapisz.Name = "toolStripMenuItem_zapisz";
 			resources.ApplyResources(this.toolStripMenuItem_zapisz, "toolStripMenuItem_zapisz");
+			this.toolStripMenuItem_zapisz.Click += new System.EventHandler(this.toolStripMenuItem_zapisz_Click);
 			// 
 			// toolStripSeparator1
 			// 
@@ -632,6 +636,15 @@
 			// 
 			this.timer_client.Tick += new System.EventHandler(this.timer_client_Tick);
 			// 
+			// saveFileDialog_1
+			// 
+			resources.ApplyResources(this.saveFileDialog_1, "saveFileDialog_1");
+			// 
+			// openFileDialog_1
+			// 
+			this.openFileDialog_1.FileName = "openFileDialog1";
+			resources.ApplyResources(this.openFileDialog_1, "openFileDialog_1");
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -741,6 +754,8 @@
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_Y;
 		private System.Windows.Forms.Timer timer_client;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog_1;
+		private System.Windows.Forms.OpenFileDialog openFileDialog_1;
 	}
 }
 
