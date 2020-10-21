@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace CS19_P06_mini_DCS
 {
@@ -62,10 +63,12 @@ namespace CS19_P06_mini_DCS
 		struct scada
 		{
 			public object obiekt;           //wskaźnik do obiektu
-			public object opis;				//wskaźnik do opisy (label)
+			public object opis;             //wskaźnik do opisy (label)
+			public object kontrolka;        //wskaźnik do przycisku lub textboxa
+			public string opis_text;
 			public Int32 nr_obiektu;		//nr porządkowy obiektu
 			public Int32 pozycja_x;			//pozycja x na ekranie
-			public Int32 pozycja_y;			//pozycja y na ekranie
+			public Int32 pozycja_y;         //pozycja y na ekranie
 			public Int32 typ;				//0-wejście (z plc) czy 1-wyjście (do plc)
 			public Int32 adres_bajt;		//który adres w mapie modbus (word)
 			public Int32 adres_bit;			//od 0 do 15
@@ -139,7 +142,11 @@ namespace CS19_P06_mini_DCS
 
 
 		}
-
+		private void zmiana_bit_kontrolki(object sender, MouseEventArgs e)
+		{
+			if(ekran_scada[kontrolka_nr_parametry].typ == 1)
+				(sender as Button).Text = (sender as Button).Text == "0" ? "1" : "0";
+		}
 
 		private void kontrolka_scada_MouseDown(object sender, MouseEventArgs e)
 		{
@@ -196,6 +203,7 @@ namespace CS19_P06_mini_DCS
 							
 
 						kontrolka_zmiana = ekran_scada[nr_temp].obiekt;
+						kontrolka_nr_parametry = nr_temp;
 
 						(kontrolka_zmiana as Panel).Enabled = false;
 
@@ -204,7 +212,8 @@ namespace CS19_P06_mini_DCS
 				{
 					(kontrolka_zmiana as Panel).Enabled = true;
 					kontrolka_zmiana = null;
-
+					ekran_scada[kontrolka_nr_parametry].pozycja_x = Convert.ToInt32(toolStripStatusLabel_X.Text);
+					ekran_scada[kontrolka_nr_parametry].pozycja_y = Convert.ToInt32(toolStripStatusLabel_Y.Text);
 				}
 			}
 		}
@@ -395,9 +404,11 @@ namespace CS19_P06_mini_DCS
 			//umiejscowanie na ekranie utworzonego panelu
 			scada_panel.Location = new System.Drawing.Point(520, 0);
 			//określenie rozmiaru
-			scada_panel.Size = new System.Drawing.Size(50, 20);
+			scada_panel.Size = new System.Drawing.Size(51, 20);
 			//określenie właściowości - automatyczne dopasowanie wielkości
 			scada_panel.AutoSize = true;
+			scada_panel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
 
 			//dodanie nowej kontroli do kontenera
 			scada_panel.Controls.Add(scada_button);
@@ -408,13 +419,16 @@ namespace CS19_P06_mini_DCS
 			//zdarzenie od przycisku myszą
 			scada_button.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_scada_MouseDown);
 			scada_button.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
+			scada_button.MouseDown += new System.Windows.Forms.MouseEventHandler(zmiana_bit_kontrolki);
+			//opis początkowy
+			scada_button.Text = "0";
 
 			//dodanie opisu kontrolki do kontenera
 			scada_panel.Controls.Add(scada_label);
 			//umiejscowienie w kontenerze opisu
 			scada_label.Location = new System.Drawing.Point(50, 4);
 			//określenie rozmiarów opisu
-			scada_label.Size = new System.Drawing.Size(41, 30);
+			scada_label.Size = new System.Drawing.Size(41, 5);
 			//auto doposaowanie do zawartości
 			scada_label.AutoSize = true;
 			//zdarzenie od przycisku myszą
@@ -430,7 +444,9 @@ namespace CS19_P06_mini_DCS
 
 			ekran_scada[scada_nr].typ = 0;
 			ekran_scada[scada_nr].wielkosc = 0;
+			ekran_scada[scada_nr].adres_bajt = 0;
 
+			ekran_scada[scada_nr].kontrolka = scada_button;
 			ekran_scada[scada_nr].opis = scada_label;
 			ekran_scada[scada_nr++].obiekt = scada_panel;
 
@@ -453,9 +469,10 @@ namespace CS19_P06_mini_DCS
 			//umiejscowanie na ekranie utworzonego panelu
 			scada_panel.Location = new System.Drawing.Point(520, 0);
 			//określenie rozmiaru
-			scada_panel.Size = new System.Drawing.Size(50, 20);
+			scada_panel.Size = new System.Drawing.Size(51, 20);
 			//określenie właściowości - automatyczne dopasowanie wielkości
 			scada_panel.AutoSize = true;
+			scada_panel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
 			//dodanie nowej kontroli do kontenera
 			scada_panel.Controls.Add(scada_textbox);
@@ -463,6 +480,8 @@ namespace CS19_P06_mini_DCS
 			scada_textbox.Location = new System.Drawing.Point(0, 0);
 			//określenie rozmiarów kontrolki
 			scada_textbox.Size = new System.Drawing.Size(50, 20);
+			//wpisanie tekstu domyślnego
+			scada_textbox.Text = "0";
 			//zdarzenie od przycisku myszą
 			scada_textbox.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_scada_MouseDown);
 			scada_textbox.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
@@ -472,9 +491,10 @@ namespace CS19_P06_mini_DCS
 			//umiejscowienie w kontenerze opisu
 			scada_label.Location = new System.Drawing.Point(50, 4);
 			//określenie rozmiarów opisu
-			scada_label.Size = new System.Drawing.Size(41, 30);
+			scada_label.Size = new System.Drawing.Size(1, 30);
 			//auto doposaowanie do zawartości
 			scada_label.AutoSize = true;
+
 			//zdarzenie od przycisku myszą
 			scada_label.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
 
@@ -489,7 +509,10 @@ namespace CS19_P06_mini_DCS
 
 			ekran_scada[scada_nr].typ = 0;
 			ekran_scada[scada_nr].wielkosc = 1;
+			ekran_scada[scada_nr].adres_bajt = 0;
+			//ekran_scada[scada_nr].adres_bit = 0;
 
+			ekran_scada[scada_nr].kontrolka = scada_textbox;
 			ekran_scada[scada_nr].opis = scada_label;
 			ekran_scada[scada_nr++].obiekt = scada_panel;
 
@@ -525,6 +548,7 @@ namespace CS19_P06_mini_DCS
 			if(e.KeyChar == Convert.ToChar(Keys.Enter))
 			{
 				(ekran_scada[kontrolka_nr_parametry].opis as Label).Text = wlasciwosci_textBox_nazwa.Text;
+				ekran_scada[kontrolka_nr_parametry].opis_text = wlasciwosci_textBox_nazwa.Text;
 			}
 		}
 
@@ -648,6 +672,36 @@ namespace CS19_P06_mini_DCS
 				{
 					(licz_odbieranie[i].cells as TextBox).Text = readHoldingRegisters[i].ToString();
 				}
+
+				for (int i = 0; i < scada_nr; i++)
+				{
+					if ( (ekran_scada[i].wielkosc != 0))// && (ekran_scada[i].adres_bajt != null) )
+					{
+						if (ekran_scada[i].typ == 0)
+						{
+							(ekran_scada[i].kontrolka as TextBox).Text = readHoldingRegisters[ekran_scada[i].adres_bajt + (Convert.ToInt16(textBox_odbieranie_poczatek.Text) - 1)].ToString();
+						}
+						else
+							(licz_wysylanie[ekran_scada[i].adres_bajt].cells as TextBox).Text = (ekran_scada[i].kontrolka as TextBox).Text;
+					}
+					else if ((ekran_scada[i].wielkosc == 0))// && (ekran_scada[i].adres_bajt != null))
+					{
+						if (ekran_scada[i].typ == 0)
+						{
+							(ekran_scada[i].kontrolka as Button).Text = ( (readHoldingRegisters[ekran_scada[i].adres_bajt + (Convert.ToInt16(textBox_odbieranie_poczatek.Text) - 1)] >> ekran_scada[i].adres_bit) &0x001 ).ToString();
+						}
+						else
+						{
+							int i_but = Convert.ToInt32( (ekran_scada[i].kontrolka as Button).Text);
+							if(i_but == 1)
+								(licz_wysylanie[ekran_scada[i].adres_bajt].cells as TextBox).Text = (Convert.ToInt32((licz_wysylanie[ekran_scada[i].adres_bajt].cells as TextBox).Text) | (0x00 | (1 << ekran_scada[i].adres_bit) )).ToString();
+							else
+								(licz_wysylanie[ekran_scada[i].adres_bajt].cells as TextBox).Text = (Convert.ToInt32((licz_wysylanie[ekran_scada[i].adres_bajt].cells as TextBox).Text) & ~(0x00 | (1 << ekran_scada[i].adres_bit) )).ToString();
+
+						}
+					}
+				}
+
 			}
 			catch (Exception ex)
 			{
