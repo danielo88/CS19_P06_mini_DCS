@@ -875,7 +875,7 @@ namespace CS19_P06_mini_DCS
 						ekran_scada[i].adres_bit = Convert.ToInt32(xml_doc.GetElementsByTagName("adres_bit").Item(i).InnerText);
 
 					}
-					scada_nr++;
+					
 
 				}
 				catch(XmlException ex)
@@ -885,6 +885,135 @@ namespace CS19_P06_mini_DCS
 
 
 			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			if(panel_scada.Controls.Count > 0)
+			{
+				panel_scada.Controls.Clear();
+			}
+
+
+
+			for (int i=0; i < scada_nr; i++)
+			{
+				//tworzymy nową kontrolkę
+				Button scada_button = new Button();
+
+				//tworzymy opis do kontrolki
+				Label scada_label = new Label();
+
+				//tworzymy panel w którym będą znajdować się kontrolki
+				Panel scada_panel = new Panel();
+
+				//tworzymy nową kontrolkę
+				TextBox scada_textbox = new TextBox();
+
+				if (ekran_scada[i].typ == 0)	//button
+				{
+					//dodanie utworzonego panelu, do istniejącego (kontener)
+					panel_scada.Controls.Add(scada_panel);
+					//umiejscowanie na ekranie utworzonego panelu
+					scada_panel.Location = new System.Drawing.Point(ekran_scada[i].pozycja_x, ekran_scada[i].pozycja_y);
+					//określenie rozmiaru
+					scada_panel.Size = new System.Drawing.Size(51, 20);
+					//określenie właściowości - automatyczne dopasowanie wielkości
+					scada_panel.AutoSize = true;
+					scada_panel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
+
+					//dodanie nowej kontroli do kontenera
+					scada_panel.Controls.Add(scada_button);
+					//umiejscowienie w konterze nowej kontrolki
+					scada_button.Location = new System.Drawing.Point(0, 0);
+					//określenie rozmiarów kontrolki
+					scada_button.Size = new System.Drawing.Size(50, 20);
+					//zdarzenie od przycisku myszą
+					scada_button.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_scada_MouseDown);
+					scada_button.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
+					scada_button.MouseDown += new System.Windows.Forms.MouseEventHandler(zmiana_bit_kontrolki);
+					//opis początkowy
+					scada_button.Text = "0";
+
+					//dodanie opisu kontrolki do kontenera
+					scada_panel.Controls.Add(scada_label);
+					//umiejscowienie w kontenerze opisu
+					scada_label.Location = new System.Drawing.Point(50, 4);
+					//określenie rozmiarów opisu
+					scada_label.Size = new System.Drawing.Size(41, 5);
+					//auto doposaowanie do zawartości
+					scada_label.AutoSize = true;
+					//zdarzenie od przycisku myszą
+					scada_label.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
+
+					//przypisanie nazwy danej kontrolce
+					scada_button.Name = "scada_button_" + i.ToString();
+					scada_label.Name = "scada_label_" + i.ToString();
+					scada_panel.Name = "scada_panel_" + i.ToString();
+
+					//przypisanie zawartości opisu
+					scada_label.Text = ekran_scada[i].opis_text;
+
+					ekran_scada[i].kontrolka = scada_button;
+					ekran_scada[i].opis = scada_label;
+					ekran_scada[i].obiekt = scada_panel;
+				}
+				else if(ekran_scada[i].typ != 0) //textbox
+				{
+
+
+					//dodanie utworzonego panelu, do istniejącego (kontener)
+					panel_scada.Controls.Add(scada_panel);
+					//umiejscowanie na ekranie utworzonego panelu
+					scada_panel.Location = new System.Drawing.Point(ekran_scada[i].pozycja_x, ekran_scada[i].pozycja_y);
+					//określenie rozmiaru
+					scada_panel.Size = new System.Drawing.Size(51, 20);
+					//określenie właściowości - automatyczne dopasowanie wielkości
+					scada_panel.AutoSize = true;
+					scada_panel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+
+					//dodanie nowej kontroli do kontenera
+					scada_panel.Controls.Add(scada_textbox);
+					//umiejscowienie w konterze nowej kontrolki
+					scada_textbox.Location = new System.Drawing.Point(0, 0);
+					//określenie rozmiarów kontrolki
+					scada_textbox.Size = new System.Drawing.Size(50, 20);
+					//wpisanie tekstu domyślnego
+					scada_textbox.Text = "0";
+					//zdarzenie od przycisku myszą
+					scada_textbox.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_scada_MouseDown);
+					scada_textbox.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
+
+					//dodanie opisu kontrolki do kontenera
+					scada_panel.Controls.Add(scada_label);
+					//umiejscowienie w kontenerze opisu
+					scada_label.Location = new System.Drawing.Point(50, 4);
+					//określenie rozmiarów opisu
+					scada_label.Size = new System.Drawing.Size(1, 30);
+					//auto doposaowanie do zawartości
+					scada_label.AutoSize = true;
+
+					//zdarzenie od przycisku myszą
+					scada_label.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
+
+					//przypisanie nazwy danej kontrolce
+					scada_textbox.Name = "scada_box_" + i.ToString();
+					scada_label.Name = "scada_label_" + i.ToString();
+					scada_panel.Name = "scada_panel_" + i.ToString();
+
+					//przypisanie zawartości opisu
+					scada_label.Text = ekran_scada[i].opis_text;
+
+					ekran_scada[i].adres_bit = 0;
+
+					ekran_scada[i].kontrolka = scada_textbox;
+					ekran_scada[i].opis = scada_label;
+					ekran_scada[i].obiekt = scada_panel;
+				}
+
+			}
+
 		}
 
 		//-----

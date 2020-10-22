@@ -109,6 +109,7 @@
 			this.timer_client = new System.Windows.Forms.Timer(this.components);
 			this.saveFileDialog_1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog_1 = new System.Windows.Forms.OpenFileDialog();
+			this.button1 = new System.Windows.Forms.Button();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl_okna.SuspendLayout();
@@ -591,6 +592,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.button1);
 			this.groupBox1.Controls.Add(this.button_kreska_poz);
 			this.groupBox1.Controls.Add(this.button_kreska_pion);
 			this.groupBox1.Controls.Add(this.button_pole_bajt);
@@ -644,6 +646,13 @@
 			// 
 			this.openFileDialog_1.FileName = "openFileDialog1";
 			resources.ApplyResources(this.openFileDialog_1, "openFileDialog_1");
+			// 
+			// button1
+			// 
+			resources.ApplyResources(this.button1, "button1");
+			this.button1.Name = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// Main
 			// 
@@ -756,6 +765,7 @@
 		private System.Windows.Forms.Timer timer_client;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog_1;
 		private System.Windows.Forms.OpenFileDialog openFileDialog_1;
+		private System.Windows.Forms.Button button1;
 	}
 }
 
