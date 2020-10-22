@@ -910,7 +910,7 @@ namespace CS19_P06_mini_DCS
 				//tworzymy nową kontrolkę
 				TextBox scada_textbox = new TextBox();
 
-				if (ekran_scada[i].typ == 0)	//button
+				if (ekran_scada[i].wielkosc == 0)	//button
 				{
 					//dodanie utworzonego panelu, do istniejącego (kontener)
 					panel_scada.Controls.Add(scada_panel);
@@ -959,7 +959,7 @@ namespace CS19_P06_mini_DCS
 					ekran_scada[i].opis = scada_label;
 					ekran_scada[i].obiekt = scada_panel;
 				}
-				else if(ekran_scada[i].typ != 0) //textbox
+				else if(ekran_scada[i].wielkosc != 0) //textbox
 				{
 
 
