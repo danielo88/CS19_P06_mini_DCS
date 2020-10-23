@@ -430,7 +430,7 @@ namespace CS19_P06_mini_DCS
 			//dodanie utworzonego panelu, do istniejącego (kontener)
 			panel_scada.Controls.Add(scada_panel);
 			//umiejscowanie na ekranie utworzonego panelu
-			scada_panel.Location = new System.Drawing.Point(520, 0);
+			scada_panel.Location = new System.Drawing.Point(panel_scada.Width-130, 0);
 			//określenie rozmiaru
 			scada_panel.Size = new System.Drawing.Size(51, 20);
 			//określenie właściowości - automatyczne dopasowanie wielkości
@@ -495,7 +495,7 @@ namespace CS19_P06_mini_DCS
 			//dodanie utworzonego panelu, do istniejącego (kontener)
 			panel_scada.Controls.Add(scada_panel);
 			//umiejscowanie na ekranie utworzonego panelu
-			scada_panel.Location = new System.Drawing.Point(520, 0);
+			scada_panel.Location = new System.Drawing.Point(panel_scada.Width - 130, 0);
 			//określenie rozmiaru
 			scada_panel.Size = new System.Drawing.Size(51, 20);
 			//określenie właściowości - automatyczne dopasowanie wielkości
