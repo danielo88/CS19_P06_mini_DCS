@@ -99,7 +99,6 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.button1 = new System.Windows.Forms.Button();
 			this.button_kreska_poz = new System.Windows.Forms.Button();
 			this.button_kreska_pion = new System.Windows.Forms.Button();
 			this.button_pole_bajt = new System.Windows.Forms.Button();
@@ -199,6 +198,7 @@
 			this.label40 = new System.Windows.Forms.Label();
 			this.textBox27 = new System.Windows.Forms.TextBox();
 			this.textBox28 = new System.Windows.Forms.TextBox();
+			this.ToolStripMenuItem_uzupelnij = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl_okna.SuspendLayout();
@@ -349,6 +349,8 @@
 			// 
 			// toolStripMenuItem_Edycja
 			// 
+			this.toolStripMenuItem_Edycja.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_uzupelnij});
 			this.toolStripMenuItem_Edycja.Name = "toolStripMenuItem_Edycja";
 			resources.ApplyResources(this.toolStripMenuItem_Edycja, "toolStripMenuItem_Edycja");
 			// 
@@ -671,20 +673,12 @@
 			// groupBox1
 			// 
 			resources.ApplyResources(this.groupBox1, "groupBox1");
-			this.groupBox1.Controls.Add(this.button1);
 			this.groupBox1.Controls.Add(this.button_kreska_poz);
 			this.groupBox1.Controls.Add(this.button_kreska_pion);
 			this.groupBox1.Controls.Add(this.button_pole_bajt);
 			this.groupBox1.Controls.Add(this.button_dodaj_bit);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.TabStop = false;
-			// 
-			// button1
-			// 
-			resources.ApplyResources(this.button1, "button1");
-			this.button1.Name = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// button_kreska_poz
 			// 
@@ -1404,6 +1398,12 @@
 			this.textBox28.Name = "textBox28";
 			this.helpProvider1.SetShowHelp(this.textBox28, ((bool)(resources.GetObject("textBox28.ShowHelp"))));
 			// 
+			// ToolStripMenuItem_uzupelnij
+			// 
+			resources.ApplyResources(this.ToolStripMenuItem_uzupelnij, "ToolStripMenuItem_uzupelnij");
+			this.ToolStripMenuItem_uzupelnij.Name = "ToolStripMenuItem_uzupelnij";
+			this.ToolStripMenuItem_uzupelnij.Click += new System.EventHandler(this.ToolStripMenuItem_uzupelnij_Click);
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -1532,7 +1532,6 @@
 		private System.Windows.Forms.Timer timer_client;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog_1;
 		private System.Windows.Forms.OpenFileDialog openFileDialog_1;
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.HelpProvider helpProvider1;
@@ -1624,6 +1623,7 @@
 		private System.Windows.Forms.Label label19;
 		private System.Windows.Forms.TextBox textBox6;
 		private System.Windows.Forms.TextBox textBox7;
+		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_uzupelnij;
 	}
 }
 
