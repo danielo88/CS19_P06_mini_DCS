@@ -110,6 +110,9 @@
 			this.timer_client = new System.Windows.Forms.Timer(this.components);
 			this.saveFileDialog_1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog_1 = new System.Windows.Forms.OpenFileDialog();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl_okna.SuspendLayout();
@@ -119,6 +122,7 @@
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
+			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// statusStrip1
@@ -282,6 +286,8 @@
 			// 
 			// tabPage_polaczenie
 			// 
+			this.tabPage_polaczenie.Controls.Add(this.groupBox3);
+			this.tabPage_polaczenie.Controls.Add(this.groupBox2);
 			this.tabPage_polaczenie.Controls.Add(this.button_ustaw_wysylanie);
 			this.tabPage_polaczenie.Controls.Add(this.button_wyczysc_wysylanie);
 			this.tabPage_polaczenie.Controls.Add(this.button_ustaw_odbieranie);
@@ -296,14 +302,6 @@
 			this.tabPage_polaczenie.Controls.Add(this.textBox_odbieranie_poczatek);
 			this.tabPage_polaczenie.Controls.Add(this.textBox_odbieranie_liczba_danych);
 			this.tabPage_polaczenie.Controls.Add(this.label4);
-			this.tabPage_polaczenie.Controls.Add(this.textBox_id);
-			this.tabPage_polaczenie.Controls.Add(this.textBox_port);
-			this.tabPage_polaczenie.Controls.Add(this.textBox_adres_ip);
-			this.tabPage_polaczenie.Controls.Add(this.label_ID);
-			this.tabPage_polaczenie.Controls.Add(this.label_port);
-			this.tabPage_polaczenie.Controls.Add(this.label_adres_ip);
-			this.tabPage_polaczenie.Controls.Add(this.button_rozlacz_modbus);
-			this.tabPage_polaczenie.Controls.Add(this.button_polacz_modbus);
 			resources.ApplyResources(this.tabPage_polaczenie, "tabPage_polaczenie");
 			this.tabPage_polaczenie.Name = "tabPage_polaczenie";
 			this.tabPage_polaczenie.UseVisualStyleBackColor = true;
@@ -655,6 +653,26 @@
 			this.openFileDialog_1.FileName = "openFileDialog1";
 			resources.ApplyResources(this.openFileDialog_1, "openFileDialog_1");
 			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.textBox_adres_ip);
+			this.groupBox2.Controls.Add(this.button_polacz_modbus);
+			this.groupBox2.Controls.Add(this.button_rozlacz_modbus);
+			this.groupBox2.Controls.Add(this.label_adres_ip);
+			this.groupBox2.Controls.Add(this.label_port);
+			this.groupBox2.Controls.Add(this.label_ID);
+			this.groupBox2.Controls.Add(this.textBox_port);
+			this.groupBox2.Controls.Add(this.textBox_id);
+			resources.ApplyResources(this.groupBox2, "groupBox2");
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.TabStop = false;
+			// 
+			// groupBox3
+			// 
+			resources.ApplyResources(this.groupBox3, "groupBox3");
+			this.groupBox3.Name = "groupBox3";
+			this.groupBox3.TabStop = false;
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -680,6 +698,8 @@
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox2.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -767,6 +787,9 @@
 		private System.Windows.Forms.SaveFileDialog saveFileDialog_1;
 		private System.Windows.Forms.OpenFileDialog openFileDialog_1;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.HelpProvider helpProvider1;
 	}
 }
 

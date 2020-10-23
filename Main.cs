@@ -10,32 +10,37 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.Xml;
 
+
 namespace CS19_P06_mini_DCS
 {
 	public partial class Main : Form
 	{
 		//zmienne
 
-		string adres_ip;// = new string();
-		int liczba_komorek_wysylanie = 0;
-		int liczba_komorek_odbieranie = 0;
-		int szerokosc_komorki = 60;
-		int ilosc_wierszy = 10;
-		int port;
-		int dawaj = 0;
-		int nowe = 0;
-		int nr_mouse_enter;
-		bool server_client = false; //0 gdy server, 1 gdy client
-		UInt32 odbieranie_ilosc_danych = 1;
-		object send_mouse_click, send_mouse_enter;
-		Int32 from_cells_copy; //z której komórki ma kopiować
-		bool przepisz = false;//czy aktywne jest przepisywanie
-		int aktywuj_czas_potwierdzenia = 0; //jeżeli podczas zmiany nastawy nie zostanie wciśnięty enter to po ustawionym czasie automatycznie zostanie to potwierdzone
+		//string adres_ip;// = new string();
+		//int liczba_komorek_wysylanie = 0;
+		//int liczba_komorek_odbieranie = 0;
 
-		Color color_textbox_background = Color.White;
-		Color color_textbox_text = Color.Black;
+//		int port;
+//		int dawaj = 0;
+//		int nowe = 0;
+//		int nr_mouse_enter;
+//		bool server_client = false; //0 gdy server, 1 gdy client
+//		UInt32 odbieranie_ilosc_danych = 1;
+//		object send_mouse_click, send_mouse_enter;
+//		Int32 from_cells_copy; //z której komórki ma kopiować
+//		bool przepisz = false;//czy aktywne jest przepisywanie
+//		int aktywuj_czas_potwierdzenia = 0; //jeżeli podczas zmiany nastawy nie zostanie wciśnięty enter to po ustawionym czasie automatycznie zostanie to potwierdzone
 
-		struct liczydlo
+		public int liczba_polaczen = 1;
+		readonly int max_connection = 5;
+		readonly int szerokosc_komorki = 60;
+		readonly int ilosc_wierszy = 10;
+
+		public Color color_textbox_background = Color.White;
+		public Color color_textbox_text = Color.Black;
+
+		public struct DANE_MODBUS
 		{
 			public object cells;
 			public Int32 nr;
@@ -48,11 +53,44 @@ namespace CS19_P06_mini_DCS
 			public bool zmiana_nastawy;     //czy nastąpiła zmiana nastawy
 		}
 
-		//tablica dynamiczn
-		liczydlo[] licz_odbieranie;
-		liczydlo[] licz_wysylanie;
+		public struct MODBUS_TCP
+		{
+			public string adres_ip;
+			public int port;
+			public int ID;
+			public string nazwa_polaczenia;
+			public int liczba_komorek_odbieranych;  //do PC
+			public int liczba_komorek_wysylanych;   //z PC
+			public int poczatek_odbierania;			//do PC
+			public int poczatek_wysylania;			//z PC
+			public bool utworzono_mape;
+			public DANE_MODBUS[] odbierane;
+			public DANE_MODBUS[] wysylane;
+		}
 
-		enum MyEnum
+		public struct SCADA
+		{
+			public object obiekt;           //wskaźnik do obiektu
+			public object opis;             //wskaźnik do opisy (label)
+			public object kontrolka;        //wskaźnik do przycisku lub textboxa
+			public string opis_text;
+			public Int32 nr_obiektu;        //nr porządkowy obiektu
+			public Int32 pozycja_x;         //pozycja x na ekranie
+			public Int32 pozycja_y;         //pozycja y na ekranie
+			public Int32 typ;               //0-wejście (z plc) czy 1-wyjście (do plc)
+			public Int32 adres_bajt;        //który adres w mapie modbus (word)
+			public Int32 adres_bit;         //od 0 do 15
+			public Int32 wielkosc;          //0=bit, 1-bajt, 2-word, 3-dword, 4-qword
+			public Int32 format;            //0-bigendian 1-litendiand
+		}
+
+		//tablica dynamiczna
+		//public DANE_MODBUS[] licz_odbieranie;
+		//public DANE_MODBUS[] licz_wysylanie;
+
+		public MODBUS_TCP[] polaczenie_modbus;
+
+		public enum MyEnum
 		{
 			_bit=0,
 			_bajt=8,
@@ -61,33 +99,21 @@ namespace CS19_P06_mini_DCS
 			_qword=64
 		}
 
-		struct scada
-		{
-			public object obiekt;           //wskaźnik do obiektu
-			public object opis;             //wskaźnik do opisy (label)
-			public object kontrolka;        //wskaźnik do przycisku lub textboxa
-			public string opis_text;
-			public Int32 nr_obiektu;		//nr porządkowy obiektu
-			public Int32 pozycja_x;			//pozycja x na ekranie
-			public Int32 pozycja_y;         //pozycja y na ekranie
-			public Int32 typ;				//0-wejście (z plc) czy 1-wyjście (do plc)
-			public Int32 adres_bajt;		//który adres w mapie modbus (word)
-			public Int32 adres_bit;			//od 0 do 15
-			public Int32 wielkosc;          //0=bit, 1-bajt, 2-word, 3-dword, 4-qword
-			public Int32 format;			//0-bigendian 1-litendiand
-		}
 
-		scada[] ekran_scada = new scada[100];
-		Int32 scada_nr=0;
 
-		object kontrolka_zmiana;
-		Int32 kontrolka_nr_parametry;
+		public SCADA[] ekran_scada = new SCADA[100];
+		public Int32 scada_nr=0;
 
-		EasyModbus.ModbusServer modbus_server;
+		public object kontrolka_zmiana;
+		public Int32 kontrolka_nr_parametry;
+
+//		EasyModbus.ModbusServer modbus_server;
 		EasyModbus.ModbusClient modbus_client;
 
 		public Main()
 		{
+			polaczenie_modbus = new MODBUS_TCP[max_connection];
+
 			InitializeComponent();
 		}
 
@@ -259,17 +285,18 @@ namespace CS19_P06_mini_DCS
 
 		private void button_ustaw_wysylanie_Click(object sender, EventArgs e)
 		{
-			liczba_komorek_wysylanie = Convert.ToInt32(textBox_wysylanie_liczba_danych.Text);
+			polaczenie_modbus[liczba_polaczen-1].liczba_komorek_wysylanych = Convert.ToInt32(textBox_wysylanie_liczba_danych.Text);
 
 			//tablica dynamiczna dla potrzeb inkrementacji funkcji itp.
-			licz_wysylanie = new liczydlo[liczba_komorek_wysylanie];
+			//licz_wysylanie = new DANE_MODBUS[polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_wysylanych];
+			polaczenie_modbus[liczba_polaczen - 1].wysylane = new DANE_MODBUS[polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_wysylanych];
 
 			//kolumny
-			for (int i = 0, y = 0; i < liczba_komorek_wysylanie; y++)
+			for (int i = 0, y = 0; i < polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_wysylanych; y++)
 			{
 
 				//wiersze
-				for (int x = 0; (x < ilosc_wierszy) && (i < liczba_komorek_wysylanie); x++, i++)
+				for (int x = 0; (x < ilosc_wierszy) && (i < polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_wysylanych); x++, i++)
 				{
 					//tworzymy nową kontrolkę - textbox
 					TextBox ntextbox = new TextBox();
@@ -324,14 +351,14 @@ namespace CS19_P06_mini_DCS
 
 					panel_wysylanie.Controls.Add(ntextbox);
 
-					licz_wysylanie[i].cells = ntextbox;
+					polaczenie_modbus[liczba_polaczen - 1].wysylane[i].cells = ntextbox;
 				}
 
 			}
 
 			//opis
 			//kolumny
-			for (int y = 0; y < (((liczba_komorek_wysylanie % 10) == 0) ? (liczba_komorek_wysylanie / 10) : (liczba_komorek_wysylanie / 10 + 1)); y++)
+			for (int y = 0; y < (((polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_wysylanych % 10) == 0) ? (polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_wysylanych / 10) : (polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_wysylanych / 10 + 1)); y++)
 			{
 				//tworzymy nową kontrolkę - textbox opis kolumny
 				TextBox ntextbox_kol = new TextBox();
@@ -599,7 +626,14 @@ namespace CS19_P06_mini_DCS
 
 			try
 			{
-				modbus_client = new EasyModbus.ModbusClient(textBox_adres_ip.Text, Convert.ToInt16(textBox_port.Text));
+				polaczenie_modbus[liczba_polaczen - 1].adres_ip = textBox_adres_ip.Text;
+				polaczenie_modbus[liczba_polaczen - 1].port = Convert.ToInt16(textBox_port.Text);
+				polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych = Convert.ToInt32(textBox_odbieranie_liczba_danych.Text);
+				polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_wysylanych = Convert.ToInt32(textBox_wysylanie_liczba_danych.Text);
+				polaczenie_modbus[liczba_polaczen - 1].poczatek_odbierania = Convert.ToInt32(textBox_odbieranie_poczatek.Text);
+				polaczenie_modbus[liczba_polaczen - 1].poczatek_wysylania = Convert.ToInt32(textBox_wysylanie_poczatek.Text);
+
+				modbus_client = new EasyModbus.ModbusClient(polaczenie_modbus[liczba_polaczen - 1].adres_ip, polaczenie_modbus[liczba_polaczen - 1].port);
 				modbus_client.UnitIdentifier = Convert.ToByte(textBox_id.Text);
 				modbus_client.Connect();
 				timer_client.Enabled = true;
@@ -637,23 +671,23 @@ namespace CS19_P06_mini_DCS
 
 			try
 			{
-				int[] tab = new int[liczba_komorek_wysylanie];
+				int[] tab = new int[polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_wysylanych];
 				// tab[Convert.ToInt16(textBox_odczyt_liczba_danych.Text)] = { 10, 32, 0, 1, 2, 3, 4, 5, 6, 7 };
 
-				for (int i = 0; i < liczba_komorek_wysylanie; i++)
+				for (int i = 0; i < polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_wysylanych; i++)
 				{
 					//sprawdzanie czy przesyłana jest nastawa
-					if (licz_wysylanie[i].nastawa == false)
+					if (polaczenie_modbus[liczba_polaczen - 1].wysylane[i].nastawa == false)
 					{
-						tab[i] = Convert.ToInt16((licz_wysylanie[i].cells as TextBox).Text);
+						tab[i] = Convert.ToInt16((polaczenie_modbus[liczba_polaczen - 1].wysylane[i].cells as TextBox).Text);
 
 					}
-					else if (licz_wysylanie[i].nastawa == true)
+					else if (polaczenie_modbus[liczba_polaczen - 1].wysylane[i].nastawa == true)
 					{
 						//sprawdzanie czy zmianie uległa nastawa
-						if (licz_wysylanie[i].zmiana_nastawy == true)
+						if (polaczenie_modbus[liczba_polaczen - 1].wysylane[i].zmiana_nastawy == true)
 						{
-							tab[i] = Convert.ToInt16((licz_wysylanie[i].cells as TextBox).Text);
+							tab[i] = Convert.ToInt16((polaczenie_modbus[liczba_polaczen - 1].wysylane[i].cells as TextBox).Text);
 
 						}
 						else
@@ -667,11 +701,11 @@ namespace CS19_P06_mini_DCS
 				int poczatek = (Convert.ToInt16(textBox_wysylanie_poczatek.Text) - 1);
 				modbus_client.WriteMultipleRegisters(poczatek, tab);
 
-				int[] readHoldingRegisters = modbus_client.ReadHoldingRegisters((Convert.ToInt16(textBox_odbieranie_poczatek.Text) - 1), liczba_komorek_odbieranie);    //Read 10 Holding Registers from Server, starting with Address 1
+				int[] readHoldingRegisters = modbus_client.ReadHoldingRegisters((Convert.ToInt16(textBox_odbieranie_poczatek.Text) - 1), polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych);    //Read 10 Holding Registers from Server, starting with Address 1
 
-				for (int i = 0; i < liczba_komorek_odbieranie; i++)
+				for (int i = 0; i < polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych; i++)
 				{
-					(licz_odbieranie[i].cells as TextBox).Text = readHoldingRegisters[i].ToString();
+					(polaczenie_modbus[liczba_polaczen - 1].odbierane[i].cells as TextBox).Text = readHoldingRegisters[i].ToString();
 				}
 
 				for (int i = 0; i < scada_nr; i++)
@@ -683,7 +717,7 @@ namespace CS19_P06_mini_DCS
 							(ekran_scada[i].kontrolka as TextBox).Text = readHoldingRegisters[ekran_scada[i].adres_bajt + (Convert.ToInt16(textBox_odbieranie_poczatek.Text) - 1)].ToString();
 						}
 						else
-							(licz_wysylanie[ekran_scada[i].adres_bajt].cells as TextBox).Text = (ekran_scada[i].kontrolka as TextBox).Text;
+							(polaczenie_modbus[liczba_polaczen - 1].wysylane[ekran_scada[i].adres_bajt].cells as TextBox).Text = (ekran_scada[i].kontrolka as TextBox).Text;
 					}
 					else if ((ekran_scada[i].wielkosc == 0))// && (ekran_scada[i].adres_bajt != null))
 					{
@@ -695,9 +729,9 @@ namespace CS19_P06_mini_DCS
 						{
 							int i_but = Convert.ToInt32( (ekran_scada[i].kontrolka as Button).Text);
 							if(i_but == 1)
-								(licz_wysylanie[ekran_scada[i].adres_bajt].cells as TextBox).Text = (Convert.ToInt32((licz_wysylanie[ekran_scada[i].adres_bajt].cells as TextBox).Text) | (0x00 | (1 << ekran_scada[i].adres_bit) )).ToString();
+								(polaczenie_modbus[liczba_polaczen - 1].wysylane[ekran_scada[i].adres_bajt].cells as TextBox).Text = (Convert.ToInt32((polaczenie_modbus[liczba_polaczen - 1].wysylane[ekran_scada[i].adres_bajt].cells as TextBox).Text) | (0x00 | (1 << ekran_scada[i].adres_bit) )).ToString();
 							else
-								(licz_wysylanie[ekran_scada[i].adres_bajt].cells as TextBox).Text = (Convert.ToInt32((licz_wysylanie[ekran_scada[i].adres_bajt].cells as TextBox).Text) & ~(0x00 | (1 << ekran_scada[i].adres_bit) )).ToString();
+								(polaczenie_modbus[liczba_polaczen - 1].wysylane[ekran_scada[i].adres_bajt].cells as TextBox).Text = (Convert.ToInt32((polaczenie_modbus[liczba_polaczen - 1].wysylane[ekran_scada[i].adres_bajt].cells as TextBox).Text) & ~(0x00 | (1 << ekran_scada[i].adres_bit) )).ToString();
 
 						}
 					}
@@ -768,31 +802,31 @@ namespace CS19_P06_mini_DCS
 				xml_write.WriteStartElement("modbus");
 
 				xml_write.WriteStartElement("ip_address");
-				xml_write.WriteString(textBox_adres_ip.Text);
+				xml_write.WriteString(polaczenie_modbus[liczba_polaczen-1].adres_ip);
 				xml_write.WriteEndElement();
 
 				xml_write.WriteStartElement("port");
-				xml_write.WriteString(textBox_port.Text);
+				xml_write.WriteString(polaczenie_modbus[liczba_polaczen-1].port.ToString());
 				xml_write.WriteEndElement();
 
 				xml_write.WriteStartElement("ID");
-				xml_write.WriteString(textBox_id.Text);
+				xml_write.WriteString(polaczenie_modbus[liczba_polaczen-1].ID.ToString());
 				xml_write.WriteEndElement();
 
 				xml_write.WriteStartElement("liczba_odebranych");
-				xml_write.WriteString(textBox_odbieranie_liczba_danych.Text);
+				xml_write.WriteString(polaczenie_modbus[liczba_polaczen-1].liczba_komorek_odbieranych.ToString());
 				xml_write.WriteEndElement();
 
 				xml_write.WriteStartElement("liczba_wysylanych");
-				xml_write.WriteString(textBox_wysylanie_liczba_danych.Text);
+				xml_write.WriteString(polaczenie_modbus[liczba_polaczen-1].liczba_komorek_wysylanych.ToString());
 				xml_write.WriteEndElement();
 
 				xml_write.WriteStartElement("odbieranie_poczatek");
-				xml_write.WriteString(textBox_odbieranie_poczatek.Text);
+				xml_write.WriteString(polaczenie_modbus[liczba_polaczen-1].poczatek_odbierania.ToString());
 				xml_write.WriteEndElement();
 
 				xml_write.WriteStartElement("wysylanie_poczatek");
-				xml_write.WriteString(textBox_wysylanie_poczatek.Text);
+				xml_write.WriteString(polaczenie_modbus[liczba_polaczen-1].poczatek_wysylania.ToString());
 				xml_write.WriteEndElement();
 
 				xml_write.WriteEndElement(); //modbus
@@ -874,6 +908,12 @@ namespace CS19_P06_mini_DCS
 					textBox_odbieranie_poczatek.Text = xml_doc.GetElementsByTagName("odbieranie_poczatek").Item(0).InnerText;
 					textBox_wysylanie_poczatek.Text = xml_doc.GetElementsByTagName("wysylanie_poczatek").Item(0).InnerText;
 
+					polaczenie_modbus[liczba_polaczen - 1].adres_ip = textBox_adres_ip.Text;
+					polaczenie_modbus[liczba_polaczen - 1].port = Convert.ToInt16(textBox_port.Text);
+					polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych = Convert.ToInt32(textBox_odbieranie_liczba_danych.Text);
+					polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_wysylanych = Convert.ToInt32(textBox_wysylanie_liczba_danych.Text);
+					polaczenie_modbus[liczba_polaczen - 1].poczatek_odbierania = Convert.ToInt32(textBox_odbieranie_poczatek.Text);
+					polaczenie_modbus[liczba_polaczen - 1].poczatek_wysylania = Convert.ToInt32(textBox_wysylanie_poczatek.Text);
 
 					//ustawienia scada
 					scada_nr = xml_doc.GetElementsByTagName("scada").Count;
@@ -1035,16 +1075,18 @@ namespace CS19_P06_mini_DCS
 		//-----
 		private void button_ustaw_odbieranie_Click(object sender, EventArgs e)
 		{
-			liczba_komorek_odbieranie = Convert.ToInt32(textBox_odbieranie_liczba_danych.Text);
+			polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych = Convert.ToInt32(textBox_odbieranie_liczba_danych.Text);
 
 			//tablica dynamiczna dla potrzeb inkrementacji funkcji itp.
-			licz_odbieranie = new liczydlo[liczba_komorek_odbieranie];
+			//licz_odbieranie = new DANE_MODBUS[polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych];
+			polaczenie_modbus[liczba_polaczen - 1].odbierane = new DANE_MODBUS[polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych];
+
 
 			//kolumny
-			for (int i = 0, y = 0; i < liczba_komorek_odbieranie; y++)
+			for (int i = 0, y = 0; i < polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych; y++)
 			{
 				//wiersze
-				for (int x = 0; (x < ilosc_wierszy) && (i < liczba_komorek_odbieranie); x++, i++)
+				for (int x = 0; (x < ilosc_wierszy) && (i < polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych); x++, i++)
 				{
 					//tworzymy nową kontrolkę - textbox
 					TextBox ntextbox = new TextBox();
@@ -1095,8 +1137,9 @@ namespace CS19_P06_mini_DCS
 
 					panel_odbieranie.Controls.Add(ntextbox);
 
-					licz_odbieranie[i].cells = ntextbox;
-					if (licz_odbieranie[i].cells.GetType() == typeof(Label))
+					//licz_odbieranie[i].cells = ntextbox;
+					polaczenie_modbus[liczba_polaczen - 1].odbierane[i].cells = ntextbox;
+					if (polaczenie_modbus[liczba_polaczen - 1].odbierane[i].cells.GetType() == typeof(Label))
 					{
 					//	int a = 0;
 					}
@@ -1106,7 +1149,7 @@ namespace CS19_P06_mini_DCS
 
 			//opis
 			//kolumny
-			for (int y = 0; y < (((liczba_komorek_odbieranie % 10) == 0) ? (liczba_komorek_odbieranie / 10) : (liczba_komorek_odbieranie / 10 + 1)); y++)
+			for (int y = 0; y < (((polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych % 10) == 0) ? (polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych / 10) : (polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych / 10 + 1)); y++)
 			{
 				//tworzymy nową kontrolkę - textbox opis kolumny
 				TextBox ntextbox_kol = new TextBox();
