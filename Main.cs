@@ -751,6 +751,19 @@ namespace CS19_P06_mini_DCS
 				xml_write.WriteStartDocument();
 				xml_write.WriteStartElement("mini_SCADA");
 
+				//parametry okna
+				xml_write.WriteStartElement("okno");
+
+				xml_write.WriteStartElement("rozmiar_okna_szerokosc");
+				xml_write.WriteString(Main.ActiveForm.Size.Width.ToString());
+				xml_write.WriteEndElement();
+
+				xml_write.WriteStartElement("rozmiar_okna_wysokosc");
+				xml_write.WriteString(Main.ActiveForm.Size.Height.ToString());
+				xml_write.WriteEndElement();
+
+				xml_write.WriteEndElement();
+
 				//parametry modbusa
 				xml_write.WriteStartElement("modbus");
 
@@ -847,6 +860,9 @@ namespace CS19_P06_mini_DCS
 				{
 
 					xml_doc.Load(plik);
+
+					//ustawienia okna
+					Main.ActiveForm.Size = new Size(Convert.ToInt32(xml_doc.GetElementsByTagName("rozmiar_okna_szerokosc").Item(0).InnerText), Convert.ToInt32(xml_doc.GetElementsByTagName("rozmiar_okna_wysokosc").Item(0).InnerText) );
 
 					//ustawienia modbus
 

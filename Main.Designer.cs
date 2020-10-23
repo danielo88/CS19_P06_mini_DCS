@@ -101,6 +101,7 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.button1 = new System.Windows.Forms.Button();
 			this.button_kreska_poz = new System.Windows.Forms.Button();
 			this.button_kreska_pion = new System.Windows.Forms.Button();
 			this.button_pole_bajt = new System.Windows.Forms.Button();
@@ -109,7 +110,6 @@
 			this.timer_client = new System.Windows.Forms.Timer(this.components);
 			this.saveFileDialog_1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog_1 = new System.Windows.Forms.OpenFileDialog();
-			this.button1 = new System.Windows.Forms.Button();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl_okna.SuspendLayout();
@@ -136,7 +136,6 @@
             this.toolStripStatusLabel_czas});
 			resources.ApplyResources(this.statusStrip1, "statusStrip1");
 			this.statusStrip1.Name = "statusStrip1";
-			this.statusStrip1.SizingGrip = false;
 			// 
 			// toolStripStatusLabel1
 			// 
@@ -274,10 +273,10 @@
 			// 
 			// tabControl_okna
 			// 
+			resources.ApplyResources(this.tabControl_okna, "tabControl_okna");
 			this.tabControl_okna.Controls.Add(this.tabPage_polaczenie);
 			this.tabControl_okna.Controls.Add(this.tabPage_mapa);
 			this.tabControl_okna.Controls.Add(this.tabPage_DCS);
-			resources.ApplyResources(this.tabControl_okna, "tabControl_okna");
 			this.tabControl_okna.Name = "tabControl_okna";
 			this.tabControl_okna.SelectedIndex = 0;
 			// 
@@ -454,11 +453,13 @@
 			// panel_wysylanie
 			// 
 			resources.ApplyResources(this.panel_wysylanie, "panel_wysylanie");
+			this.panel_wysylanie.BackColor = System.Drawing.Color.Transparent;
 			this.panel_wysylanie.Name = "panel_wysylanie";
 			// 
 			// panel_odbieranie
 			// 
 			resources.ApplyResources(this.panel_odbieranie, "panel_odbieranie");
+			this.panel_odbieranie.BackColor = System.Drawing.Color.Transparent;
 			this.panel_odbieranie.Name = "panel_odbieranie";
 			// 
 			// tabPage_DCS
@@ -472,17 +473,17 @@
 			// 
 			// panel_scada
 			// 
-			this.panel_scada.BackColor = System.Drawing.Color.Silver;
 			resources.ApplyResources(this.panel_scada, "panel_scada");
+			this.panel_scada.BackColor = System.Drawing.Color.LightGray;
 			this.panel_scada.Name = "panel_scada";
 			this.panel_scada.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_scada_MouseMove);
 			this.panel_scada.MouseUp += new System.Windows.Forms.MouseEventHandler(this.kontrolka_scada_MouseDown);
 			// 
 			// tabControl1
 			// 
+			resources.ApplyResources(this.tabControl1, "tabControl1");
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
-			resources.ApplyResources(this.tabControl1, "tabControl1");
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
 			// 
@@ -592,14 +593,21 @@
 			// 
 			// groupBox1
 			// 
+			resources.ApplyResources(this.groupBox1, "groupBox1");
 			this.groupBox1.Controls.Add(this.button1);
 			this.groupBox1.Controls.Add(this.button_kreska_poz);
 			this.groupBox1.Controls.Add(this.button_kreska_pion);
 			this.groupBox1.Controls.Add(this.button_pole_bajt);
 			this.groupBox1.Controls.Add(this.button_dodaj_bit);
-			resources.ApplyResources(this.groupBox1, "groupBox1");
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.TabStop = false;
+			// 
+			// button1
+			// 
+			resources.ApplyResources(this.button1, "button1");
+			this.button1.Name = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// button_kreska_poz
 			// 
@@ -629,8 +637,8 @@
 			// 
 			// richTextBox_tekst
 			// 
-			this.richTextBox_tekst.BackColor = System.Drawing.SystemColors.Window;
 			resources.ApplyResources(this.richTextBox_tekst, "richTextBox_tekst");
+			this.richTextBox_tekst.BackColor = System.Drawing.SystemColors.Window;
 			this.richTextBox_tekst.Name = "richTextBox_tekst";
 			this.richTextBox_tekst.ReadOnly = true;
 			// 
@@ -646,13 +654,6 @@
 			// 
 			this.openFileDialog_1.FileName = "openFileDialog1";
 			resources.ApplyResources(this.openFileDialog_1, "openFileDialog_1");
-			// 
-			// button1
-			// 
-			resources.ApplyResources(this.button1, "button1");
-			this.button1.Name = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// Main
 			// 

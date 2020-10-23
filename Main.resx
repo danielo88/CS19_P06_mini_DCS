@@ -178,7 +178,7 @@
     <value>Rozłączono</value>
   </data>
   <data name="toolStripStatusLabel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 17</value>
+    <value>84, 17</value>
   </data>
   <data name="toolStripStatusLabel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 17</value>
@@ -250,37 +250,37 @@
     <value>Plik</value>
   </data>
   <data name="toolStripMenuItem_otworz.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItem_otworz.Text" xml:space="preserve">
     <value>Otwórz</value>
   </data>
   <data name="toolStripMenuItem_zapisz.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItem_zapisz.Text" xml:space="preserve">
     <value>Zapisz</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="toolStripMenuItem_polacz.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItem_polacz.Text" xml:space="preserve">
     <value>Połącz</value>
   </data>
   <data name="toolStripMenuItem_rozlacz.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItem_rozlacz.Text" xml:space="preserve">
     <value>Rozłącz</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="toolStripMenuItem_zamknij.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="toolStripMenuItem_zamknij.Text" xml:space="preserve">
     <value>Zamknij</value>
@@ -306,6 +306,9 @@
   <metadata name="timer_1s.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>248, 17</value>
   </metadata>
+  <data name="tabControl_okna.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="&gt;&gt;button_ustaw_wysylanie.Name" xml:space="preserve">
     <value>button_ustaw_wysylanie</value>
   </data>
@@ -672,6 +675,9 @@
   <data name="&gt;&gt;tabPage_mapa.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="panel_scada.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="panel_scada.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
@@ -692,6 +698,9 @@
   </data>
   <data name="&gt;&gt;panel_scada.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tabControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
     <value>tabPage1</value>
@@ -738,17 +747,8 @@
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 106</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 23</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>button1</value>
+  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
@@ -762,18 +762,6 @@
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="button_kreska_poz.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 106</value>
-  </data>
-  <data name="button_kreska_poz.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 23</value>
-  </data>
-  <data name="button_kreska_poz.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="button_kreska_poz.Text" xml:space="preserve">
-    <value>Kreskę -</value>
-  </data>
   <data name="&gt;&gt;button_kreska_poz.Name" xml:space="preserve">
     <value>button_kreska_poz</value>
   </data>
@@ -785,18 +773,6 @@
   </data>
   <data name="&gt;&gt;button_kreska_poz.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="button_kreska_pion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 77</value>
-  </data>
-  <data name="button_kreska_pion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 23</value>
-  </data>
-  <data name="button_kreska_pion.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="button_kreska_pion.Text" xml:space="preserve">
-    <value>Kreskę |</value>
   </data>
   <data name="&gt;&gt;button_kreska_pion.Name" xml:space="preserve">
     <value>button_kreska_pion</value>
@@ -810,21 +786,6 @@
   <data name="&gt;&gt;button_kreska_pion.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="button_pole_bajt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="button_pole_bajt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 48</value>
-  </data>
-  <data name="button_pole_bajt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 23</value>
-  </data>
-  <data name="button_pole_bajt.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="button_pole_bajt.Text" xml:space="preserve">
-    <value>Pole bajtowe</value>
-  </data>
   <data name="&gt;&gt;button_pole_bajt.Name" xml:space="preserve">
     <value>button_pole_bajt</value>
   </data>
@@ -836,18 +797,6 @@
   </data>
   <data name="&gt;&gt;button_pole_bajt.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="button_dodaj_bit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="button_dodaj_bit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 23</value>
-  </data>
-  <data name="button_dodaj_bit.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="button_dodaj_bit.Text" xml:space="preserve">
-    <value>Pole bitowe</value>
   </data>
   <data name="&gt;&gt;button_dodaj_bit.Name" xml:space="preserve">
     <value>button_dodaj_bit</value>
@@ -1476,6 +1425,9 @@
   <data name="&gt;&gt;button_polacz_modbus.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
+  <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1529,6 +1481,9 @@
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="panel_wysylanie.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="panel_wysylanie.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2102,6 +2057,132 @@
   </data>
   <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 106</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 23</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_kreska_poz.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 106</value>
+  </data>
+  <data name="button_kreska_poz.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="button_kreska_poz.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="button_kreska_poz.Text" xml:space="preserve">
+    <value>Kreskę -</value>
+  </data>
+  <data name="&gt;&gt;button_kreska_poz.Name" xml:space="preserve">
+    <value>button_kreska_poz</value>
+  </data>
+  <data name="&gt;&gt;button_kreska_poz.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_kreska_poz.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;button_kreska_poz.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_kreska_pion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 77</value>
+  </data>
+  <data name="button_kreska_pion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="button_kreska_pion.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="button_kreska_pion.Text" xml:space="preserve">
+    <value>Kreskę |</value>
+  </data>
+  <data name="&gt;&gt;button_kreska_pion.Name" xml:space="preserve">
+    <value>button_kreska_pion</value>
+  </data>
+  <data name="&gt;&gt;button_kreska_pion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_kreska_pion.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;button_kreska_pion.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button_pole_bajt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_pole_bajt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 48</value>
+  </data>
+  <data name="button_pole_bajt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="button_pole_bajt.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="button_pole_bajt.Text" xml:space="preserve">
+    <value>Pole bajtowe</value>
+  </data>
+  <data name="&gt;&gt;button_pole_bajt.Name" xml:space="preserve">
+    <value>button_pole_bajt</value>
+  </data>
+  <data name="&gt;&gt;button_pole_bajt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_pole_bajt.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;button_pole_bajt.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="button_dodaj_bit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="button_dodaj_bit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="button_dodaj_bit.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="button_dodaj_bit.Text" xml:space="preserve">
+    <value>Pole bitowe</value>
+  </data>
+  <data name="&gt;&gt;button_dodaj_bit.Name" xml:space="preserve">
+    <value>button_dodaj_bit</value>
+  </data>
+  <data name="&gt;&gt;button_dodaj_bit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_dodaj_bit.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;button_dodaj_bit.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="richTextBox_tekst.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="richTextBox_tekst.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 431</value>
