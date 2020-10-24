@@ -1022,6 +1022,7 @@
 			// 
 			resources.ApplyResources(this.textBox_wysylanie_liczba_danych, "textBox_wysylanie_liczba_danych");
 			this.textBox_wysylanie_liczba_danych.Name = "textBox_wysylanie_liczba_danych";
+			this.textBox_wysylanie_liczba_danych.TextChanged += new System.EventHandler(this.TextChanged_max_9999);
 			this.textBox_wysylanie_liczba_danych.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// label4
@@ -1045,6 +1046,7 @@
 			// 
 			resources.ApplyResources(this.textBox_odbieranie_liczba_danych, "textBox_odbieranie_liczba_danych");
 			this.textBox_odbieranie_liczba_danych.Name = "textBox_odbieranie_liczba_danych";
+			this.textBox_odbieranie_liczba_danych.TextChanged += new System.EventHandler(this.TextChanged_max_9999);
 			this.textBox_odbieranie_liczba_danych.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// label9
@@ -1075,12 +1077,14 @@
 			// 
 			resources.ApplyResources(this.textBox_wysylanie_poczatek, "textBox_wysylanie_poczatek");
 			this.textBox_wysylanie_poczatek.Name = "textBox_wysylanie_poczatek";
+			this.textBox_wysylanie_poczatek.TextChanged += new System.EventHandler(this.TextChanged_max_9999);
 			this.textBox_wysylanie_poczatek.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// textBox_odbieranie_poczatek
 			// 
 			resources.ApplyResources(this.textBox_odbieranie_poczatek, "textBox_odbieranie_poczatek");
 			this.textBox_odbieranie_poczatek.Name = "textBox_odbieranie_poczatek";
+			this.textBox_odbieranie_poczatek.TextChanged += new System.EventHandler(this.TextChanged_max_9999);
 			this.textBox_odbieranie_poczatek.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// button_wyczysc_odbieranie
@@ -1209,12 +1213,14 @@
 			// 
 			resources.ApplyResources(this.textBox_port, "textBox_port");
 			this.textBox_port.Name = "textBox_port";
+			this.textBox_port.TextChanged += new System.EventHandler(this.TextChanged_max_999);
 			this.textBox_port.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// textBox_id
 			// 
 			resources.ApplyResources(this.textBox_id, "textBox_id");
 			this.textBox_id.Name = "textBox_id";
+			this.textBox_id.TextChanged += new System.EventHandler(this.TextChanged_max_999);
 			this.textBox_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// tabPage_mapa
@@ -1323,7 +1329,8 @@
 			// 
 			resources.ApplyResources(this.wlasciwosci_textBox_bit, "wlasciwosci_textBox_bit");
 			this.wlasciwosci_textBox_bit.Name = "wlasciwosci_textBox_bit";
-			this.wlasciwosci_textBox_bit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
+			this.wlasciwosci_textBox_bit.TextChanged += new System.EventHandler(this.TextChanged_max_15);
+			this.wlasciwosci_textBox_bit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.wlasciwosci_bit_KeyPress);
 			// 
 			// label13
 			// 
@@ -1339,6 +1346,7 @@
 			// 
 			resources.ApplyResources(this.wlasciwosci_textBox_bajt, "wlasciwosci_textBox_bajt");
 			this.wlasciwosci_textBox_bajt.Name = "wlasciwosci_textBox_bajt";
+			this.wlasciwosci_textBox_bajt.TextChanged += new System.EventHandler(this.TextChanged_max_15);
 			this.wlasciwosci_textBox_bajt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// label11

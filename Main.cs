@@ -128,6 +128,52 @@ namespace CS19_P06_mini_DCS
 			}
 		}
 
+		private void TextChanged_max_15(object sender, EventArgs e)
+		{
+			if ((sender as TextBox).Text != "")
+			{
+				if ((Convert.ToInt32((sender as TextBox).Text) > 15) || (Convert.ToInt32((sender as TextBox).Text) < 0))
+				{
+					(sender as TextBox).Text = "15";
+				}
+			}
+		}
+
+		private void TextChanged_max_999(object sender, EventArgs e)
+		{
+
+			if ((sender as TextBox).Text != "")
+			{
+				if (Convert.ToInt32((sender as TextBox).Text) > 999)
+				{
+					(sender as TextBox).Text = "999";
+				}
+			}
+		}
+
+		private void TextChanged_max_9999(object sender, EventArgs e)
+		{
+
+			if ((sender as TextBox).Text != "")
+			{
+				if (Convert.ToInt32((sender as TextBox).Text) > 9999)
+				{
+					(sender as TextBox).Text = "9999";
+				}
+			}
+		}
+
+		private void TextChanged_max_32bit(object sender, EventArgs e)
+		{
+			if ((sender as TextBox).Text != "")
+			{
+				if (Convert.ToInt64((sender as TextBox).Text) > 4294967295)
+				{
+					(sender as TextBox).Text = "4294967295";
+				}
+			}
+		}
+
 		//wybranie danej kontrolki w celu m.in. określenia ich właściwości
 		private void kontrolka_parametry_MouseDown(object sender, MouseEventArgs e)
 		{
@@ -347,6 +393,7 @@ namespace CS19_P06_mini_DCS
 					//->ntextbox.MouseEnter += textBox_cells_MouseEnter_zapis;
 
 					//zdarzenie od zmiany wartości
+					ntextbox.TextChanged += new System.EventHandler(TextChanged_max_32bit);
 					//ntextbox.TextChanged += Ntextbox_TextChanged;
 
 
@@ -531,6 +578,8 @@ namespace CS19_P06_mini_DCS
 			scada_textbox.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
 			scada_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(KeyPress_tylko_cyfra);
 
+			scada_textbox.TextChanged += new System.EventHandler(TextChanged_max_32bit);
+
 			//dodanie opisu kontrolki do kontenera
 			scada_panel.Controls.Add(scada_label);
 			//umiejscowienie w kontenerze opisu
@@ -613,6 +662,7 @@ namespace CS19_P06_mini_DCS
 		{
 			if (e.KeyChar == Convert.ToChar(Keys.Enter))
 			{
+				if (wlasciwosci_textBox_bajt.Text == "") wlasciwosci_textBox_bajt.Text = "0";
 				ekran_scada[kontrolka_nr_parametry].adres_bajt = Convert.ToInt32(wlasciwosci_textBox_bajt.Text);
 			}
 		}
@@ -621,6 +671,7 @@ namespace CS19_P06_mini_DCS
 		{
 			if (e.KeyChar == Convert.ToChar(Keys.Enter))
 			{
+				if (wlasciwosci_textBox_bit.Text == "") wlasciwosci_textBox_bit.Text = "0";
 				ekran_scada[kontrolka_nr_parametry].adres_bit = Convert.ToInt32(wlasciwosci_textBox_bit.Text);
 			}
 		}
@@ -1022,6 +1073,7 @@ namespace CS19_P06_mini_DCS
 					//->ntextbox.MouseEnter += textBox_cells_MouseEnter_odczyt;
 
 					//zdarzenie od zmiany wartości
+					ntextbox.TextChanged += new System.EventHandler(TextChanged_max_32bit);
 					//ntextbox.TextChanged += Ntextbox_TextChanged;
 
 
@@ -1170,6 +1222,8 @@ namespace CS19_P06_mini_DCS
 					scada_textbox.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_scada_MouseDown);
 					scada_textbox.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
 					scada_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(KeyPress_tylko_cyfra);
+
+					scada_textbox.TextChanged += new System.EventHandler(TextChanged_max_32bit);
 
 					//dodanie opisu kontrolki do kontenera
 					scada_panel.Controls.Add(scada_label);
