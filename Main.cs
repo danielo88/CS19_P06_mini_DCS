@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,6 +83,9 @@ namespace CS19_P06_mini_DCS
 			public Int32 adres_bit;         //od 0 do 15
 			public Int32 wielkosc;          //0=bit, 1-bajt, 2-word, 3-dword, 4-qword
 			public Int32 format;            //0-bigendian 1-litendiand
+			public Color kolor_tlo_textbox;
+			public Color kolor_tekst_opis;
+			public Color kolor_tekst_textbox;
 		}
 
 		//tablica dynamiczna
@@ -516,6 +520,10 @@ namespace CS19_P06_mini_DCS
 			scada_button.MouseDown += new System.Windows.Forms.MouseEventHandler(zmiana_bit_kontrolki);
 			//opis początkowy
 			scada_button.Text = "0";
+			//kolor tekstu
+			scada_button.ForeColor = Color.Black;
+			//kolor tla
+			scada_button.BackColor = Color.Transparent;
 
 			//dodanie opisu kontrolki do kontenera
 			scada_panel.Controls.Add(scada_label);
@@ -527,6 +535,8 @@ namespace CS19_P06_mini_DCS
 			scada_label.AutoSize = true;
 			//zdarzenie od przycisku myszą
 			scada_label.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
+			//kolor tekstu
+			scada_label.ForeColor = Color.Black;
 
 			//przypisanie nazwy danej kontrolce
 			scada_button.Name = "scada_button_" + scada_nr.ToString();
@@ -539,6 +549,11 @@ namespace CS19_P06_mini_DCS
 			ekran_scada[scada_nr].typ = 0;
 			ekran_scada[scada_nr].wielkosc = 0;
 			ekran_scada[scada_nr].adres_bajt = 0;
+
+
+			ekran_scada[scada_nr].kolor_tekst_opis = scada_label.ForeColor;
+			ekran_scada[scada_nr].kolor_tekst_textbox = scada_button.ForeColor;
+			ekran_scada[scada_nr].kolor_tlo_textbox = scada_button.BackColor;
 
 			ekran_scada[scada_nr].pozycja_x = scada_panel.Location.X;
 			ekran_scada[scada_nr].pozycja_y = scada_panel.Location.Y;
@@ -579,6 +594,10 @@ namespace CS19_P06_mini_DCS
 			scada_textbox.Location = new System.Drawing.Point(0, 0);
 			//określenie rozmiarów kontrolki
 			scada_textbox.Size = new System.Drawing.Size(50, 20);
+			//kolor tekstu
+			scada_textbox.ForeColor = Color.Black;
+			//kolor tła
+			scada_textbox.BackColor = Color.White;
 			//wpisanie tekstu domyślnego
 			scada_textbox.Text = "0";
 			//zdarzenie od przycisku myszą
@@ -596,6 +615,8 @@ namespace CS19_P06_mini_DCS
 			scada_label.Size = new System.Drawing.Size(1, 30);
 			//auto doposaowanie do zawartości
 			scada_label.AutoSize = true;
+			//kolor tekstu
+			scada_label.ForeColor = Color.Black;
 
 			//zdarzenie od przycisku myszą
 			scada_label.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
@@ -613,6 +634,10 @@ namespace CS19_P06_mini_DCS
 			ekran_scada[scada_nr].wielkosc = 1;
 			ekran_scada[scada_nr].adres_bajt = 0;
 			//ekran_scada[scada_nr].adres_bit = 0;
+
+			ekran_scada[scada_nr].kolor_tekst_opis = scada_label.ForeColor;
+			ekran_scada[scada_nr].kolor_tekst_textbox = scada_textbox.ForeColor;
+			ekran_scada[scada_nr].kolor_tlo_textbox = scada_textbox.BackColor;
 
 			ekran_scada[scada_nr].pozycja_x = scada_panel.Location.X;
 			ekran_scada[scada_nr].pozycja_y = scada_panel.Location.Y;
@@ -1263,7 +1288,7 @@ namespace CS19_P06_mini_DCS
 			}
 		}
 
-		private void toolStripMenuItem_kolor_tla_Click(object sender, EventArgs e)
+		private void ToolStripMenuItem_kolor_tla_Click(object sender, EventArgs e)
 		{
 			if (colorDialog.ShowDialog() == DialogResult.OK)
 			{
@@ -1272,7 +1297,7 @@ namespace CS19_P06_mini_DCS
 			}
 		}
 
-		private void toolStripMenuItem_kolor_tekstu_Click(object sender, EventArgs e)
+		private void ToolStripMenuItem_kolor_tekstu_Click(object sender, EventArgs e)
 		{
 			if (colorDialog.ShowDialog() == DialogResult.OK)
 			{
@@ -1281,7 +1306,7 @@ namespace CS19_P06_mini_DCS
 			}
 		}
 
-		private void toolStripMenuItem3_Click(object sender, EventArgs e)
+		private void ToolStripMenuItem3_Click(object sender, EventArgs e)
 		{
 /*			if (!licz_odbieranie[nr_mouse_enter].active)
 			{
@@ -1306,6 +1331,37 @@ namespace CS19_P06_mini_DCS
 					(licz_odbieranie[nr_mouse_enter].cells as TextBox).Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 
 			}*/
+		}
+
+		private void Button_kolor_tekstu_Click(object sender, EventArgs e)
+		{
+
+			if (colorDialog.ShowDialog() == DialogResult.OK)
+			{
+				(ekran_scada[kontrolka_nr_parametry].kontrolka as TextBox).ForeColor = colorDialog.Color;
+				ekran_scada[kontrolka_nr_parametry].kolor_tekst_textbox = colorDialog.Color;
+				textBox_przyklad_kolor_tekst.ForeColor = colorDialog.Color;
+			}
+		}
+
+		private void Button_kolor_tlo_Click(object sender, EventArgs e)
+		{
+			if (colorDialog.ShowDialog() == DialogResult.OK)
+			{
+				(ekran_scada[kontrolka_nr_parametry].kontrolka as TextBox).BackColor = colorDialog.Color;
+				ekran_scada[kontrolka_nr_parametry].kolor_tlo_textbox = colorDialog.Color;
+				textBox_przyklad_kolor_tlo.BackColor = colorDialog.Color;
+			}
+		}
+
+		private void button_kolor_opisu_Click(object sender, EventArgs e)
+		{
+			if (colorDialog.ShowDialog() == DialogResult.OK)
+			{
+				(ekran_scada[kontrolka_nr_parametry].opis as Label).ForeColor = colorDialog.Color;
+				ekran_scada[kontrolka_nr_parametry].kolor_tlo_textbox = colorDialog.Color;
+				label_przyklad_kolor_opis.ForeColor = colorDialog.Color;
+			}
 		}
 	}
 }

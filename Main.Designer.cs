@@ -189,6 +189,13 @@
 			this.wlasciwosci_textBox_nazwa = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.label_przyklad_kolor_opis = new System.Windows.Forms.Label();
+			this.textBox_przyklad_kolor_tlo = new System.Windows.Forms.TextBox();
+			this.button_kolor_tlo = new System.Windows.Forms.Button();
+			this.textBox_przyklad_kolor_tekst = new System.Windows.Forms.TextBox();
+			this.button_kolor_opisu = new System.Windows.Forms.Button();
+			this.button_kolor_tekstu = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.button_kreska_poz = new System.Windows.Forms.Button();
 			this.button_kreska_pion = new System.Windows.Forms.Button();
@@ -230,6 +237,7 @@
 			this.tabPage_DCS.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
+			this.tabPage3.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.contextMenuStrip_odebrane.SuspendLayout();
 			this.contextMenuStrip_wysylane.SuspendLayout();
@@ -1204,11 +1212,13 @@
 			resources.ApplyResources(this.tabControl1, "tabControl1");
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.BackColor = System.Drawing.Color.Bisque;
 			this.tabPage1.Controls.Add(this.wlasciwosci_comboBox_format);
 			this.tabPage1.Controls.Add(this.wlasciwosci_comboBox_wielkosc);
 			this.tabPage1.Controls.Add(this.label14);
@@ -1223,7 +1233,6 @@
 			this.tabPage1.Controls.Add(this.label3);
 			resources.ApplyResources(this.tabPage1, "tabPage1");
 			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
 			// wlasciwosci_comboBox_format
 			// 
@@ -1309,9 +1318,57 @@
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.BackColor = System.Drawing.Color.Gold;
 			resources.ApplyResources(this.tabPage2, "tabPage2");
 			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// tabPage3
+			// 
+			resources.ApplyResources(this.tabPage3, "tabPage3");
+			this.tabPage3.BackColor = System.Drawing.Color.Beige;
+			this.tabPage3.Controls.Add(this.label_przyklad_kolor_opis);
+			this.tabPage3.Controls.Add(this.textBox_przyklad_kolor_tlo);
+			this.tabPage3.Controls.Add(this.button_kolor_tlo);
+			this.tabPage3.Controls.Add(this.textBox_przyklad_kolor_tekst);
+			this.tabPage3.Controls.Add(this.button_kolor_opisu);
+			this.tabPage3.Controls.Add(this.button_kolor_tekstu);
+			this.tabPage3.Name = "tabPage3";
+			// 
+			// label_przyklad_kolor_opis
+			// 
+			resources.ApplyResources(this.label_przyklad_kolor_opis, "label_przyklad_kolor_opis");
+			this.label_przyklad_kolor_opis.Name = "label_przyklad_kolor_opis";
+			// 
+			// textBox_przyklad_kolor_tlo
+			// 
+			resources.ApplyResources(this.textBox_przyklad_kolor_tlo, "textBox_przyklad_kolor_tlo");
+			this.textBox_przyklad_kolor_tlo.Name = "textBox_przyklad_kolor_tlo";
+			// 
+			// button_kolor_tlo
+			// 
+			resources.ApplyResources(this.button_kolor_tlo, "button_kolor_tlo");
+			this.button_kolor_tlo.Name = "button_kolor_tlo";
+			this.button_kolor_tlo.UseVisualStyleBackColor = true;
+			this.button_kolor_tlo.Click += new System.EventHandler(this.Button_kolor_tlo_Click);
+			// 
+			// textBox_przyklad_kolor_tekst
+			// 
+			resources.ApplyResources(this.textBox_przyklad_kolor_tekst, "textBox_przyklad_kolor_tekst");
+			this.textBox_przyklad_kolor_tekst.Name = "textBox_przyklad_kolor_tekst";
+			// 
+			// button_kolor_opisu
+			// 
+			resources.ApplyResources(this.button_kolor_opisu, "button_kolor_opisu");
+			this.button_kolor_opisu.Name = "button_kolor_opisu";
+			this.button_kolor_opisu.UseVisualStyleBackColor = true;
+			this.button_kolor_opisu.Click += new System.EventHandler(this.button_kolor_opisu_Click);
+			// 
+			// button_kolor_tekstu
+			// 
+			resources.ApplyResources(this.button_kolor_tekstu, "button_kolor_tekstu");
+			this.button_kolor_tekstu.Name = "button_kolor_tekstu";
+			this.button_kolor_tekstu.UseVisualStyleBackColor = true;
+			this.button_kolor_tekstu.Click += new System.EventHandler(this.Button_kolor_tekstu_Click);
 			// 
 			// groupBox1
 			// 
@@ -1384,13 +1441,13 @@
 			// 
 			this.toolStripMenuItem_kolor_tla.Name = "toolStripMenuItem_kolor_tla";
 			resources.ApplyResources(this.toolStripMenuItem_kolor_tla, "toolStripMenuItem_kolor_tla");
-			this.toolStripMenuItem_kolor_tla.Click += new System.EventHandler(this.toolStripMenuItem_kolor_tla_Click);
+			this.toolStripMenuItem_kolor_tla.Click += new System.EventHandler(this.ToolStripMenuItem_kolor_tla_Click);
 			// 
 			// toolStripMenuItem_kolor_tekstu
 			// 
 			this.toolStripMenuItem_kolor_tekstu.Name = "toolStripMenuItem_kolor_tekstu";
 			resources.ApplyResources(this.toolStripMenuItem_kolor_tekstu, "toolStripMenuItem_kolor_tekstu");
-			this.toolStripMenuItem_kolor_tekstu.Click += new System.EventHandler(this.toolStripMenuItem_kolor_tekstu_Click);
+			this.toolStripMenuItem_kolor_tekstu.Click += new System.EventHandler(this.ToolStripMenuItem_kolor_tekstu_Click);
 			// 
 			// toolStripSeparator3
 			// 
@@ -1423,13 +1480,13 @@
 			// 
 			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
 			resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-			this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem_kolor_tla_Click);
+			this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem_kolor_tla_Click);
 			// 
 			// toolStripMenuItem2
 			// 
 			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
 			resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-			this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem_kolor_tekstu_Click);
+			this.toolStripMenuItem2.Click += new System.EventHandler(this.ToolStripMenuItem_kolor_tekstu_Click);
 			// 
 			// toolStripSeparator4
 			// 
@@ -1440,7 +1497,7 @@
 			// 
 			resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
 			this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-			this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+			this.toolStripMenuItem3.Click += new System.EventHandler(this.ToolStripMenuItem3_Click);
 			// 
 			// toolStripMenuItem_przepisz_zapis
 			// 
@@ -1495,6 +1552,8 @@
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
+			this.tabPage3.ResumeLayout(false);
+			this.tabPage3.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
 			this.contextMenuStrip_odebrane.ResumeLayout(false);
 			this.contextMenuStrip_wysylane.ResumeLayout(false);
@@ -1687,6 +1746,13 @@
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_przepisz_zapis;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_nastawa;
 		private System.Windows.Forms.ColorDialog colorDialog;
+		private System.Windows.Forms.TabPage tabPage3;
+		private System.Windows.Forms.Button button_kolor_opisu;
+		private System.Windows.Forms.Button button_kolor_tekstu;
+		private System.Windows.Forms.Label label_przyklad_kolor_opis;
+		private System.Windows.Forms.TextBox textBox_przyklad_kolor_tlo;
+		private System.Windows.Forms.Button button_kolor_tlo;
+		private System.Windows.Forms.TextBox textBox_przyklad_kolor_tekst;
 	}
 }
 
