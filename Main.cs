@@ -117,6 +117,17 @@ namespace CS19_P06_mini_DCS
 			InitializeComponent();
 		}
 
+		//sprawdzanie czy wpisywane są tylko cyfry
+		private void KeyPress_tylko_cyfra(object sender, KeyPressEventArgs e)
+		{
+			char chr = e.KeyChar;
+
+			if ((!char.IsDigit(chr) && chr != 8))
+			{
+				e.Handled = true;
+			}
+		}
+
 		//wybranie danej kontrolki w celu m.in. określenia ich właściwości
 		private void kontrolka_parametry_MouseDown(object sender, MouseEventArgs e)
 		{
@@ -326,7 +337,7 @@ namespace CS19_P06_mini_DCS
 					//dla kliknięcia na textbox
 					//ntextbox.MouseClick += new System.Windows.Forms.MouseEventHandler(Ntextbox_MouseClick);
 
-					//->ntextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(textBox_KeyPress_tylko_cyfra);
+					ntextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(KeyPress_tylko_cyfra);
 					//->ntextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(zmiana_nastawy);
 					//ntextbox.Leave += new System.EventHandler(zmiana_nastawy);
 					//ntextbox.TextChanged += new System.EventHandler(zmiana_nastawy);
@@ -518,6 +529,7 @@ namespace CS19_P06_mini_DCS
 			//zdarzenie od przycisku myszą
 			scada_textbox.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_scada_MouseDown);
 			scada_textbox.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
+			scada_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(KeyPress_tylko_cyfra);
 
 			//dodanie opisu kontrolki do kontenera
 			scada_panel.Controls.Add(scada_label);
@@ -1004,7 +1016,7 @@ namespace CS19_P06_mini_DCS
 					//dla kliknięcia na textbox
 					//ntextbox.MouseClick += new System.Windows.Forms.MouseEventHandler(Ntextbox_MouseClick);
 
-					//->ntextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(textBox_KeyPress_tylko_cyfra);
+					ntextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(KeyPress_tylko_cyfra);
 
 					//zdarzenie dla najechania przycisku
 					//->ntextbox.MouseEnter += textBox_cells_MouseEnter_odczyt;
@@ -1157,6 +1169,7 @@ namespace CS19_P06_mini_DCS
 					//zdarzenie od przycisku myszą
 					scada_textbox.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_scada_MouseDown);
 					scada_textbox.MouseDown += new System.Windows.Forms.MouseEventHandler(kontrolka_parametry_MouseDown);
+					scada_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(KeyPress_tylko_cyfra);
 
 					//dodanie opisu kontrolki do kontenera
 					scada_panel.Controls.Add(scada_label);
