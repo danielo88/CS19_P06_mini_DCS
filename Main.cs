@@ -108,7 +108,8 @@ namespace CS19_P06_mini_DCS
 		public Int32 kontrolka_nr_parametry;
 
 //		EasyModbus.ModbusServer modbus_server;
-		EasyModbus.ModbusClient modbus_client;
+		private EasyModbus.ModbusClient modbus_client;
+		private object send_mouse_enter;
 
 		public Main()
 		{
@@ -231,6 +232,13 @@ namespace CS19_P06_mini_DCS
 			if(ekran_scada[kontrolka_nr_parametry].typ == 1)
 				(sender as Button).Text = (sender as Button).Text == "0" ? "1" : "0";
 		}
+
+		private void textBox_cells_MouseEnter(object sender, EventArgs e)
+		{
+			//throw new NotImplementedException();
+			send_mouse_enter = sender;
+		}
+
 
 		private void kontrolka_scada_MouseDown(object sender, MouseEventArgs e)
 		{
@@ -390,7 +398,7 @@ namespace CS19_P06_mini_DCS
 					//ntextbox.Enter += new System.EventHandler(zmiana_nastawy);
 
 					//zdarzenie dla najechania przycisku
-					//->ntextbox.MouseEnter += textBox_cells_MouseEnter_zapis;
+					ntextbox.MouseEnter += textBox_cells_MouseEnter;
 
 					//zdarzenie od zmiany wartości
 					ntextbox.TextChanged += new System.EventHandler(TextChanged_max_32bit);
@@ -398,7 +406,7 @@ namespace CS19_P06_mini_DCS
 
 
 					//ustawienie menu kontekstowego
-					//->ntextbox.ContextMenuStrip = contextMenuStrip_tabele_wysylane;
+					ntextbox.ContextMenuStrip = contextMenuStrip_wysylane;
 
 					//dodanie kontrolek do formularza (do kolekcji - tablicy)
 					//Controls.Add(ntextbox);
@@ -1070,7 +1078,7 @@ namespace CS19_P06_mini_DCS
 					ntextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(KeyPress_tylko_cyfra);
 
 					//zdarzenie dla najechania przycisku
-					//->ntextbox.MouseEnter += textBox_cells_MouseEnter_odczyt;
+					ntextbox.MouseEnter += textBox_cells_MouseEnter;
 
 					//zdarzenie od zmiany wartości
 					ntextbox.TextChanged += new System.EventHandler(TextChanged_max_32bit);
@@ -1078,7 +1086,7 @@ namespace CS19_P06_mini_DCS
 
 
 					//ustawienie menu kontekstowego
-					//->ntextbox.ContextMenuStrip = contextMenuStrip_tabele_odebrane;
+					ntextbox.ContextMenuStrip = contextMenuStrip_odebrane;
 
 					//dodanie kontrolek do formularza (do kolekcji - tablicy)
 					//Controls.Add(ntextbox);
@@ -1253,6 +1261,51 @@ namespace CS19_P06_mini_DCS
 				}
 
 			}
+		}
+
+		private void toolStripMenuItem_kolor_tla_Click(object sender, EventArgs e)
+		{
+			if (colorDialog.ShowDialog() == DialogResult.OK)
+			{
+				color_textbox_background = colorDialog.Color;
+				(send_mouse_enter as TextBox).BackColor = color_textbox_background;
+			}
+		}
+
+		private void toolStripMenuItem_kolor_tekstu_Click(object sender, EventArgs e)
+		{
+			if (colorDialog.ShowDialog() == DialogResult.OK)
+			{
+				color_textbox_text = colorDialog.Color;
+				(send_mouse_enter as TextBox).ForeColor = color_textbox_text;
+			}
+		}
+
+		private void toolStripMenuItem3_Click(object sender, EventArgs e)
+		{
+/*			if (!licz_odbieranie[nr_mouse_enter].active)
+			{
+				licz_odbieranie[nr_mouse_enter].active = true;
+				if ((licz_odbieranie[nr_mouse_enter].cells as TextBox).Font.Bold)
+				{
+					(licz_odbieranie[nr_mouse_enter].cells as TextBox).Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+				}
+				else
+					(licz_odbieranie[nr_mouse_enter].cells as TextBox).Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+
+
+			}
+			else
+			{
+				licz_odbieranie[nr_mouse_enter].active = false;
+				if ((licz_odbieranie[nr_mouse_enter].cells as TextBox).Font.Bold)
+				{
+					(licz_odbieranie[nr_mouse_enter].cells as TextBox).Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+				}
+				else
+					(licz_odbieranie[nr_mouse_enter].cells as TextBox).Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+
+			}*/
 		}
 	}
 }

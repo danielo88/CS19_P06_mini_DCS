@@ -198,7 +198,20 @@
 			this.timer_client = new System.Windows.Forms.Timer(this.components);
 			this.saveFileDialog_1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog_1 = new System.Windows.Forms.OpenFileDialog();
-			this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+			this.contextMenuStrip_odebrane = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.toolStripMenuItem_kolor_tla = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem_kolor_tekstu = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripMenuItem_inkrementacja = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem_przepisz_odczyt = new System.Windows.Forms.ToolStripMenuItem();
+			this.contextMenuStrip_wysylane = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem_przepisz_zapis = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem_nastawa = new System.Windows.Forms.ToolStripMenuItem();
+			this.colorDialog = new System.Windows.Forms.ColorDialog();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl_okna.SuspendLayout();
@@ -218,6 +231,8 @@
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
+			this.contextMenuStrip_odebrane.SuspendLayout();
+			this.contextMenuStrip_wysylane.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// statusStrip1
@@ -419,87 +434,74 @@
 			this.groupBox10.Controls.Add(this.button23);
 			resources.ApplyResources(this.groupBox10, "groupBox10");
 			this.groupBox10.Name = "groupBox10";
-			this.helpProvider1.SetShowHelp(this.groupBox10, ((bool)(resources.GetObject("groupBox10.ShowHelp"))));
 			this.groupBox10.TabStop = false;
 			// 
 			// textBox22
 			// 
 			resources.ApplyResources(this.textBox22, "textBox22");
 			this.textBox22.Name = "textBox22";
-			this.helpProvider1.SetShowHelp(this.textBox22, ((bool)(resources.GetObject("textBox22.ShowHelp"))));
 			this.textBox22.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// label34
 			// 
 			resources.ApplyResources(this.label34, "label34");
 			this.label34.Name = "label34";
-			this.helpProvider1.SetShowHelp(this.label34, ((bool)(resources.GetObject("label34.ShowHelp"))));
 			// 
 			// label35
 			// 
 			resources.ApplyResources(this.label35, "label35");
 			this.label35.Name = "label35";
-			this.helpProvider1.SetShowHelp(this.label35, ((bool)(resources.GetObject("label35.ShowHelp"))));
 			// 
 			// button20
 			// 
 			resources.ApplyResources(this.button20, "button20");
 			this.button20.Name = "button20";
-			this.helpProvider1.SetShowHelp(this.button20, ((bool)(resources.GetObject("button20.ShowHelp"))));
 			this.button20.UseVisualStyleBackColor = true;
 			// 
 			// textBox23
 			// 
 			resources.ApplyResources(this.textBox23, "textBox23");
 			this.textBox23.Name = "textBox23";
-			this.helpProvider1.SetShowHelp(this.textBox23, ((bool)(resources.GetObject("textBox23.ShowHelp"))));
 			this.textBox23.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// label36
 			// 
 			resources.ApplyResources(this.label36, "label36");
 			this.label36.Name = "label36";
-			this.helpProvider1.SetShowHelp(this.label36, ((bool)(resources.GetObject("label36.ShowHelp"))));
 			// 
 			// button21
 			// 
 			resources.ApplyResources(this.button21, "button21");
 			this.button21.Name = "button21";
-			this.helpProvider1.SetShowHelp(this.button21, ((bool)(resources.GetObject("button21.ShowHelp"))));
 			this.button21.UseVisualStyleBackColor = true;
 			// 
 			// label37
 			// 
 			resources.ApplyResources(this.label37, "label37");
 			this.label37.Name = "label37";
-			this.helpProvider1.SetShowHelp(this.label37, ((bool)(resources.GetObject("label37.ShowHelp"))));
 			// 
 			// button22
 			// 
 			resources.ApplyResources(this.button22, "button22");
 			this.button22.Name = "button22";
-			this.helpProvider1.SetShowHelp(this.button22, ((bool)(resources.GetObject("button22.ShowHelp"))));
 			this.button22.UseVisualStyleBackColor = true;
 			// 
 			// textBox24
 			// 
 			resources.ApplyResources(this.textBox24, "textBox24");
 			this.textBox24.Name = "textBox24";
-			this.helpProvider1.SetShowHelp(this.textBox24, ((bool)(resources.GetObject("textBox24.ShowHelp"))));
 			this.textBox24.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// textBox25
 			// 
 			resources.ApplyResources(this.textBox25, "textBox25");
 			this.textBox25.Name = "textBox25";
-			this.helpProvider1.SetShowHelp(this.textBox25, ((bool)(resources.GetObject("textBox25.ShowHelp"))));
 			this.textBox25.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// button23
 			// 
 			resources.ApplyResources(this.button23, "button23");
 			this.button23.Name = "button23";
-			this.helpProvider1.SetShowHelp(this.button23, ((bool)(resources.GetObject("button23.ShowHelp"))));
 			this.button23.UseVisualStyleBackColor = true;
 			// 
 			// groupBox11
@@ -514,59 +516,50 @@
 			this.groupBox11.Controls.Add(this.textBox28);
 			resources.ApplyResources(this.groupBox11, "groupBox11");
 			this.groupBox11.Name = "groupBox11";
-			this.helpProvider1.SetShowHelp(this.groupBox11, ((bool)(resources.GetObject("groupBox11.ShowHelp"))));
 			this.groupBox11.TabStop = false;
 			// 
 			// textBox26
 			// 
 			resources.ApplyResources(this.textBox26, "textBox26");
 			this.textBox26.Name = "textBox26";
-			this.helpProvider1.SetShowHelp(this.textBox26, ((bool)(resources.GetObject("textBox26.ShowHelp"))));
 			// 
 			// button24
 			// 
 			resources.ApplyResources(this.button24, "button24");
 			this.button24.Name = "button24";
-			this.helpProvider1.SetShowHelp(this.button24, ((bool)(resources.GetObject("button24.ShowHelp"))));
 			this.button24.UseVisualStyleBackColor = true;
 			// 
 			// button25
 			// 
 			resources.ApplyResources(this.button25, "button25");
 			this.button25.Name = "button25";
-			this.helpProvider1.SetShowHelp(this.button25, ((bool)(resources.GetObject("button25.ShowHelp"))));
 			this.button25.UseVisualStyleBackColor = true;
 			// 
 			// label38
 			// 
 			resources.ApplyResources(this.label38, "label38");
 			this.label38.Name = "label38";
-			this.helpProvider1.SetShowHelp(this.label38, ((bool)(resources.GetObject("label38.ShowHelp"))));
 			// 
 			// label39
 			// 
 			resources.ApplyResources(this.label39, "label39");
 			this.label39.Name = "label39";
-			this.helpProvider1.SetShowHelp(this.label39, ((bool)(resources.GetObject("label39.ShowHelp"))));
 			// 
 			// label40
 			// 
 			resources.ApplyResources(this.label40, "label40");
 			this.label40.Name = "label40";
-			this.helpProvider1.SetShowHelp(this.label40, ((bool)(resources.GetObject("label40.ShowHelp"))));
 			// 
 			// textBox27
 			// 
 			resources.ApplyResources(this.textBox27, "textBox27");
 			this.textBox27.Name = "textBox27";
-			this.helpProvider1.SetShowHelp(this.textBox27, ((bool)(resources.GetObject("textBox27.ShowHelp"))));
 			this.textBox27.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// textBox28
 			// 
 			resources.ApplyResources(this.textBox28, "textBox28");
 			this.textBox28.Name = "textBox28";
-			this.helpProvider1.SetShowHelp(this.textBox28, ((bool)(resources.GetObject("textBox28.ShowHelp"))));
 			this.textBox28.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// groupBox8
@@ -585,87 +578,74 @@
 			this.groupBox8.Controls.Add(this.button17);
 			resources.ApplyResources(this.groupBox8, "groupBox8");
 			this.groupBox8.Name = "groupBox8";
-			this.helpProvider1.SetShowHelp(this.groupBox8, ((bool)(resources.GetObject("groupBox8.ShowHelp"))));
 			this.groupBox8.TabStop = false;
 			// 
 			// textBox15
 			// 
 			resources.ApplyResources(this.textBox15, "textBox15");
 			this.textBox15.Name = "textBox15";
-			this.helpProvider1.SetShowHelp(this.textBox15, ((bool)(resources.GetObject("textBox15.ShowHelp"))));
 			this.textBox15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// label27
 			// 
 			resources.ApplyResources(this.label27, "label27");
 			this.label27.Name = "label27";
-			this.helpProvider1.SetShowHelp(this.label27, ((bool)(resources.GetObject("label27.ShowHelp"))));
 			// 
 			// label28
 			// 
 			resources.ApplyResources(this.label28, "label28");
 			this.label28.Name = "label28";
-			this.helpProvider1.SetShowHelp(this.label28, ((bool)(resources.GetObject("label28.ShowHelp"))));
 			// 
 			// button14
 			// 
 			resources.ApplyResources(this.button14, "button14");
 			this.button14.Name = "button14";
-			this.helpProvider1.SetShowHelp(this.button14, ((bool)(resources.GetObject("button14.ShowHelp"))));
 			this.button14.UseVisualStyleBackColor = true;
 			// 
 			// textBox16
 			// 
 			resources.ApplyResources(this.textBox16, "textBox16");
 			this.textBox16.Name = "textBox16";
-			this.helpProvider1.SetShowHelp(this.textBox16, ((bool)(resources.GetObject("textBox16.ShowHelp"))));
 			this.textBox16.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// label29
 			// 
 			resources.ApplyResources(this.label29, "label29");
 			this.label29.Name = "label29";
-			this.helpProvider1.SetShowHelp(this.label29, ((bool)(resources.GetObject("label29.ShowHelp"))));
 			// 
 			// button15
 			// 
 			resources.ApplyResources(this.button15, "button15");
 			this.button15.Name = "button15";
-			this.helpProvider1.SetShowHelp(this.button15, ((bool)(resources.GetObject("button15.ShowHelp"))));
 			this.button15.UseVisualStyleBackColor = true;
 			// 
 			// label30
 			// 
 			resources.ApplyResources(this.label30, "label30");
 			this.label30.Name = "label30";
-			this.helpProvider1.SetShowHelp(this.label30, ((bool)(resources.GetObject("label30.ShowHelp"))));
 			// 
 			// button16
 			// 
 			resources.ApplyResources(this.button16, "button16");
 			this.button16.Name = "button16";
-			this.helpProvider1.SetShowHelp(this.button16, ((bool)(resources.GetObject("button16.ShowHelp"))));
 			this.button16.UseVisualStyleBackColor = true;
 			// 
 			// textBox17
 			// 
 			resources.ApplyResources(this.textBox17, "textBox17");
 			this.textBox17.Name = "textBox17";
-			this.helpProvider1.SetShowHelp(this.textBox17, ((bool)(resources.GetObject("textBox17.ShowHelp"))));
 			this.textBox17.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// textBox18
 			// 
 			resources.ApplyResources(this.textBox18, "textBox18");
 			this.textBox18.Name = "textBox18";
-			this.helpProvider1.SetShowHelp(this.textBox18, ((bool)(resources.GetObject("textBox18.ShowHelp"))));
 			this.textBox18.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// button17
 			// 
 			resources.ApplyResources(this.button17, "button17");
 			this.button17.Name = "button17";
-			this.helpProvider1.SetShowHelp(this.button17, ((bool)(resources.GetObject("button17.ShowHelp"))));
 			this.button17.UseVisualStyleBackColor = true;
 			// 
 			// groupBox9
@@ -680,59 +660,50 @@
 			this.groupBox9.Controls.Add(this.textBox21);
 			resources.ApplyResources(this.groupBox9, "groupBox9");
 			this.groupBox9.Name = "groupBox9";
-			this.helpProvider1.SetShowHelp(this.groupBox9, ((bool)(resources.GetObject("groupBox9.ShowHelp"))));
 			this.groupBox9.TabStop = false;
 			// 
 			// textBox19
 			// 
 			resources.ApplyResources(this.textBox19, "textBox19");
 			this.textBox19.Name = "textBox19";
-			this.helpProvider1.SetShowHelp(this.textBox19, ((bool)(resources.GetObject("textBox19.ShowHelp"))));
 			// 
 			// button18
 			// 
 			resources.ApplyResources(this.button18, "button18");
 			this.button18.Name = "button18";
-			this.helpProvider1.SetShowHelp(this.button18, ((bool)(resources.GetObject("button18.ShowHelp"))));
 			this.button18.UseVisualStyleBackColor = true;
 			// 
 			// button19
 			// 
 			resources.ApplyResources(this.button19, "button19");
 			this.button19.Name = "button19";
-			this.helpProvider1.SetShowHelp(this.button19, ((bool)(resources.GetObject("button19.ShowHelp"))));
 			this.button19.UseVisualStyleBackColor = true;
 			// 
 			// label31
 			// 
 			resources.ApplyResources(this.label31, "label31");
 			this.label31.Name = "label31";
-			this.helpProvider1.SetShowHelp(this.label31, ((bool)(resources.GetObject("label31.ShowHelp"))));
 			// 
 			// label32
 			// 
 			resources.ApplyResources(this.label32, "label32");
 			this.label32.Name = "label32";
-			this.helpProvider1.SetShowHelp(this.label32, ((bool)(resources.GetObject("label32.ShowHelp"))));
 			// 
 			// label33
 			// 
 			resources.ApplyResources(this.label33, "label33");
 			this.label33.Name = "label33";
-			this.helpProvider1.SetShowHelp(this.label33, ((bool)(resources.GetObject("label33.ShowHelp"))));
 			// 
 			// textBox20
 			// 
 			resources.ApplyResources(this.textBox20, "textBox20");
 			this.textBox20.Name = "textBox20";
-			this.helpProvider1.SetShowHelp(this.textBox20, ((bool)(resources.GetObject("textBox20.ShowHelp"))));
 			this.textBox20.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// textBox21
 			// 
 			resources.ApplyResources(this.textBox21, "textBox21");
 			this.textBox21.Name = "textBox21";
-			this.helpProvider1.SetShowHelp(this.textBox21, ((bool)(resources.GetObject("textBox21.ShowHelp"))));
 			this.textBox21.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// groupBox6
@@ -751,87 +722,74 @@
 			this.groupBox6.Controls.Add(this.button11);
 			resources.ApplyResources(this.groupBox6, "groupBox6");
 			this.groupBox6.Name = "groupBox6";
-			this.helpProvider1.SetShowHelp(this.groupBox6, ((bool)(resources.GetObject("groupBox6.ShowHelp"))));
 			this.groupBox6.TabStop = false;
 			// 
 			// textBox8
 			// 
 			resources.ApplyResources(this.textBox8, "textBox8");
 			this.textBox8.Name = "textBox8";
-			this.helpProvider1.SetShowHelp(this.textBox8, ((bool)(resources.GetObject("textBox8.ShowHelp"))));
 			this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// label20
 			// 
 			resources.ApplyResources(this.label20, "label20");
 			this.label20.Name = "label20";
-			this.helpProvider1.SetShowHelp(this.label20, ((bool)(resources.GetObject("label20.ShowHelp"))));
 			// 
 			// label21
 			// 
 			resources.ApplyResources(this.label21, "label21");
 			this.label21.Name = "label21";
-			this.helpProvider1.SetShowHelp(this.label21, ((bool)(resources.GetObject("label21.ShowHelp"))));
 			// 
 			// button8
 			// 
 			resources.ApplyResources(this.button8, "button8");
 			this.button8.Name = "button8";
-			this.helpProvider1.SetShowHelp(this.button8, ((bool)(resources.GetObject("button8.ShowHelp"))));
 			this.button8.UseVisualStyleBackColor = true;
 			// 
 			// textBox9
 			// 
 			resources.ApplyResources(this.textBox9, "textBox9");
 			this.textBox9.Name = "textBox9";
-			this.helpProvider1.SetShowHelp(this.textBox9, ((bool)(resources.GetObject("textBox9.ShowHelp"))));
 			this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// label22
 			// 
 			resources.ApplyResources(this.label22, "label22");
 			this.label22.Name = "label22";
-			this.helpProvider1.SetShowHelp(this.label22, ((bool)(resources.GetObject("label22.ShowHelp"))));
 			// 
 			// button9
 			// 
 			resources.ApplyResources(this.button9, "button9");
 			this.button9.Name = "button9";
-			this.helpProvider1.SetShowHelp(this.button9, ((bool)(resources.GetObject("button9.ShowHelp"))));
 			this.button9.UseVisualStyleBackColor = true;
 			// 
 			// label23
 			// 
 			resources.ApplyResources(this.label23, "label23");
 			this.label23.Name = "label23";
-			this.helpProvider1.SetShowHelp(this.label23, ((bool)(resources.GetObject("label23.ShowHelp"))));
 			// 
 			// button10
 			// 
 			resources.ApplyResources(this.button10, "button10");
 			this.button10.Name = "button10";
-			this.helpProvider1.SetShowHelp(this.button10, ((bool)(resources.GetObject("button10.ShowHelp"))));
 			this.button10.UseVisualStyleBackColor = true;
 			// 
 			// textBox10
 			// 
 			resources.ApplyResources(this.textBox10, "textBox10");
 			this.textBox10.Name = "textBox10";
-			this.helpProvider1.SetShowHelp(this.textBox10, ((bool)(resources.GetObject("textBox10.ShowHelp"))));
 			this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// textBox11
 			// 
 			resources.ApplyResources(this.textBox11, "textBox11");
 			this.textBox11.Name = "textBox11";
-			this.helpProvider1.SetShowHelp(this.textBox11, ((bool)(resources.GetObject("textBox11.ShowHelp"))));
 			this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// button11
 			// 
 			resources.ApplyResources(this.button11, "button11");
 			this.button11.Name = "button11";
-			this.helpProvider1.SetShowHelp(this.button11, ((bool)(resources.GetObject("button11.ShowHelp"))));
 			this.button11.UseVisualStyleBackColor = true;
 			// 
 			// groupBox7
@@ -846,59 +804,50 @@
 			this.groupBox7.Controls.Add(this.textBox14);
 			resources.ApplyResources(this.groupBox7, "groupBox7");
 			this.groupBox7.Name = "groupBox7";
-			this.helpProvider1.SetShowHelp(this.groupBox7, ((bool)(resources.GetObject("groupBox7.ShowHelp"))));
 			this.groupBox7.TabStop = false;
 			// 
 			// textBox12
 			// 
 			resources.ApplyResources(this.textBox12, "textBox12");
 			this.textBox12.Name = "textBox12";
-			this.helpProvider1.SetShowHelp(this.textBox12, ((bool)(resources.GetObject("textBox12.ShowHelp"))));
 			// 
 			// button12
 			// 
 			resources.ApplyResources(this.button12, "button12");
 			this.button12.Name = "button12";
-			this.helpProvider1.SetShowHelp(this.button12, ((bool)(resources.GetObject("button12.ShowHelp"))));
 			this.button12.UseVisualStyleBackColor = true;
 			// 
 			// button13
 			// 
 			resources.ApplyResources(this.button13, "button13");
 			this.button13.Name = "button13";
-			this.helpProvider1.SetShowHelp(this.button13, ((bool)(resources.GetObject("button13.ShowHelp"))));
 			this.button13.UseVisualStyleBackColor = true;
 			// 
 			// label24
 			// 
 			resources.ApplyResources(this.label24, "label24");
 			this.label24.Name = "label24";
-			this.helpProvider1.SetShowHelp(this.label24, ((bool)(resources.GetObject("label24.ShowHelp"))));
 			// 
 			// label25
 			// 
 			resources.ApplyResources(this.label25, "label25");
 			this.label25.Name = "label25";
-			this.helpProvider1.SetShowHelp(this.label25, ((bool)(resources.GetObject("label25.ShowHelp"))));
 			// 
 			// label26
 			// 
 			resources.ApplyResources(this.label26, "label26");
 			this.label26.Name = "label26";
-			this.helpProvider1.SetShowHelp(this.label26, ((bool)(resources.GetObject("label26.ShowHelp"))));
 			// 
 			// textBox13
 			// 
 			resources.ApplyResources(this.textBox13, "textBox13");
 			this.textBox13.Name = "textBox13";
-			this.helpProvider1.SetShowHelp(this.textBox13, ((bool)(resources.GetObject("textBox13.ShowHelp"))));
 			this.textBox13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// textBox14
 			// 
 			resources.ApplyResources(this.textBox14, "textBox14");
 			this.textBox14.Name = "textBox14";
-			this.helpProvider1.SetShowHelp(this.textBox14, ((bool)(resources.GetObject("textBox14.ShowHelp"))));
 			this.textBox14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// groupBox4
@@ -917,87 +866,74 @@
 			this.groupBox4.Controls.Add(this.button5);
 			resources.ApplyResources(this.groupBox4, "groupBox4");
 			this.groupBox4.Name = "groupBox4";
-			this.helpProvider1.SetShowHelp(this.groupBox4, ((bool)(resources.GetObject("groupBox4.ShowHelp"))));
 			this.groupBox4.TabStop = false;
 			// 
 			// textBox1
 			// 
 			resources.ApplyResources(this.textBox1, "textBox1");
 			this.textBox1.Name = "textBox1";
-			this.helpProvider1.SetShowHelp(this.textBox1, ((bool)(resources.GetObject("textBox1.ShowHelp"))));
 			this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// label6
 			// 
 			resources.ApplyResources(this.label6, "label6");
 			this.label6.Name = "label6";
-			this.helpProvider1.SetShowHelp(this.label6, ((bool)(resources.GetObject("label6.ShowHelp"))));
 			// 
 			// label7
 			// 
 			resources.ApplyResources(this.label7, "label7");
 			this.label7.Name = "label7";
-			this.helpProvider1.SetShowHelp(this.label7, ((bool)(resources.GetObject("label7.ShowHelp"))));
 			// 
 			// button2
 			// 
 			resources.ApplyResources(this.button2, "button2");
 			this.button2.Name = "button2";
-			this.helpProvider1.SetShowHelp(this.button2, ((bool)(resources.GetObject("button2.ShowHelp"))));
 			this.button2.UseVisualStyleBackColor = true;
 			// 
 			// textBox2
 			// 
 			resources.ApplyResources(this.textBox2, "textBox2");
 			this.textBox2.Name = "textBox2";
-			this.helpProvider1.SetShowHelp(this.textBox2, ((bool)(resources.GetObject("textBox2.ShowHelp"))));
 			this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// label15
 			// 
 			resources.ApplyResources(this.label15, "label15");
 			this.label15.Name = "label15";
-			this.helpProvider1.SetShowHelp(this.label15, ((bool)(resources.GetObject("label15.ShowHelp"))));
 			// 
 			// button3
 			// 
 			resources.ApplyResources(this.button3, "button3");
 			this.button3.Name = "button3";
-			this.helpProvider1.SetShowHelp(this.button3, ((bool)(resources.GetObject("button3.ShowHelp"))));
 			this.button3.UseVisualStyleBackColor = true;
 			// 
 			// label16
 			// 
 			resources.ApplyResources(this.label16, "label16");
 			this.label16.Name = "label16";
-			this.helpProvider1.SetShowHelp(this.label16, ((bool)(resources.GetObject("label16.ShowHelp"))));
 			// 
 			// button4
 			// 
 			resources.ApplyResources(this.button4, "button4");
 			this.button4.Name = "button4";
-			this.helpProvider1.SetShowHelp(this.button4, ((bool)(resources.GetObject("button4.ShowHelp"))));
 			this.button4.UseVisualStyleBackColor = true;
 			// 
 			// textBox3
 			// 
 			resources.ApplyResources(this.textBox3, "textBox3");
 			this.textBox3.Name = "textBox3";
-			this.helpProvider1.SetShowHelp(this.textBox3, ((bool)(resources.GetObject("textBox3.ShowHelp"))));
 			this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// textBox4
 			// 
 			resources.ApplyResources(this.textBox4, "textBox4");
 			this.textBox4.Name = "textBox4";
-			this.helpProvider1.SetShowHelp(this.textBox4, ((bool)(resources.GetObject("textBox4.ShowHelp"))));
 			this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// button5
 			// 
 			resources.ApplyResources(this.button5, "button5");
 			this.button5.Name = "button5";
-			this.helpProvider1.SetShowHelp(this.button5, ((bool)(resources.GetObject("button5.ShowHelp"))));
 			this.button5.UseVisualStyleBackColor = true;
 			// 
 			// groupBox3
@@ -1106,59 +1042,50 @@
 			this.groupBox5.Controls.Add(this.textBox7);
 			resources.ApplyResources(this.groupBox5, "groupBox5");
 			this.groupBox5.Name = "groupBox5";
-			this.helpProvider1.SetShowHelp(this.groupBox5, ((bool)(resources.GetObject("groupBox5.ShowHelp"))));
 			this.groupBox5.TabStop = false;
 			// 
 			// textBox5
 			// 
 			resources.ApplyResources(this.textBox5, "textBox5");
 			this.textBox5.Name = "textBox5";
-			this.helpProvider1.SetShowHelp(this.textBox5, ((bool)(resources.GetObject("textBox5.ShowHelp"))));
 			// 
 			// button6
 			// 
 			resources.ApplyResources(this.button6, "button6");
 			this.button6.Name = "button6";
-			this.helpProvider1.SetShowHelp(this.button6, ((bool)(resources.GetObject("button6.ShowHelp"))));
 			this.button6.UseVisualStyleBackColor = true;
 			// 
 			// button7
 			// 
 			resources.ApplyResources(this.button7, "button7");
 			this.button7.Name = "button7";
-			this.helpProvider1.SetShowHelp(this.button7, ((bool)(resources.GetObject("button7.ShowHelp"))));
 			this.button7.UseVisualStyleBackColor = true;
 			// 
 			// label17
 			// 
 			resources.ApplyResources(this.label17, "label17");
 			this.label17.Name = "label17";
-			this.helpProvider1.SetShowHelp(this.label17, ((bool)(resources.GetObject("label17.ShowHelp"))));
 			// 
 			// label18
 			// 
 			resources.ApplyResources(this.label18, "label18");
 			this.label18.Name = "label18";
-			this.helpProvider1.SetShowHelp(this.label18, ((bool)(resources.GetObject("label18.ShowHelp"))));
 			// 
 			// label19
 			// 
 			resources.ApplyResources(this.label19, "label19");
 			this.label19.Name = "label19";
-			this.helpProvider1.SetShowHelp(this.label19, ((bool)(resources.GetObject("label19.ShowHelp"))));
 			// 
 			// textBox6
 			// 
 			resources.ApplyResources(this.textBox6, "textBox6");
 			this.textBox6.Name = "textBox6";
-			this.helpProvider1.SetShowHelp(this.textBox6, ((bool)(resources.GetObject("textBox6.ShowHelp"))));
 			this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// textBox7
 			// 
 			resources.ApplyResources(this.textBox7, "textBox7");
 			this.textBox7.Name = "textBox7";
-			this.helpProvider1.SetShowHelp(this.textBox7, ((bool)(resources.GetObject("textBox7.ShowHelp"))));
 			this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
 			// groupBox2
@@ -1442,6 +1369,89 @@
 			this.openFileDialog_1.FileName = "openFileDialog1";
 			resources.ApplyResources(this.openFileDialog_1, "openFileDialog_1");
 			// 
+			// contextMenuStrip_odebrane
+			// 
+			this.contextMenuStrip_odebrane.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem_kolor_tla,
+            this.toolStripMenuItem_kolor_tekstu,
+            this.toolStripSeparator3,
+            this.toolStripMenuItem_inkrementacja,
+            this.toolStripMenuItem_przepisz_odczyt});
+			this.contextMenuStrip_odebrane.Name = "contextMenuStrip_tabele";
+			resources.ApplyResources(this.contextMenuStrip_odebrane, "contextMenuStrip_odebrane");
+			// 
+			// toolStripMenuItem_kolor_tla
+			// 
+			this.toolStripMenuItem_kolor_tla.Name = "toolStripMenuItem_kolor_tla";
+			resources.ApplyResources(this.toolStripMenuItem_kolor_tla, "toolStripMenuItem_kolor_tla");
+			this.toolStripMenuItem_kolor_tla.Click += new System.EventHandler(this.toolStripMenuItem_kolor_tla_Click);
+			// 
+			// toolStripMenuItem_kolor_tekstu
+			// 
+			this.toolStripMenuItem_kolor_tekstu.Name = "toolStripMenuItem_kolor_tekstu";
+			resources.ApplyResources(this.toolStripMenuItem_kolor_tekstu, "toolStripMenuItem_kolor_tekstu");
+			this.toolStripMenuItem_kolor_tekstu.Click += new System.EventHandler(this.toolStripMenuItem_kolor_tekstu_Click);
+			// 
+			// toolStripSeparator3
+			// 
+			this.toolStripSeparator3.Name = "toolStripSeparator3";
+			resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+			// 
+			// toolStripMenuItem_inkrementacja
+			// 
+			resources.ApplyResources(this.toolStripMenuItem_inkrementacja, "toolStripMenuItem_inkrementacja");
+			this.toolStripMenuItem_inkrementacja.Name = "toolStripMenuItem_inkrementacja";
+			// 
+			// toolStripMenuItem_przepisz_odczyt
+			// 
+			resources.ApplyResources(this.toolStripMenuItem_przepisz_odczyt, "toolStripMenuItem_przepisz_odczyt");
+			this.toolStripMenuItem_przepisz_odczyt.Name = "toolStripMenuItem_przepisz_odczyt";
+			// 
+			// contextMenuStrip_wysylane
+			// 
+			this.contextMenuStrip_wysylane.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripSeparator4,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem_przepisz_zapis,
+            this.toolStripMenuItem_nastawa});
+			this.contextMenuStrip_wysylane.Name = "contextMenuStrip_tabele";
+			resources.ApplyResources(this.contextMenuStrip_wysylane, "contextMenuStrip_wysylane");
+			// 
+			// toolStripMenuItem1
+			// 
+			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+			resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+			this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem_kolor_tla_Click);
+			// 
+			// toolStripMenuItem2
+			// 
+			this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+			resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+			this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem_kolor_tekstu_Click);
+			// 
+			// toolStripSeparator4
+			// 
+			this.toolStripSeparator4.Name = "toolStripSeparator4";
+			resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+			// 
+			// toolStripMenuItem3
+			// 
+			resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+			this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+			this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+			// 
+			// toolStripMenuItem_przepisz_zapis
+			// 
+			resources.ApplyResources(this.toolStripMenuItem_przepisz_zapis, "toolStripMenuItem_przepisz_zapis");
+			this.toolStripMenuItem_przepisz_zapis.Name = "toolStripMenuItem_przepisz_zapis";
+			// 
+			// toolStripMenuItem_nastawa
+			// 
+			resources.ApplyResources(this.toolStripMenuItem_nastawa, "toolStripMenuItem_nastawa");
+			this.toolStripMenuItem_nastawa.Name = "toolStripMenuItem_nastawa";
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
@@ -1486,6 +1496,8 @@
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
+			this.contextMenuStrip_odebrane.ResumeLayout(false);
+			this.contextMenuStrip_wysylane.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1572,7 +1584,6 @@
 		private System.Windows.Forms.OpenFileDialog openFileDialog_1;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.GroupBox groupBox2;
-		private System.Windows.Forms.HelpProvider helpProvider1;
 		private System.Windows.Forms.GroupBox groupBox10;
 		private System.Windows.Forms.TextBox textBox22;
 		private System.Windows.Forms.Label label34;
@@ -1662,6 +1673,20 @@
 		private System.Windows.Forms.TextBox textBox6;
 		private System.Windows.Forms.TextBox textBox7;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_uzupelnij;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip_odebrane;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_kolor_tla;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_kolor_tekstu;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_inkrementacja;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_przepisz_odczyt;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip_wysylane;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_przepisz_zapis;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_nastawa;
+		private System.Windows.Forms.ColorDialog colorDialog;
 	}
 }
 
