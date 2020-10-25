@@ -122,20 +122,20 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 17</value>
+    <value>61, 17</value>
   </data>
   <data name="toolStripStatusLabel1.Text" xml:space="preserve">
-    <value>Parametry połączenia:</value>
+    <value>Parametry</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="toolStripStatusLabel2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="toolStripStatusLabel_parametry.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="toolStripStatusLabel2.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+  <data name="toolStripStatusLabel_parametry.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="toolStripStatusLabel2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripStatusLabel_parametry.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 17</value>
   </data>
   <data name="toolStripStatusLabel3.Size" type="System.Drawing.Size, System.Drawing">
@@ -148,13 +148,13 @@
     <value>False</value>
   </data>
   <data name="toolStripStatusLabel_status.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 17</value>
+    <value>80, 17</value>
   </data>
   <data name="toolStripStatusLabel_status.Text" xml:space="preserve">
     <value>Rozłączono</value>
   </data>
   <data name="toolStripStatusLabel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 17</value>
+    <value>260, 17</value>
   </data>
   <data name="toolStripStatusLabel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 17</value>
@@ -214,7 +214,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>133, 17</value>
@@ -310,7 +310,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <metadata name="timer_1s.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>248, 17</value>
@@ -3242,7 +3242,7 @@
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>451, 6</value>
+    <value>441, 6</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 13</value>
@@ -3299,7 +3299,7 @@
     <value>True</value>
   </data>
   <data name="panel_wysylanie.Location" type="System.Drawing.Point, System.Drawing">
-    <value>448, 22</value>
+    <value>441, 22</value>
   </data>
   <data name="panel_wysylanie.Size" type="System.Drawing.Size, System.Drawing">
     <value>435, 256</value>
@@ -4145,48 +4145,48 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tabControl_okna.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
-  <data name="richTextBox_tekst.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="richTextBox_log.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
-  <data name="richTextBox_tekst.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="richTextBox_log.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 431</value>
   </data>
-  <data name="richTextBox_tekst.Size" type="System.Drawing.Size, System.Drawing">
-    <value>893, 103</value>
+  <data name="richTextBox_log.Size" type="System.Drawing.Size, System.Drawing">
+    <value>832, 103</value>
   </data>
-  <data name="richTextBox_tekst.TabIndex" type="System.Int32, mscorlib">
+  <data name="richTextBox_log.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
   </data>
-  <data name="richTextBox_tekst.Text" xml:space="preserve">
+  <data name="richTextBox_log.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;richTextBox_tekst.Name" xml:space="preserve">
-    <value>richTextBox_tekst</value>
+  <data name="&gt;&gt;richTextBox_log.Name" xml:space="preserve">
+    <value>richTextBox_log</value>
   </data>
-  <data name="&gt;&gt;richTextBox_tekst.Type" xml:space="preserve">
+  <data name="&gt;&gt;richTextBox_log.Type" xml:space="preserve">
     <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;richTextBox_tekst.Parent" xml:space="preserve">
+  <data name="&gt;&gt;richTextBox_log.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;richTextBox_tekst.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;richTextBox_log.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <metadata name="timer_client.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>345, 17</value>
   </metadata>
-  <metadata name="saveFileDialog_1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="saveFileDialog_modbus.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>460, 17</value>
   </metadata>
-  <data name="saveFileDialog_1.Filter" xml:space="preserve">
+  <data name="saveFileDialog_modbus.Filter" xml:space="preserve">
     <value>XML|*.xml</value>
   </data>
-  <metadata name="openFileDialog_1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="openFileDialog_modbus.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>601, 17</value>
   </metadata>
-  <data name="openFileDialog_1.Filter" xml:space="preserve">
+  <data name="openFileDialog_modbus.Filter" xml:space="preserve">
     <value>XML|*.xml</value>
   </data>
   <metadata name="contextMenuStrip_odebrane.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -4291,6 +4291,63 @@
   <metadata name="colorDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
+  <data name="button_wyczysc_log.Location" type="System.Drawing.Point, System.Drawing">
+    <value>832, 431</value>
+  </data>
+  <data name="button_wyczysc_log.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 51</value>
+  </data>
+  <data name="button_wyczysc_log.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="button_wyczysc_log.Text" xml:space="preserve">
+    <value>Wyczyść</value>
+  </data>
+  <data name="&gt;&gt;button_wyczysc_log.Name" xml:space="preserve">
+    <value>button_wyczysc_log</value>
+  </data>
+  <data name="&gt;&gt;button_wyczysc_log.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_wyczysc_log.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_wyczysc_log.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_zapisz_log.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_zapisz_log.Location" type="System.Drawing.Point, System.Drawing">
+    <value>832, 483</value>
+  </data>
+  <data name="button_zapisz_log.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 51</value>
+  </data>
+  <data name="button_zapisz_log.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="button_zapisz_log.Text" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="&gt;&gt;button_zapisz_log.Name" xml:space="preserve">
+    <value>button_zapisz_log</value>
+  </data>
+  <data name="&gt;&gt;button_zapisz_log.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_zapisz_log.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_zapisz_log.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="saveFileDialog_log.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>131, 56</value>
+  </metadata>
+  <data name="saveFileDialog_log.Filter" xml:space="preserve">
+    <value>Plik tekstowy |*.txt</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -4299,6 +4356,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>893, 559</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>909, 598</value>
@@ -4312,10 +4372,10 @@
   <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripStatusLabel2.Name" xml:space="preserve">
-    <value>toolStripStatusLabel2</value>
+  <data name="&gt;&gt;toolStripStatusLabel_parametry.Name" xml:space="preserve">
+    <value>toolStripStatusLabel_parametry</value>
   </data>
-  <data name="&gt;&gt;toolStripStatusLabel2.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripStatusLabel_parametry.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripStatusLabel3.Name" xml:space="preserve">
@@ -4450,16 +4510,16 @@
   <data name="&gt;&gt;timer_client.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveFileDialog_1.Name" xml:space="preserve">
-    <value>saveFileDialog_1</value>
+  <data name="&gt;&gt;saveFileDialog_modbus.Name" xml:space="preserve">
+    <value>saveFileDialog_modbus</value>
   </data>
-  <data name="&gt;&gt;saveFileDialog_1.Type" xml:space="preserve">
+  <data name="&gt;&gt;saveFileDialog_modbus.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;openFileDialog_1.Name" xml:space="preserve">
-    <value>openFileDialog_1</value>
+  <data name="&gt;&gt;openFileDialog_modbus.Name" xml:space="preserve">
+    <value>openFileDialog_modbus</value>
   </data>
-  <data name="&gt;&gt;openFileDialog_1.Type" xml:space="preserve">
+  <data name="&gt;&gt;openFileDialog_modbus.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem_kolor_tla.Name" xml:space="preserve">
@@ -4533,6 +4593,12 @@
   </data>
   <data name="&gt;&gt;colorDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog_log.Name" xml:space="preserve">
+    <value>saveFileDialog_log</value>
+  </data>
+  <data name="&gt;&gt;saveFileDialog_log.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Main</value>

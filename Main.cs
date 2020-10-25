@@ -118,7 +118,7 @@ namespace CS19_P06_mini_DCS
 		public Main()
 		{
 			polaczenie_modbus = new MODBUS_TCP[max_connection];
-
+			modbus_client = new EasyModbus.ModbusClient("localhost", 501);
 			InitializeComponent();
 		}
 
@@ -344,6 +344,14 @@ namespace CS19_P06_mini_DCS
 
 			}else
 				toolStripStatusLabel_czas.Text = toolStripStatusLabel_czas.Text + now.Minute.ToString() + " " + znak + " " + now.Year.ToString() + "-"  + now.Month.ToString() + "-" + now.Day.ToString() + " ";
+
+			if (modbus_client.Connected)
+				toolStripStatusLabel_status.Text = " Połączono";
+			else
+				toolStripStatusLabel_status.Text = " Rozłączono";
+
+			toolStripStatusLabel_parametry.Text = modbus_client.IPAddress.ToString() + ":" + modbus_client.Port.ToString() + "     ID:" + modbus_client.UnitIdentifier.ToString();
+
 
 		}
 
@@ -745,8 +753,8 @@ namespace CS19_P06_mini_DCS
 			}
 			catch (Exception ex)
 			{
-				richTextBox_tekst.AppendText(ex.Message + "\n");
-				richTextBox_tekst.AppendText(ex.ToString() + "\n");
+				richTextBox_log.AppendText("----\n" + ex.Message + "\n");
+				richTextBox_log.AppendText(ex.ToString() + "\n----\n");
 				//throw;
 			}
 		}
@@ -765,7 +773,8 @@ namespace CS19_P06_mini_DCS
 			}
 			catch (Exception ex)
 			{
-				richTextBox_tekst.AppendText(ex.ToString() + "\n");
+				richTextBox_log.AppendText("----\n" + ex.Message + "\n");
+				richTextBox_log.AppendText(ex.ToString() + "----\n");
 				throw;
 			}
 		}
@@ -845,7 +854,8 @@ namespace CS19_P06_mini_DCS
 			}
 			catch (Exception ex)
 			{
-				richTextBox_tekst.AppendText(ex.ToString() + "\n");
+				richTextBox_log.AppendText("----\n" + ex.Message + "\n");
+				richTextBox_log.AppendText(ex.ToString() + "\n-----\n");
 				button_rozlacz_modbus_Click(null, null);
 				return;
 				//throw;
@@ -870,16 +880,17 @@ namespace CS19_P06_mini_DCS
 			}
 			catch (Exception ex)
 			{
-				richTextBox_tekst.AppendText(ex.ToString() + "\n");
+				richTextBox_log.AppendText("----\n" + ex.Message + "\n");
+				richTextBox_log.AppendText(ex.ToString() + "\n-----\n");
 				throw;
 			}
 		}
 
 		private void toolStripMenuItem_zapisz_Click(object sender, EventArgs e)
 		{
-			if (saveFileDialog_1.ShowDialog() == DialogResult.OK)
+			if (saveFileDialog_modbus.ShowDialog() == DialogResult.OK)
 			{
-				string plik = saveFileDialog_1.FileName;
+				string plik = saveFileDialog_modbus.FileName;
 
 				XmlWriterSettings xml_settings = new XmlWriterSettings();
 				xml_settings.NewLineOnAttributes = true;
@@ -990,9 +1001,9 @@ namespace CS19_P06_mini_DCS
 
 		private void toolStripMenuItem_otworz_Click(object sender, EventArgs e)
 		{
-			if(openFileDialog_1.ShowDialog() == DialogResult.OK)
+			if(openFileDialog_modbus.ShowDialog() == DialogResult.OK)
 			{
-				string plik = openFileDialog_1.FileName;
+				string plik = openFileDialog_modbus.FileName;
 				XmlDocument xml_doc = new XmlDocument();
 
 				try
@@ -1044,6 +1055,8 @@ namespace CS19_P06_mini_DCS
 				catch(XmlException ex)
 				{
 					MessageBox.Show(ex.Message);
+					richTextBox_log.AppendText("----\n" + ex.Message + "\n");
+					richTextBox_log.AppendText(ex.ToString() + "\n----\n");
 				}
 
 
@@ -1362,6 +1375,27 @@ namespace CS19_P06_mini_DCS
 				ekran_scada[kontrolka_nr_parametry].kolor_tlo_textbox = colorDialog.Color;
 				label_przyklad_kolor_opis.ForeColor = colorDialog.Color;
 			}
+		}
+
+		private void button_wyczysc_log_Click(object sender, EventArgs e)
+		{
+			richTextBox_log.Clear();
+		}
+
+		private void button_zapisz_log_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (saveFileDialog_log.ShowDialog() == DialogResult.OK)
+				{
+					richTextBox_log.SaveFile(saveFileDialog_log.FileName, RichTextBoxStreamType.PlainText);
+				}
+			}catch(Exception ex)
+			{
+				richTextBox_log.AppendText("----\n" + ex.Message + "\n");
+				richTextBox_log.AppendText(ex.ToString() + "\n-----\n");
+			}
+
 		}
 	}
 }

@@ -32,7 +32,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel_parametry = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripStatusLabel_status = new System.Windows.Forms.ToolStripStatusLabel();
 			this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -201,10 +201,10 @@
 			this.button_kreska_pion = new System.Windows.Forms.Button();
 			this.button_pole_bajt = new System.Windows.Forms.Button();
 			this.button_dodaj_bit = new System.Windows.Forms.Button();
-			this.richTextBox_tekst = new System.Windows.Forms.RichTextBox();
+			this.richTextBox_log = new System.Windows.Forms.RichTextBox();
 			this.timer_client = new System.Windows.Forms.Timer(this.components);
-			this.saveFileDialog_1 = new System.Windows.Forms.SaveFileDialog();
-			this.openFileDialog_1 = new System.Windows.Forms.OpenFileDialog();
+			this.saveFileDialog_modbus = new System.Windows.Forms.SaveFileDialog();
+			this.openFileDialog_modbus = new System.Windows.Forms.OpenFileDialog();
 			this.contextMenuStrip_odebrane = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.toolStripMenuItem_kolor_tla = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_kolor_tekstu = new System.Windows.Forms.ToolStripMenuItem();
@@ -219,6 +219,9 @@
 			this.toolStripMenuItem_przepisz_zapis = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_nastawa = new System.Windows.Forms.ToolStripMenuItem();
 			this.colorDialog = new System.Windows.Forms.ColorDialog();
+			this.button_wyczysc_log = new System.Windows.Forms.Button();
+			this.button_zapisz_log = new System.Windows.Forms.Button();
+			this.saveFileDialog_log = new System.Windows.Forms.SaveFileDialog();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl_okna.SuspendLayout();
@@ -247,7 +250,7 @@
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel_parametry,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel_status,
             this.toolStripStatusLabel5,
@@ -264,10 +267,10 @@
 			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
 			resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
 			// 
-			// toolStripStatusLabel2
+			// toolStripStatusLabel_parametry
 			// 
-			resources.ApplyResources(this.toolStripStatusLabel2, "toolStripStatusLabel2");
-			this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+			resources.ApplyResources(this.toolStripStatusLabel_parametry, "toolStripStatusLabel_parametry");
+			this.toolStripStatusLabel_parametry.Name = "toolStripStatusLabel_parametry";
 			// 
 			// toolStripStatusLabel3
 			// 
@@ -1406,25 +1409,25 @@
 			this.button_dodaj_bit.UseVisualStyleBackColor = true;
 			this.button_dodaj_bit.Click += new System.EventHandler(this.button_dodaj_bit_Click);
 			// 
-			// richTextBox_tekst
+			// richTextBox_log
 			// 
-			resources.ApplyResources(this.richTextBox_tekst, "richTextBox_tekst");
-			this.richTextBox_tekst.BackColor = System.Drawing.SystemColors.Window;
-			this.richTextBox_tekst.Name = "richTextBox_tekst";
-			this.richTextBox_tekst.ReadOnly = true;
+			resources.ApplyResources(this.richTextBox_log, "richTextBox_log");
+			this.richTextBox_log.BackColor = System.Drawing.SystemColors.Window;
+			this.richTextBox_log.Name = "richTextBox_log";
+			this.richTextBox_log.ReadOnly = true;
 			// 
 			// timer_client
 			// 
 			this.timer_client.Tick += new System.EventHandler(this.timer_client_Tick);
 			// 
-			// saveFileDialog_1
+			// saveFileDialog_modbus
 			// 
-			resources.ApplyResources(this.saveFileDialog_1, "saveFileDialog_1");
+			resources.ApplyResources(this.saveFileDialog_modbus, "saveFileDialog_modbus");
 			// 
-			// openFileDialog_1
+			// openFileDialog_modbus
 			// 
-			this.openFileDialog_1.FileName = "openFileDialog1";
-			resources.ApplyResources(this.openFileDialog_1, "openFileDialog_1");
+			this.openFileDialog_modbus.FileName = "*.xml";
+			resources.ApplyResources(this.openFileDialog_modbus, "openFileDialog_modbus");
 			// 
 			// contextMenuStrip_odebrane
 			// 
@@ -1509,11 +1512,32 @@
 			resources.ApplyResources(this.toolStripMenuItem_nastawa, "toolStripMenuItem_nastawa");
 			this.toolStripMenuItem_nastawa.Name = "toolStripMenuItem_nastawa";
 			// 
+			// button_wyczysc_log
+			// 
+			resources.ApplyResources(this.button_wyczysc_log, "button_wyczysc_log");
+			this.button_wyczysc_log.Name = "button_wyczysc_log";
+			this.button_wyczysc_log.UseVisualStyleBackColor = true;
+			this.button_wyczysc_log.Click += new System.EventHandler(this.button_wyczysc_log_Click);
+			// 
+			// button_zapisz_log
+			// 
+			resources.ApplyResources(this.button_zapisz_log, "button_zapisz_log");
+			this.button_zapisz_log.Name = "button_zapisz_log";
+			this.button_zapisz_log.UseVisualStyleBackColor = true;
+			this.button_zapisz_log.Click += new System.EventHandler(this.button_zapisz_log_Click);
+			// 
+			// saveFileDialog_log
+			// 
+			this.saveFileDialog_log.FileName = "log.txt";
+			resources.ApplyResources(this.saveFileDialog_log, "saveFileDialog_log");
+			// 
 			// Main
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.richTextBox_tekst);
+			this.Controls.Add(this.button_zapisz_log);
+			this.Controls.Add(this.button_wyczysc_log);
+			this.Controls.Add(this.richTextBox_log);
 			this.Controls.Add(this.tabControl_okna);
 			this.Controls.Add(this.statusStrip1);
 			this.Controls.Add(this.menuStrip1);
@@ -1578,7 +1602,7 @@
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_zamknij;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_about;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_parametry;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_status;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
@@ -1610,7 +1634,7 @@
 		private System.Windows.Forms.TabPage tabPage_DCS;
 		private System.Windows.Forms.Panel panel_wysylanie;
 		private System.Windows.Forms.Panel panel_odbieranie;
-		private System.Windows.Forms.RichTextBox richTextBox_tekst;
+		private System.Windows.Forms.RichTextBox richTextBox_log;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.GroupBox groupBox1;
@@ -1639,8 +1663,8 @@
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_Y;
 		private System.Windows.Forms.Timer timer_client;
-		private System.Windows.Forms.SaveFileDialog saveFileDialog_1;
-		private System.Windows.Forms.OpenFileDialog openFileDialog_1;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog_modbus;
+		private System.Windows.Forms.OpenFileDialog openFileDialog_modbus;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.GroupBox groupBox10;
@@ -1753,6 +1777,9 @@
 		private System.Windows.Forms.TextBox textBox_przyklad_kolor_tlo;
 		private System.Windows.Forms.Button button_kolor_tlo;
 		private System.Windows.Forms.TextBox textBox_przyklad_kolor_tekst;
+		private System.Windows.Forms.Button button_wyczysc_log;
+		private System.Windows.Forms.Button button_zapisz_log;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog_log;
 	}
 }
 
