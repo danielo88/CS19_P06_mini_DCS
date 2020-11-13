@@ -1397,5 +1397,37 @@ namespace CS19_P06_mini_DCS
 			}
 
 		}
+
+		private void checkBox_active_con_CheckedChanged(object sender, EventArgs e)
+		{
+			groupBox2.Enabled = (checkBox_active_con.Checked ? true : false);
+			groupBox3.Enabled = (checkBox_active_con.Checked ? true : false);
+		}
+
+		private void checkBox_active_con_2_CheckedChanged(object sender, EventArgs e)
+		{
+			groupBox5.Enabled = (checkBox_active_con_2.Checked?true:false);
+			groupBox4.Enabled = (checkBox_active_con_2.Checked ? true : false);
+		}
+
+		private void checkBox_active_con_3_CheckedChanged(object sender, EventArgs e)
+		{
+			groupBox7.Enabled = (checkBox_active_con_3.Checked ? true : false);
+			groupBox6.Enabled = (checkBox_active_con_3.Checked ? true : false);
+		}
+
+		private void checkBox_active_con_4_CheckedChanged(object sender, EventArgs e)
+		{
+			groupBox9.Enabled = (checkBox_active_con_4.Checked ? true : false);
+			groupBox8.Enabled = (checkBox_active_con_4.Checked ? true : false);
+		}
+
+		private void checkBox_active_con_5_CheckedChanged(object sender, EventArgs e)
+		{
+			groupBox11.Enabled = (checkBox_active_con_5.Checked ? true : false);
+			groupBox10.Enabled = (checkBox_active_con_5.Checked ? true : false);
+		}
+
+
 	}
 }

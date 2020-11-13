@@ -57,6 +57,11 @@
 			this.timer_1s = new System.Windows.Forms.Timer(this.components);
 			this.tabControl_okna = new System.Windows.Forms.TabControl();
 			this.tabPage_polaczenie = new System.Windows.Forms.TabPage();
+			this.checkBox_active_con_5 = new System.Windows.Forms.CheckBox();
+			this.checkBox_active_con_4 = new System.Windows.Forms.CheckBox();
+			this.checkBox_active_con_3 = new System.Windows.Forms.CheckBox();
+			this.checkBox_active_con_2 = new System.Windows.Forms.CheckBox();
+			this.checkBox_active_con = new System.Windows.Forms.CheckBox();
 			this.groupBox10 = new System.Windows.Forms.GroupBox();
 			this.textBox22 = new System.Windows.Forms.TextBox();
 			this.label34 = new System.Windows.Forms.Label();
@@ -71,14 +76,16 @@
 			this.textBox25 = new System.Windows.Forms.TextBox();
 			this.button23 = new System.Windows.Forms.Button();
 			this.groupBox11 = new System.Windows.Forms.GroupBox();
-			this.textBox26 = new System.Windows.Forms.TextBox();
 			this.button24 = new System.Windows.Forms.Button();
+			this.textBox_con_name_5 = new System.Windows.Forms.TextBox();
 			this.button25 = new System.Windows.Forms.Button();
-			this.label38 = new System.Windows.Forms.Label();
-			this.label39 = new System.Windows.Forms.Label();
-			this.label40 = new System.Windows.Forms.Label();
-			this.textBox27 = new System.Windows.Forms.TextBox();
-			this.textBox28 = new System.Windows.Forms.TextBox();
+			this.textBox_adres_ip_5 = new System.Windows.Forms.TextBox();
+			this.textBox_id_5 = new System.Windows.Forms.TextBox();
+			this.label42 = new System.Windows.Forms.Label();
+			this.label45 = new System.Windows.Forms.Label();
+			this.label44 = new System.Windows.Forms.Label();
+			this.label43 = new System.Windows.Forms.Label();
+			this.textBox_port_5 = new System.Windows.Forms.TextBox();
 			this.groupBox8 = new System.Windows.Forms.GroupBox();
 			this.textBox15 = new System.Windows.Forms.TextBox();
 			this.label27 = new System.Windows.Forms.Label();
@@ -93,14 +100,16 @@
 			this.textBox18 = new System.Windows.Forms.TextBox();
 			this.button17 = new System.Windows.Forms.Button();
 			this.groupBox9 = new System.Windows.Forms.GroupBox();
-			this.textBox19 = new System.Windows.Forms.TextBox();
 			this.button18 = new System.Windows.Forms.Button();
+			this.textBox_con_name_4 = new System.Windows.Forms.TextBox();
 			this.button19 = new System.Windows.Forms.Button();
-			this.label31 = new System.Windows.Forms.Label();
-			this.label32 = new System.Windows.Forms.Label();
-			this.label33 = new System.Windows.Forms.Label();
-			this.textBox20 = new System.Windows.Forms.TextBox();
-			this.textBox21 = new System.Windows.Forms.TextBox();
+			this.textBox_adres_ip_4 = new System.Windows.Forms.TextBox();
+			this.textBox_id_4 = new System.Windows.Forms.TextBox();
+			this.label38 = new System.Windows.Forms.Label();
+			this.label41 = new System.Windows.Forms.Label();
+			this.label40 = new System.Windows.Forms.Label();
+			this.label39 = new System.Windows.Forms.Label();
+			this.textBox_port_4 = new System.Windows.Forms.TextBox();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.textBox8 = new System.Windows.Forms.TextBox();
 			this.label20 = new System.Windows.Forms.Label();
@@ -115,14 +124,16 @@
 			this.textBox11 = new System.Windows.Forms.TextBox();
 			this.button11 = new System.Windows.Forms.Button();
 			this.groupBox7 = new System.Windows.Forms.GroupBox();
-			this.textBox12 = new System.Windows.Forms.TextBox();
 			this.button12 = new System.Windows.Forms.Button();
+			this.textBox_con_name_3 = new System.Windows.Forms.TextBox();
 			this.button13 = new System.Windows.Forms.Button();
-			this.label24 = new System.Windows.Forms.Label();
-			this.label25 = new System.Windows.Forms.Label();
+			this.textBox_adres_ip_3 = new System.Windows.Forms.TextBox();
+			this.textBox_id_3 = new System.Windows.Forms.TextBox();
 			this.label26 = new System.Windows.Forms.Label();
-			this.textBox13 = new System.Windows.Forms.TextBox();
-			this.textBox14 = new System.Windows.Forms.TextBox();
+			this.label33 = new System.Windows.Forms.Label();
+			this.label32 = new System.Windows.Forms.Label();
+			this.label31 = new System.Windows.Forms.Label();
+			this.textBox_port_3 = new System.Windows.Forms.TextBox();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
@@ -150,16 +161,20 @@
 			this.textBox_odbieranie_poczatek = new System.Windows.Forms.TextBox();
 			this.button_wyczysc_odbieranie = new System.Windows.Forms.Button();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
-			this.textBox5 = new System.Windows.Forms.TextBox();
+			this.textBox_con_name_2 = new System.Windows.Forms.TextBox();
 			this.button6 = new System.Windows.Forms.Button();
+			this.textBox_adres_ip_2 = new System.Windows.Forms.TextBox();
 			this.button7 = new System.Windows.Forms.Button();
-			this.label17 = new System.Windows.Forms.Label();
 			this.label18 = new System.Windows.Forms.Label();
+			this.textBox_id_2 = new System.Windows.Forms.TextBox();
 			this.label19 = new System.Windows.Forms.Label();
-			this.textBox6 = new System.Windows.Forms.TextBox();
-			this.textBox7 = new System.Windows.Forms.TextBox();
+			this.textBox_port_2 = new System.Windows.Forms.TextBox();
+			this.label24 = new System.Windows.Forms.Label();
+			this.label25 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.textBox_con_name = new System.Windows.Forms.TextBox();
 			this.textBox_adres_ip = new System.Windows.Forms.TextBox();
+			this.label17 = new System.Windows.Forms.Label();
 			this.button_polacz_modbus = new System.Windows.Forms.Button();
 			this.button_rozlacz_modbus = new System.Windows.Forms.Button();
 			this.label_adres_ip = new System.Windows.Forms.Label();
@@ -415,6 +430,11 @@
 			// 
 			// tabPage_polaczenie
 			// 
+			this.tabPage_polaczenie.Controls.Add(this.checkBox_active_con_5);
+			this.tabPage_polaczenie.Controls.Add(this.checkBox_active_con_4);
+			this.tabPage_polaczenie.Controls.Add(this.checkBox_active_con_3);
+			this.tabPage_polaczenie.Controls.Add(this.checkBox_active_con_2);
+			this.tabPage_polaczenie.Controls.Add(this.checkBox_active_con);
 			this.tabPage_polaczenie.Controls.Add(this.groupBox10);
 			this.tabPage_polaczenie.Controls.Add(this.groupBox11);
 			this.tabPage_polaczenie.Controls.Add(this.groupBox8);
@@ -428,6 +448,43 @@
 			resources.ApplyResources(this.tabPage_polaczenie, "tabPage_polaczenie");
 			this.tabPage_polaczenie.Name = "tabPage_polaczenie";
 			this.tabPage_polaczenie.UseVisualStyleBackColor = true;
+			// 
+			// checkBox_active_con_5
+			// 
+			resources.ApplyResources(this.checkBox_active_con_5, "checkBox_active_con_5");
+			this.checkBox_active_con_5.Name = "checkBox_active_con_5";
+			this.checkBox_active_con_5.UseVisualStyleBackColor = true;
+			this.checkBox_active_con_5.CheckedChanged += new System.EventHandler(this.checkBox_active_con_5_CheckedChanged);
+			// 
+			// checkBox_active_con_4
+			// 
+			resources.ApplyResources(this.checkBox_active_con_4, "checkBox_active_con_4");
+			this.checkBox_active_con_4.Name = "checkBox_active_con_4";
+			this.checkBox_active_con_4.UseVisualStyleBackColor = true;
+			this.checkBox_active_con_4.CheckedChanged += new System.EventHandler(this.checkBox_active_con_4_CheckedChanged);
+			// 
+			// checkBox_active_con_3
+			// 
+			resources.ApplyResources(this.checkBox_active_con_3, "checkBox_active_con_3");
+			this.checkBox_active_con_3.Name = "checkBox_active_con_3";
+			this.checkBox_active_con_3.UseVisualStyleBackColor = true;
+			this.checkBox_active_con_3.CheckedChanged += new System.EventHandler(this.checkBox_active_con_3_CheckedChanged);
+			// 
+			// checkBox_active_con_2
+			// 
+			resources.ApplyResources(this.checkBox_active_con_2, "checkBox_active_con_2");
+			this.checkBox_active_con_2.Name = "checkBox_active_con_2";
+			this.checkBox_active_con_2.UseVisualStyleBackColor = true;
+			this.checkBox_active_con_2.CheckedChanged += new System.EventHandler(this.checkBox_active_con_2_CheckedChanged);
+			// 
+			// checkBox_active_con
+			// 
+			resources.ApplyResources(this.checkBox_active_con, "checkBox_active_con");
+			this.checkBox_active_con.Checked = true;
+			this.checkBox_active_con.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.checkBox_active_con.Name = "checkBox_active_con";
+			this.checkBox_active_con.UseVisualStyleBackColor = true;
+			this.checkBox_active_con.CheckedChanged += new System.EventHandler(this.checkBox_active_con_CheckedChanged);
 			// 
 			// groupBox10
 			// 
@@ -517,22 +574,19 @@
 			// 
 			// groupBox11
 			// 
-			this.groupBox11.Controls.Add(this.textBox26);
 			this.groupBox11.Controls.Add(this.button24);
+			this.groupBox11.Controls.Add(this.textBox_con_name_5);
 			this.groupBox11.Controls.Add(this.button25);
-			this.groupBox11.Controls.Add(this.label38);
-			this.groupBox11.Controls.Add(this.label39);
-			this.groupBox11.Controls.Add(this.label40);
-			this.groupBox11.Controls.Add(this.textBox27);
-			this.groupBox11.Controls.Add(this.textBox28);
+			this.groupBox11.Controls.Add(this.textBox_adres_ip_5);
+			this.groupBox11.Controls.Add(this.textBox_id_5);
+			this.groupBox11.Controls.Add(this.label42);
+			this.groupBox11.Controls.Add(this.label45);
+			this.groupBox11.Controls.Add(this.label44);
+			this.groupBox11.Controls.Add(this.label43);
+			this.groupBox11.Controls.Add(this.textBox_port_5);
 			resources.ApplyResources(this.groupBox11, "groupBox11");
 			this.groupBox11.Name = "groupBox11";
 			this.groupBox11.TabStop = false;
-			// 
-			// textBox26
-			// 
-			resources.ApplyResources(this.textBox26, "textBox26");
-			this.textBox26.Name = "textBox26";
 			// 
 			// button24
 			// 
@@ -540,38 +594,51 @@
 			this.button24.Name = "button24";
 			this.button24.UseVisualStyleBackColor = true;
 			// 
+			// textBox_con_name_5
+			// 
+			resources.ApplyResources(this.textBox_con_name_5, "textBox_con_name_5");
+			this.textBox_con_name_5.Name = "textBox_con_name_5";
+			// 
 			// button25
 			// 
 			resources.ApplyResources(this.button25, "button25");
 			this.button25.Name = "button25";
 			this.button25.UseVisualStyleBackColor = true;
 			// 
-			// label38
+			// textBox_adres_ip_5
 			// 
-			resources.ApplyResources(this.label38, "label38");
-			this.label38.Name = "label38";
+			resources.ApplyResources(this.textBox_adres_ip_5, "textBox_adres_ip_5");
+			this.textBox_adres_ip_5.Name = "textBox_adres_ip_5";
 			// 
-			// label39
+			// textBox_id_5
 			// 
-			resources.ApplyResources(this.label39, "label39");
-			this.label39.Name = "label39";
+			resources.ApplyResources(this.textBox_id_5, "textBox_id_5");
+			this.textBox_id_5.Name = "textBox_id_5";
 			// 
-			// label40
+			// label42
 			// 
-			resources.ApplyResources(this.label40, "label40");
-			this.label40.Name = "label40";
+			resources.ApplyResources(this.label42, "label42");
+			this.label42.Name = "label42";
 			// 
-			// textBox27
+			// label45
 			// 
-			resources.ApplyResources(this.textBox27, "textBox27");
-			this.textBox27.Name = "textBox27";
-			this.textBox27.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
+			resources.ApplyResources(this.label45, "label45");
+			this.label45.Name = "label45";
 			// 
-			// textBox28
+			// label44
 			// 
-			resources.ApplyResources(this.textBox28, "textBox28");
-			this.textBox28.Name = "textBox28";
-			this.textBox28.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
+			resources.ApplyResources(this.label44, "label44");
+			this.label44.Name = "label44";
+			// 
+			// label43
+			// 
+			resources.ApplyResources(this.label43, "label43");
+			this.label43.Name = "label43";
+			// 
+			// textBox_port_5
+			// 
+			resources.ApplyResources(this.textBox_port_5, "textBox_port_5");
+			this.textBox_port_5.Name = "textBox_port_5";
 			// 
 			// groupBox8
 			// 
@@ -661,22 +728,19 @@
 			// 
 			// groupBox9
 			// 
-			this.groupBox9.Controls.Add(this.textBox19);
 			this.groupBox9.Controls.Add(this.button18);
+			this.groupBox9.Controls.Add(this.textBox_con_name_4);
 			this.groupBox9.Controls.Add(this.button19);
-			this.groupBox9.Controls.Add(this.label31);
-			this.groupBox9.Controls.Add(this.label32);
-			this.groupBox9.Controls.Add(this.label33);
-			this.groupBox9.Controls.Add(this.textBox20);
-			this.groupBox9.Controls.Add(this.textBox21);
+			this.groupBox9.Controls.Add(this.textBox_adres_ip_4);
+			this.groupBox9.Controls.Add(this.textBox_id_4);
+			this.groupBox9.Controls.Add(this.label38);
+			this.groupBox9.Controls.Add(this.label41);
+			this.groupBox9.Controls.Add(this.label40);
+			this.groupBox9.Controls.Add(this.label39);
+			this.groupBox9.Controls.Add(this.textBox_port_4);
 			resources.ApplyResources(this.groupBox9, "groupBox9");
 			this.groupBox9.Name = "groupBox9";
 			this.groupBox9.TabStop = false;
-			// 
-			// textBox19
-			// 
-			resources.ApplyResources(this.textBox19, "textBox19");
-			this.textBox19.Name = "textBox19";
 			// 
 			// button18
 			// 
@@ -684,38 +748,51 @@
 			this.button18.Name = "button18";
 			this.button18.UseVisualStyleBackColor = true;
 			// 
+			// textBox_con_name_4
+			// 
+			resources.ApplyResources(this.textBox_con_name_4, "textBox_con_name_4");
+			this.textBox_con_name_4.Name = "textBox_con_name_4";
+			// 
 			// button19
 			// 
 			resources.ApplyResources(this.button19, "button19");
 			this.button19.Name = "button19";
 			this.button19.UseVisualStyleBackColor = true;
 			// 
-			// label31
+			// textBox_adres_ip_4
 			// 
-			resources.ApplyResources(this.label31, "label31");
-			this.label31.Name = "label31";
+			resources.ApplyResources(this.textBox_adres_ip_4, "textBox_adres_ip_4");
+			this.textBox_adres_ip_4.Name = "textBox_adres_ip_4";
 			// 
-			// label32
+			// textBox_id_4
 			// 
-			resources.ApplyResources(this.label32, "label32");
-			this.label32.Name = "label32";
+			resources.ApplyResources(this.textBox_id_4, "textBox_id_4");
+			this.textBox_id_4.Name = "textBox_id_4";
 			// 
-			// label33
+			// label38
 			// 
-			resources.ApplyResources(this.label33, "label33");
-			this.label33.Name = "label33";
+			resources.ApplyResources(this.label38, "label38");
+			this.label38.Name = "label38";
 			// 
-			// textBox20
+			// label41
 			// 
-			resources.ApplyResources(this.textBox20, "textBox20");
-			this.textBox20.Name = "textBox20";
-			this.textBox20.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
+			resources.ApplyResources(this.label41, "label41");
+			this.label41.Name = "label41";
 			// 
-			// textBox21
+			// label40
 			// 
-			resources.ApplyResources(this.textBox21, "textBox21");
-			this.textBox21.Name = "textBox21";
-			this.textBox21.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
+			resources.ApplyResources(this.label40, "label40");
+			this.label40.Name = "label40";
+			// 
+			// label39
+			// 
+			resources.ApplyResources(this.label39, "label39");
+			this.label39.Name = "label39";
+			// 
+			// textBox_port_4
+			// 
+			resources.ApplyResources(this.textBox_port_4, "textBox_port_4");
+			this.textBox_port_4.Name = "textBox_port_4";
 			// 
 			// groupBox6
 			// 
@@ -805,22 +882,19 @@
 			// 
 			// groupBox7
 			// 
-			this.groupBox7.Controls.Add(this.textBox12);
 			this.groupBox7.Controls.Add(this.button12);
+			this.groupBox7.Controls.Add(this.textBox_con_name_3);
 			this.groupBox7.Controls.Add(this.button13);
-			this.groupBox7.Controls.Add(this.label24);
-			this.groupBox7.Controls.Add(this.label25);
+			this.groupBox7.Controls.Add(this.textBox_adres_ip_3);
+			this.groupBox7.Controls.Add(this.textBox_id_3);
 			this.groupBox7.Controls.Add(this.label26);
-			this.groupBox7.Controls.Add(this.textBox13);
-			this.groupBox7.Controls.Add(this.textBox14);
+			this.groupBox7.Controls.Add(this.label33);
+			this.groupBox7.Controls.Add(this.label32);
+			this.groupBox7.Controls.Add(this.label31);
+			this.groupBox7.Controls.Add(this.textBox_port_3);
 			resources.ApplyResources(this.groupBox7, "groupBox7");
 			this.groupBox7.Name = "groupBox7";
 			this.groupBox7.TabStop = false;
-			// 
-			// textBox12
-			// 
-			resources.ApplyResources(this.textBox12, "textBox12");
-			this.textBox12.Name = "textBox12";
 			// 
 			// button12
 			// 
@@ -828,38 +902,51 @@
 			this.button12.Name = "button12";
 			this.button12.UseVisualStyleBackColor = true;
 			// 
+			// textBox_con_name_3
+			// 
+			resources.ApplyResources(this.textBox_con_name_3, "textBox_con_name_3");
+			this.textBox_con_name_3.Name = "textBox_con_name_3";
+			// 
 			// button13
 			// 
 			resources.ApplyResources(this.button13, "button13");
 			this.button13.Name = "button13";
 			this.button13.UseVisualStyleBackColor = true;
 			// 
-			// label24
+			// textBox_adres_ip_3
 			// 
-			resources.ApplyResources(this.label24, "label24");
-			this.label24.Name = "label24";
+			resources.ApplyResources(this.textBox_adres_ip_3, "textBox_adres_ip_3");
+			this.textBox_adres_ip_3.Name = "textBox_adres_ip_3";
 			// 
-			// label25
+			// textBox_id_3
 			// 
-			resources.ApplyResources(this.label25, "label25");
-			this.label25.Name = "label25";
+			resources.ApplyResources(this.textBox_id_3, "textBox_id_3");
+			this.textBox_id_3.Name = "textBox_id_3";
 			// 
 			// label26
 			// 
 			resources.ApplyResources(this.label26, "label26");
 			this.label26.Name = "label26";
 			// 
-			// textBox13
+			// label33
 			// 
-			resources.ApplyResources(this.textBox13, "textBox13");
-			this.textBox13.Name = "textBox13";
-			this.textBox13.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
+			resources.ApplyResources(this.label33, "label33");
+			this.label33.Name = "label33";
 			// 
-			// textBox14
+			// label32
 			// 
-			resources.ApplyResources(this.textBox14, "textBox14");
-			this.textBox14.Name = "textBox14";
-			this.textBox14.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
+			resources.ApplyResources(this.label32, "label32");
+			this.label32.Name = "label32";
+			// 
+			// label31
+			// 
+			resources.ApplyResources(this.label31, "label31");
+			this.label31.Name = "label31";
+			// 
+			// textBox_port_3
+			// 
+			resources.ApplyResources(this.textBox_port_3, "textBox_port_3");
+			this.textBox_port_3.Name = "textBox_port_3";
 			// 
 			// groupBox4
 			// 
@@ -1043,22 +1130,24 @@
 			// 
 			// groupBox5
 			// 
-			this.groupBox5.Controls.Add(this.textBox5);
+			this.groupBox5.Controls.Add(this.textBox_con_name_2);
 			this.groupBox5.Controls.Add(this.button6);
+			this.groupBox5.Controls.Add(this.textBox_adres_ip_2);
 			this.groupBox5.Controls.Add(this.button7);
-			this.groupBox5.Controls.Add(this.label17);
 			this.groupBox5.Controls.Add(this.label18);
+			this.groupBox5.Controls.Add(this.textBox_id_2);
 			this.groupBox5.Controls.Add(this.label19);
-			this.groupBox5.Controls.Add(this.textBox6);
-			this.groupBox5.Controls.Add(this.textBox7);
+			this.groupBox5.Controls.Add(this.textBox_port_2);
+			this.groupBox5.Controls.Add(this.label24);
+			this.groupBox5.Controls.Add(this.label25);
 			resources.ApplyResources(this.groupBox5, "groupBox5");
 			this.groupBox5.Name = "groupBox5";
 			this.groupBox5.TabStop = false;
 			// 
-			// textBox5
+			// textBox_con_name_2
 			// 
-			resources.ApplyResources(this.textBox5, "textBox5");
-			this.textBox5.Name = "textBox5";
+			resources.ApplyResources(this.textBox_con_name_2, "textBox_con_name_2");
+			this.textBox_con_name_2.Name = "textBox_con_name_2";
 			// 
 			// button6
 			// 
@@ -1066,42 +1155,52 @@
 			this.button6.Name = "button6";
 			this.button6.UseVisualStyleBackColor = true;
 			// 
+			// textBox_adres_ip_2
+			// 
+			resources.ApplyResources(this.textBox_adres_ip_2, "textBox_adres_ip_2");
+			this.textBox_adres_ip_2.Name = "textBox_adres_ip_2";
+			// 
 			// button7
 			// 
 			resources.ApplyResources(this.button7, "button7");
 			this.button7.Name = "button7";
 			this.button7.UseVisualStyleBackColor = true;
 			// 
-			// label17
-			// 
-			resources.ApplyResources(this.label17, "label17");
-			this.label17.Name = "label17";
-			// 
 			// label18
 			// 
 			resources.ApplyResources(this.label18, "label18");
 			this.label18.Name = "label18";
+			// 
+			// textBox_id_2
+			// 
+			resources.ApplyResources(this.textBox_id_2, "textBox_id_2");
+			this.textBox_id_2.Name = "textBox_id_2";
 			// 
 			// label19
 			// 
 			resources.ApplyResources(this.label19, "label19");
 			this.label19.Name = "label19";
 			// 
-			// textBox6
+			// textBox_port_2
 			// 
-			resources.ApplyResources(this.textBox6, "textBox6");
-			this.textBox6.Name = "textBox6";
-			this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
+			resources.ApplyResources(this.textBox_port_2, "textBox_port_2");
+			this.textBox_port_2.Name = "textBox_port_2";
 			// 
-			// textBox7
+			// label24
 			// 
-			resources.ApplyResources(this.textBox7, "textBox7");
-			this.textBox7.Name = "textBox7";
-			this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
+			resources.ApplyResources(this.label24, "label24");
+			this.label24.Name = "label24";
+			// 
+			// label25
+			// 
+			resources.ApplyResources(this.label25, "label25");
+			this.label25.Name = "label25";
 			// 
 			// groupBox2
 			// 
+			this.groupBox2.Controls.Add(this.textBox_con_name);
 			this.groupBox2.Controls.Add(this.textBox_adres_ip);
+			this.groupBox2.Controls.Add(this.label17);
 			this.groupBox2.Controls.Add(this.button_polacz_modbus);
 			this.groupBox2.Controls.Add(this.button_rozlacz_modbus);
 			this.groupBox2.Controls.Add(this.label_adres_ip);
@@ -1113,10 +1212,20 @@
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.TabStop = false;
 			// 
+			// textBox_con_name
+			// 
+			resources.ApplyResources(this.textBox_con_name, "textBox_con_name");
+			this.textBox_con_name.Name = "textBox_con_name";
+			// 
 			// textBox_adres_ip
 			// 
 			resources.ApplyResources(this.textBox_adres_ip, "textBox_adres_ip");
 			this.textBox_adres_ip.Name = "textBox_adres_ip";
+			// 
+			// label17
+			// 
+			resources.ApplyResources(this.label17, "label17");
+			this.label17.Name = "label17";
 			// 
 			// button_polacz_modbus
 			// 
@@ -1550,6 +1659,7 @@
 			this.menuStrip1.PerformLayout();
 			this.tabControl_okna.ResumeLayout(false);
 			this.tabPage_polaczenie.ResumeLayout(false);
+			this.tabPage_polaczenie.PerformLayout();
 			this.groupBox10.ResumeLayout(false);
 			this.groupBox10.PerformLayout();
 			this.groupBox11.ResumeLayout(false);
@@ -1680,15 +1790,6 @@
 		private System.Windows.Forms.TextBox textBox24;
 		private System.Windows.Forms.TextBox textBox25;
 		private System.Windows.Forms.Button button23;
-		private System.Windows.Forms.GroupBox groupBox11;
-		private System.Windows.Forms.TextBox textBox26;
-		private System.Windows.Forms.Button button24;
-		private System.Windows.Forms.Button button25;
-		private System.Windows.Forms.Label label38;
-		private System.Windows.Forms.Label label39;
-		private System.Windows.Forms.Label label40;
-		private System.Windows.Forms.TextBox textBox27;
-		private System.Windows.Forms.TextBox textBox28;
 		private System.Windows.Forms.GroupBox groupBox8;
 		private System.Windows.Forms.TextBox textBox15;
 		private System.Windows.Forms.Label label27;
@@ -1703,14 +1804,8 @@
 		private System.Windows.Forms.TextBox textBox18;
 		private System.Windows.Forms.Button button17;
 		private System.Windows.Forms.GroupBox groupBox9;
-		private System.Windows.Forms.TextBox textBox19;
 		private System.Windows.Forms.Button button18;
 		private System.Windows.Forms.Button button19;
-		private System.Windows.Forms.Label label31;
-		private System.Windows.Forms.Label label32;
-		private System.Windows.Forms.Label label33;
-		private System.Windows.Forms.TextBox textBox20;
-		private System.Windows.Forms.TextBox textBox21;
 		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.TextBox textBox8;
 		private System.Windows.Forms.Label label20;
@@ -1725,14 +1820,8 @@
 		private System.Windows.Forms.TextBox textBox11;
 		private System.Windows.Forms.Button button11;
 		private System.Windows.Forms.GroupBox groupBox7;
-		private System.Windows.Forms.TextBox textBox12;
 		private System.Windows.Forms.Button button12;
 		private System.Windows.Forms.Button button13;
-		private System.Windows.Forms.Label label24;
-		private System.Windows.Forms.Label label25;
-		private System.Windows.Forms.Label label26;
-		private System.Windows.Forms.TextBox textBox13;
-		private System.Windows.Forms.TextBox textBox14;
 		private System.Windows.Forms.GroupBox groupBox4;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label6;
@@ -1747,14 +1836,10 @@
 		private System.Windows.Forms.TextBox textBox4;
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.GroupBox groupBox5;
-		private System.Windows.Forms.TextBox textBox5;
+		private System.Windows.Forms.TextBox textBox_con_name;
 		private System.Windows.Forms.Button button6;
 		private System.Windows.Forms.Button button7;
 		private System.Windows.Forms.Label label17;
-		private System.Windows.Forms.Label label18;
-		private System.Windows.Forms.Label label19;
-		private System.Windows.Forms.TextBox textBox6;
-		private System.Windows.Forms.TextBox textBox7;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_uzupelnij;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip_odebrane;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_kolor_tla;
@@ -1780,6 +1865,46 @@
 		private System.Windows.Forms.Button button_wyczysc_log;
 		private System.Windows.Forms.Button button_zapisz_log;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog_log;
+		private System.Windows.Forms.GroupBox groupBox11;
+		private System.Windows.Forms.CheckBox checkBox_active_con_5;
+		private System.Windows.Forms.Button button24;
+		private System.Windows.Forms.TextBox textBox_con_name_5;
+		private System.Windows.Forms.Button button25;
+		private System.Windows.Forms.TextBox textBox_adres_ip_5;
+		private System.Windows.Forms.TextBox textBox_id_5;
+		private System.Windows.Forms.Label label42;
+		private System.Windows.Forms.Label label45;
+		private System.Windows.Forms.Label label44;
+		private System.Windows.Forms.Label label43;
+		private System.Windows.Forms.TextBox textBox_port_5;
+		private System.Windows.Forms.CheckBox checkBox_active_con_4;
+		private System.Windows.Forms.TextBox textBox_con_name_4;
+		private System.Windows.Forms.TextBox textBox_adres_ip_4;
+		private System.Windows.Forms.TextBox textBox_id_4;
+		private System.Windows.Forms.Label label38;
+		private System.Windows.Forms.Label label41;
+		private System.Windows.Forms.Label label40;
+		private System.Windows.Forms.Label label39;
+		private System.Windows.Forms.TextBox textBox_port_4;
+		private System.Windows.Forms.CheckBox checkBox_active_con_3;
+		private System.Windows.Forms.TextBox textBox_con_name_3;
+		private System.Windows.Forms.TextBox textBox_adres_ip_3;
+		private System.Windows.Forms.TextBox textBox_id_3;
+		private System.Windows.Forms.Label label26;
+		private System.Windows.Forms.Label label33;
+		private System.Windows.Forms.Label label32;
+		private System.Windows.Forms.Label label31;
+		private System.Windows.Forms.TextBox textBox_port_3;
+		private System.Windows.Forms.CheckBox checkBox_active_con_2;
+		private System.Windows.Forms.TextBox textBox_con_name_2;
+		private System.Windows.Forms.TextBox textBox_adres_ip_2;
+		private System.Windows.Forms.Label label18;
+		private System.Windows.Forms.TextBox textBox_id_2;
+		private System.Windows.Forms.Label label19;
+		private System.Windows.Forms.TextBox textBox_port_2;
+		private System.Windows.Forms.Label label24;
+		private System.Windows.Forms.Label label25;
+		private System.Windows.Forms.CheckBox checkBox_active_con;
 	}
 }
 
