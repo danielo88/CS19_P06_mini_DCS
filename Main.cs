@@ -11,13 +11,12 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.Xml;
 
-
 namespace CS19_P06_mini_DCS
 {
 	public partial class Main : Form
 	{
 		//zmienne
-
+		
 		//string adres_ip;// = new string();
 		//int liczba_komorek_wysylanie = 0;
 		//int liczba_komorek_odbieranie = 0;
@@ -37,7 +36,7 @@ namespace CS19_P06_mini_DCS
 		readonly int max_connection = 5;
 		readonly int szerokosc_komorki = 60;
 		readonly int ilosc_wierszy = 10;
-
+		
 		public Color color_textbox_background = Color.White;
 		public Color color_textbox_text = Color.Black;
 
@@ -1017,15 +1016,15 @@ namespace CS19_P06_mini_DCS
 			if(openFileDialog_modbus.ShowDialog() == DialogResult.OK)
 			{
 				string plik = openFileDialog_modbus.FileName;
+				
 				XmlDocument xml_doc = new XmlDocument();
-
 				try
 				{
 
 					xml_doc.Load(plik);
 
 					//ustawienia okna
-					Main.ActiveForm.Size = new Size(Convert.ToInt32(xml_doc.GetElementsByTagName("rozmiar_okna_szerokosc").Item(0).InnerText), Convert.ToInt32(xml_doc.GetElementsByTagName("rozmiar_okna_wysokosc").Item(0).InnerText) );
+					Main.ActiveForm.Size = new Size(Convert.ToInt32(xml_doc.GetElementsByTagName("rozmiar_okna_szerokosc").Item(0).InnerText), Convert.ToInt32(xml_doc.GetElementsByTagName("rozmiar_okna_wysokosc").Item(0).InnerText));
 
 					//ustawienia modbus
 
@@ -1047,7 +1046,7 @@ namespace CS19_P06_mini_DCS
 					//ustawienia scada
 					scada_nr = xml_doc.GetElementsByTagName("scada").Count;
 
-					for(int i = 0; i < scada_nr; i++)
+					for (int i = 0; i < scada_nr; i++)
 					{
 						ekran_scada[i].opis_text = xml_doc.GetElementsByTagName("opis").Item(i).InnerText;
 						ekran_scada[i].nr_obiektu = Convert.ToInt32(xml_doc.GetElementsByTagName("nr_obiektu").Item(i).InnerText);
@@ -1061,11 +1060,11 @@ namespace CS19_P06_mini_DCS
 
 					}
 
-					if(scada_nr != 0)
+					if (scada_nr != 0)
 						ToolStripMenuItem_uzupelnij.Enabled = true;
 
 				}
-				catch(XmlException ex)
+				catch (XmlException ex)
 				{
 					MessageBox.Show(ex.Message);
 					richTextBox_log.AppendText("----\n" + ex.Message + "\n");
