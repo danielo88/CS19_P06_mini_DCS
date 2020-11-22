@@ -56,6 +56,7 @@ namespace CS19_P06_mini_DCS
 
 		public struct MODBUS_TCP
 		{
+			public EasyModbus.ModbusClient modbus_client;
 			public string adres_ip;
 			public int port;
 			public int ID;
@@ -112,13 +113,13 @@ namespace CS19_P06_mini_DCS
 		public Int32 kontrolka_nr_parametry;
 
 //		EasyModbus.ModbusServer modbus_server;
-		private EasyModbus.ModbusClient modbus_client;
+		//private EasyModbus.ModbusClient modbus_client;
 		private object send_mouse_enter;
 
 		public Main()
 		{
 			polaczenie_modbus = new MODBUS_TCP[max_connection];
-			modbus_client = new EasyModbus.ModbusClient("localhost", 501);
+			//modbus_client = new EasyModbus.ModbusClient("localhost", 501);
 			InitializeComponent();
 		}
 
@@ -345,12 +346,21 @@ namespace CS19_P06_mini_DCS
 			}else
 				toolStripStatusLabel_czas.Text = toolStripStatusLabel_czas.Text + now.Minute.ToString() + " " + znak + " " + now.Year.ToString() + "-"  + now.Month.ToString() + "-" + now.Day.ToString() + " ";
 
-			if (modbus_client.Connected)
+			if (polaczenie_modbus[0].modbus_client != null && polaczenie_modbus[0].modbus_client.Connected)
+			{
 				toolStripStatusLabel_status.Text = " Połączono";
-			else
-				toolStripStatusLabel_status.Text = " Rozłączono";
+				button_rozlacz_modbus.Enabled = true;
+				button_polacz_modbus.Enabled = false;
+				toolStripStatusLabel_parametry.Text = polaczenie_modbus[0].modbus_client.IPAddress.ToString() + ":" + polaczenie_modbus[0].modbus_client.Port.ToString() + "     ID:" + polaczenie_modbus[0].modbus_client.UnitIdentifier.ToString();
 
-			toolStripStatusLabel_parametry.Text = modbus_client.IPAddress.ToString() + ":" + modbus_client.Port.ToString() + "     ID:" + modbus_client.UnitIdentifier.ToString();
+			}
+			else
+			{
+				toolStripStatusLabel_status.Text = " Rozłączono";
+				button_rozlacz_modbus.Enabled = false;
+				button_polacz_modbus.Enabled = true;
+			}
+			
 
 			if (scada_nr != 0)
 				ToolStripMenuItem_odswiez.Enabled = true;
@@ -748,9 +758,10 @@ namespace CS19_P06_mini_DCS
 				polaczenie_modbus[liczba_polaczen - 1].poczatek_odbierania = Convert.ToInt32(textBox_odbieranie_poczatek.Text);
 				polaczenie_modbus[liczba_polaczen - 1].poczatek_wysylania = Convert.ToInt32(textBox_wysylanie_poczatek.Text);
 
-				modbus_client = new EasyModbus.ModbusClient(polaczenie_modbus[liczba_polaczen - 1].adres_ip, polaczenie_modbus[liczba_polaczen - 1].port);
-				modbus_client.UnitIdentifier = Convert.ToByte(textBox_id.Text);
-				modbus_client.Connect();
+				polaczenie_modbus[0].modbus_client = new EasyModbus.ModbusClient(polaczenie_modbus[liczba_polaczen - 1].adres_ip, polaczenie_modbus[liczba_polaczen - 1].port);
+				polaczenie_modbus[0].modbus_client.UnitIdentifier = Convert.ToByte(textBox_id.Text);
+				polaczenie_modbus[0].nazwa_polaczenia = textBox_con_name.Text;
+				polaczenie_modbus[0].modbus_client.Connect();
 				timer_client.Enabled = true;
 			}
 			catch (Exception ex)
@@ -765,9 +776,9 @@ namespace CS19_P06_mini_DCS
 		{
 			try
 			{
-				if(modbus_client != null)
+				if(polaczenie_modbus[0].modbus_client != null)
 				{
-					modbus_client.Disconnect();
+					polaczenie_modbus[0].modbus_client.Disconnect();
 				}
 
 				timer_client.Enabled = false;
@@ -815,9 +826,9 @@ namespace CS19_P06_mini_DCS
 
 				}
 				int poczatek = (Convert.ToInt16(textBox_wysylanie_poczatek.Text) - 1);
-				modbus_client.WriteMultipleRegisters(poczatek, tab);
+				polaczenie_modbus[0].modbus_client.WriteMultipleRegisters(poczatek, tab);
 
-				int[] readHoldingRegisters = modbus_client.ReadHoldingRegisters((Convert.ToInt16(textBox_odbieranie_poczatek.Text) - 1), polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych);    //Read 10 Holding Registers from Server, starting with Address 1
+				int[] readHoldingRegisters = polaczenie_modbus[0].modbus_client.ReadHoldingRegisters((Convert.ToInt16(textBox_odbieranie_poczatek.Text) - 1), polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych);    //Read 10 Holding Registers from Server, starting with Address 1
 
 				for (int i = 0; i < polaczenie_modbus[liczba_polaczen - 1].liczba_komorek_odbieranych; i++)
 				{
@@ -872,9 +883,9 @@ namespace CS19_P06_mini_DCS
 		{
 			try
 			{
-				if (modbus_client != null)
+				if (polaczenie_modbus[0].modbus_client != null)
 				{
-					modbus_client.Disconnect();
+					polaczenie_modbus[0].modbus_client.Disconnect();
 				}
 				
 				timer_client.Enabled = false;
@@ -1566,6 +1577,19 @@ namespace CS19_P06_mini_DCS
 
 			}
 
+		}
+
+		private void tabControl_okna_Selecting(object sender, TabControlCancelEventArgs e)
+		{
+			if (e.TabPageIndex == 1)
+			{
+				comboBox_polaczenia.Items.Clear();
+				comboBox_polaczenia.Items.Add("1 - " + textBox_con_name.Text);
+				comboBox_polaczenia.Items.Add("2 - " + textBox_con_name_2.Text);
+				comboBox_polaczenia.Items.Add("3 - " + textBox_con_name_3.Text);
+				comboBox_polaczenia.Items.Add("4 - " + textBox_con_name_4.Text);
+				comboBox_polaczenia.Items.Add("5 - " + textBox_con_name_5.Text);
+			}
 		}
 	}
 }

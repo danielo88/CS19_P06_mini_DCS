@@ -52,6 +52,7 @@
 			this.toolStripMenuItem_zamknij = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_Edycja = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_uzupelnij = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItem_odswiez = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_Pomoc = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_about = new System.Windows.Forms.ToolStripMenuItem();
 			this.timer_1s = new System.Windows.Forms.Timer(this.components);
@@ -76,9 +77,9 @@
 			this.textBox25 = new System.Windows.Forms.TextBox();
 			this.button23 = new System.Windows.Forms.Button();
 			this.groupBox11 = new System.Windows.Forms.GroupBox();
-			this.button24 = new System.Windows.Forms.Button();
+			this.button_polacz_modbus_5 = new System.Windows.Forms.Button();
 			this.textBox_con_name_5 = new System.Windows.Forms.TextBox();
-			this.button25 = new System.Windows.Forms.Button();
+			this.button_rozlacz_modbus_5 = new System.Windows.Forms.Button();
 			this.textBox_adres_ip_5 = new System.Windows.Forms.TextBox();
 			this.textBox_id_5 = new System.Windows.Forms.TextBox();
 			this.label42 = new System.Windows.Forms.Label();
@@ -100,9 +101,9 @@
 			this.textBox18 = new System.Windows.Forms.TextBox();
 			this.button17 = new System.Windows.Forms.Button();
 			this.groupBox9 = new System.Windows.Forms.GroupBox();
-			this.button18 = new System.Windows.Forms.Button();
+			this.button_polacz_modbus_4 = new System.Windows.Forms.Button();
 			this.textBox_con_name_4 = new System.Windows.Forms.TextBox();
-			this.button19 = new System.Windows.Forms.Button();
+			this.button_rozlacz_modbus_4 = new System.Windows.Forms.Button();
 			this.textBox_adres_ip_4 = new System.Windows.Forms.TextBox();
 			this.textBox_id_4 = new System.Windows.Forms.TextBox();
 			this.label38 = new System.Windows.Forms.Label();
@@ -124,9 +125,9 @@
 			this.textBox11 = new System.Windows.Forms.TextBox();
 			this.button11 = new System.Windows.Forms.Button();
 			this.groupBox7 = new System.Windows.Forms.GroupBox();
-			this.button12 = new System.Windows.Forms.Button();
+			this.button_polacz_modbus_3 = new System.Windows.Forms.Button();
 			this.textBox_con_name_3 = new System.Windows.Forms.TextBox();
-			this.button13 = new System.Windows.Forms.Button();
+			this.button_rozlacz_modbus_3 = new System.Windows.Forms.Button();
 			this.textBox_adres_ip_3 = new System.Windows.Forms.TextBox();
 			this.textBox_id_3 = new System.Windows.Forms.TextBox();
 			this.label26 = new System.Windows.Forms.Label();
@@ -162,9 +163,9 @@
 			this.button_wyczysc_odbieranie = new System.Windows.Forms.Button();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
 			this.textBox_con_name_2 = new System.Windows.Forms.TextBox();
-			this.button6 = new System.Windows.Forms.Button();
+			this.button_polacz_modbus_2 = new System.Windows.Forms.Button();
 			this.textBox_adres_ip_2 = new System.Windows.Forms.TextBox();
-			this.button7 = new System.Windows.Forms.Button();
+			this.button_rozlacz_modbus_2 = new System.Windows.Forms.Button();
 			this.label18 = new System.Windows.Forms.Label();
 			this.textBox_id_2 = new System.Windows.Forms.TextBox();
 			this.label19 = new System.Windows.Forms.Label();
@@ -182,11 +183,6 @@
 			this.label_ID = new System.Windows.Forms.Label();
 			this.textBox_port = new System.Windows.Forms.TextBox();
 			this.textBox_id = new System.Windows.Forms.TextBox();
-			this.tabPage_mapa = new System.Windows.Forms.TabPage();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.panel_wysylanie = new System.Windows.Forms.Panel();
-			this.panel_odbieranie = new System.Windows.Forms.Panel();
 			this.tabPage_DCS = new System.Windows.Forms.TabPage();
 			this.panel_scada = new System.Windows.Forms.Panel();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -216,6 +212,38 @@
 			this.button_kreska_pion = new System.Windows.Forms.Button();
 			this.button_pole_bajt = new System.Windows.Forms.Button();
 			this.button_dodaj_bit = new System.Windows.Forms.Button();
+			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.groupBox_stat_1 = new System.Windows.Forms.GroupBox();
+			this.textBox_status_1 = new System.Windows.Forms.TextBox();
+			this.label46 = new System.Windows.Forms.Label();
+			this.label47 = new System.Windows.Forms.Label();
+			this.textBox_name_1 = new System.Windows.Forms.TextBox();
+			this.groupBox_stat_2 = new System.Windows.Forms.GroupBox();
+			this.textBox_status_2 = new System.Windows.Forms.TextBox();
+			this.label48 = new System.Windows.Forms.Label();
+			this.label49 = new System.Windows.Forms.Label();
+			this.textBox_name_2 = new System.Windows.Forms.TextBox();
+			this.groupBox_stat_3 = new System.Windows.Forms.GroupBox();
+			this.textBox_status_3 = new System.Windows.Forms.TextBox();
+			this.label52 = new System.Windows.Forms.Label();
+			this.label53 = new System.Windows.Forms.Label();
+			this.textBox_name_3 = new System.Windows.Forms.TextBox();
+			this.panel = new System.Windows.Forms.Panel();
+			this.groupBox_stat_4 = new System.Windows.Forms.GroupBox();
+			this.textBox_status_4 = new System.Windows.Forms.TextBox();
+			this.label50 = new System.Windows.Forms.Label();
+			this.label51 = new System.Windows.Forms.Label();
+			this.textBox_name_4 = new System.Windows.Forms.TextBox();
+			this.groupBox_stat_5 = new System.Windows.Forms.GroupBox();
+			this.textBox_status_5 = new System.Windows.Forms.TextBox();
+			this.label54 = new System.Windows.Forms.Label();
+			this.label55 = new System.Windows.Forms.Label();
+			this.textBox_name_5 = new System.Windows.Forms.TextBox();
+			this.tabPage_mapa = new System.Windows.Forms.TabPage();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.panel_wysylanie = new System.Windows.Forms.Panel();
+			this.panel_odbieranie = new System.Windows.Forms.Panel();
 			this.richTextBox_log = new System.Windows.Forms.RichTextBox();
 			this.timer_client = new System.Windows.Forms.Timer(this.components);
 			this.saveFileDialog_modbus = new System.Windows.Forms.SaveFileDialog();
@@ -237,34 +265,8 @@
 			this.button_wyczysc_log = new System.Windows.Forms.Button();
 			this.button_zapisz_log = new System.Windows.Forms.Button();
 			this.saveFileDialog_log = new System.Windows.Forms.SaveFileDialog();
-			this.tabPage4 = new System.Windows.Forms.TabPage();
-			this.panel = new System.Windows.Forms.Panel();
-			this.label46 = new System.Windows.Forms.Label();
-			this.textBox_name_1 = new System.Windows.Forms.TextBox();
-			this.label47 = new System.Windows.Forms.Label();
-			this.textBox_status_1 = new System.Windows.Forms.TextBox();
-			this.ToolStripMenuItem_odswiez = new System.Windows.Forms.ToolStripMenuItem();
-			this.groupBox_stat_1 = new System.Windows.Forms.GroupBox();
-			this.groupBox_stat_2 = new System.Windows.Forms.GroupBox();
-			this.textBox_status_2 = new System.Windows.Forms.TextBox();
-			this.label48 = new System.Windows.Forms.Label();
-			this.label49 = new System.Windows.Forms.Label();
-			this.textBox_name_2 = new System.Windows.Forms.TextBox();
-			this.groupBox_stat_4 = new System.Windows.Forms.GroupBox();
-			this.textBox_status_4 = new System.Windows.Forms.TextBox();
-			this.label50 = new System.Windows.Forms.Label();
-			this.label51 = new System.Windows.Forms.Label();
-			this.textBox_name_4 = new System.Windows.Forms.TextBox();
-			this.groupBox_stat_3 = new System.Windows.Forms.GroupBox();
-			this.textBox_status_3 = new System.Windows.Forms.TextBox();
-			this.label52 = new System.Windows.Forms.Label();
-			this.label53 = new System.Windows.Forms.Label();
-			this.textBox_name_3 = new System.Windows.Forms.TextBox();
-			this.groupBox_stat_5 = new System.Windows.Forms.GroupBox();
-			this.textBox_status_5 = new System.Windows.Forms.TextBox();
-			this.label54 = new System.Windows.Forms.Label();
-			this.label55 = new System.Windows.Forms.Label();
-			this.textBox_name_5 = new System.Windows.Forms.TextBox();
+			this.comboBox_polaczenia = new System.Windows.Forms.ComboBox();
+			this.label56 = new System.Windows.Forms.Label();
 			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl_okna.SuspendLayout();
@@ -279,20 +281,20 @@
 			this.groupBox3.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			this.groupBox2.SuspendLayout();
-			this.tabPage_mapa.SuspendLayout();
 			this.tabPage_DCS.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage3.SuspendLayout();
 			this.groupBox1.SuspendLayout();
-			this.contextMenuStrip_odebrane.SuspendLayout();
-			this.contextMenuStrip_wysylane.SuspendLayout();
 			this.tabPage4.SuspendLayout();
 			this.groupBox_stat_1.SuspendLayout();
 			this.groupBox_stat_2.SuspendLayout();
-			this.groupBox_stat_4.SuspendLayout();
 			this.groupBox_stat_3.SuspendLayout();
+			this.groupBox_stat_4.SuspendLayout();
 			this.groupBox_stat_5.SuspendLayout();
+			this.tabPage_mapa.SuspendLayout();
+			this.contextMenuStrip_odebrane.SuspendLayout();
+			this.contextMenuStrip_wysylane.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// statusStrip1
@@ -436,6 +438,12 @@
 			this.ToolStripMenuItem_uzupelnij.Name = "ToolStripMenuItem_uzupelnij";
 			this.ToolStripMenuItem_uzupelnij.Click += new System.EventHandler(this.ToolStripMenuItem_uzupelnij_Click);
 			// 
+			// ToolStripMenuItem_odswiez
+			// 
+			this.ToolStripMenuItem_odswiez.Name = "ToolStripMenuItem_odswiez";
+			resources.ApplyResources(this.ToolStripMenuItem_odswiez, "ToolStripMenuItem_odswiez");
+			this.ToolStripMenuItem_odswiez.Click += new System.EventHandler(this.odświeżEkranToolStripMenuItem_Click);
+			// 
 			// toolStripMenuItem_Pomoc
 			// 
 			this.toolStripMenuItem_Pomoc.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -458,11 +466,12 @@
 			// 
 			resources.ApplyResources(this.tabControl_okna, "tabControl_okna");
 			this.tabControl_okna.Controls.Add(this.tabPage_polaczenie);
-			this.tabControl_okna.Controls.Add(this.tabPage_mapa);
 			this.tabControl_okna.Controls.Add(this.tabPage_DCS);
 			this.tabControl_okna.Controls.Add(this.tabPage4);
+			this.tabControl_okna.Controls.Add(this.tabPage_mapa);
 			this.tabControl_okna.Name = "tabControl_okna";
 			this.tabControl_okna.SelectedIndex = 0;
+			this.tabControl_okna.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl_okna_Selecting);
 			// 
 			// tabPage_polaczenie
 			// 
@@ -610,9 +619,9 @@
 			// 
 			// groupBox11
 			// 
-			this.groupBox11.Controls.Add(this.button24);
+			this.groupBox11.Controls.Add(this.button_polacz_modbus_5);
 			this.groupBox11.Controls.Add(this.textBox_con_name_5);
-			this.groupBox11.Controls.Add(this.button25);
+			this.groupBox11.Controls.Add(this.button_rozlacz_modbus_5);
 			this.groupBox11.Controls.Add(this.textBox_adres_ip_5);
 			this.groupBox11.Controls.Add(this.textBox_id_5);
 			this.groupBox11.Controls.Add(this.label42);
@@ -624,22 +633,22 @@
 			this.groupBox11.Name = "groupBox11";
 			this.groupBox11.TabStop = false;
 			// 
-			// button24
+			// button_polacz_modbus_5
 			// 
-			resources.ApplyResources(this.button24, "button24");
-			this.button24.Name = "button24";
-			this.button24.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.button_polacz_modbus_5, "button_polacz_modbus_5");
+			this.button_polacz_modbus_5.Name = "button_polacz_modbus_5";
+			this.button_polacz_modbus_5.UseVisualStyleBackColor = true;
 			// 
 			// textBox_con_name_5
 			// 
 			resources.ApplyResources(this.textBox_con_name_5, "textBox_con_name_5");
 			this.textBox_con_name_5.Name = "textBox_con_name_5";
 			// 
-			// button25
+			// button_rozlacz_modbus_5
 			// 
-			resources.ApplyResources(this.button25, "button25");
-			this.button25.Name = "button25";
-			this.button25.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.button_rozlacz_modbus_5, "button_rozlacz_modbus_5");
+			this.button_rozlacz_modbus_5.Name = "button_rozlacz_modbus_5";
+			this.button_rozlacz_modbus_5.UseVisualStyleBackColor = true;
 			// 
 			// textBox_adres_ip_5
 			// 
@@ -764,9 +773,9 @@
 			// 
 			// groupBox9
 			// 
-			this.groupBox9.Controls.Add(this.button18);
+			this.groupBox9.Controls.Add(this.button_polacz_modbus_4);
 			this.groupBox9.Controls.Add(this.textBox_con_name_4);
-			this.groupBox9.Controls.Add(this.button19);
+			this.groupBox9.Controls.Add(this.button_rozlacz_modbus_4);
 			this.groupBox9.Controls.Add(this.textBox_adres_ip_4);
 			this.groupBox9.Controls.Add(this.textBox_id_4);
 			this.groupBox9.Controls.Add(this.label38);
@@ -778,22 +787,22 @@
 			this.groupBox9.Name = "groupBox9";
 			this.groupBox9.TabStop = false;
 			// 
-			// button18
+			// button_polacz_modbus_4
 			// 
-			resources.ApplyResources(this.button18, "button18");
-			this.button18.Name = "button18";
-			this.button18.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.button_polacz_modbus_4, "button_polacz_modbus_4");
+			this.button_polacz_modbus_4.Name = "button_polacz_modbus_4";
+			this.button_polacz_modbus_4.UseVisualStyleBackColor = true;
 			// 
 			// textBox_con_name_4
 			// 
 			resources.ApplyResources(this.textBox_con_name_4, "textBox_con_name_4");
 			this.textBox_con_name_4.Name = "textBox_con_name_4";
 			// 
-			// button19
+			// button_rozlacz_modbus_4
 			// 
-			resources.ApplyResources(this.button19, "button19");
-			this.button19.Name = "button19";
-			this.button19.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.button_rozlacz_modbus_4, "button_rozlacz_modbus_4");
+			this.button_rozlacz_modbus_4.Name = "button_rozlacz_modbus_4";
+			this.button_rozlacz_modbus_4.UseVisualStyleBackColor = true;
 			// 
 			// textBox_adres_ip_4
 			// 
@@ -918,9 +927,9 @@
 			// 
 			// groupBox7
 			// 
-			this.groupBox7.Controls.Add(this.button12);
+			this.groupBox7.Controls.Add(this.button_polacz_modbus_3);
 			this.groupBox7.Controls.Add(this.textBox_con_name_3);
-			this.groupBox7.Controls.Add(this.button13);
+			this.groupBox7.Controls.Add(this.button_rozlacz_modbus_3);
 			this.groupBox7.Controls.Add(this.textBox_adres_ip_3);
 			this.groupBox7.Controls.Add(this.textBox_id_3);
 			this.groupBox7.Controls.Add(this.label26);
@@ -932,22 +941,22 @@
 			this.groupBox7.Name = "groupBox7";
 			this.groupBox7.TabStop = false;
 			// 
-			// button12
+			// button_polacz_modbus_3
 			// 
-			resources.ApplyResources(this.button12, "button12");
-			this.button12.Name = "button12";
-			this.button12.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.button_polacz_modbus_3, "button_polacz_modbus_3");
+			this.button_polacz_modbus_3.Name = "button_polacz_modbus_3";
+			this.button_polacz_modbus_3.UseVisualStyleBackColor = true;
 			// 
 			// textBox_con_name_3
 			// 
 			resources.ApplyResources(this.textBox_con_name_3, "textBox_con_name_3");
 			this.textBox_con_name_3.Name = "textBox_con_name_3";
 			// 
-			// button13
+			// button_rozlacz_modbus_3
 			// 
-			resources.ApplyResources(this.button13, "button13");
-			this.button13.Name = "button13";
-			this.button13.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.button_rozlacz_modbus_3, "button_rozlacz_modbus_3");
+			this.button_rozlacz_modbus_3.Name = "button_rozlacz_modbus_3";
+			this.button_rozlacz_modbus_3.UseVisualStyleBackColor = true;
 			// 
 			// textBox_adres_ip_3
 			// 
@@ -1167,9 +1176,9 @@
 			// groupBox5
 			// 
 			this.groupBox5.Controls.Add(this.textBox_con_name_2);
-			this.groupBox5.Controls.Add(this.button6);
+			this.groupBox5.Controls.Add(this.button_polacz_modbus_2);
 			this.groupBox5.Controls.Add(this.textBox_adres_ip_2);
-			this.groupBox5.Controls.Add(this.button7);
+			this.groupBox5.Controls.Add(this.button_rozlacz_modbus_2);
 			this.groupBox5.Controls.Add(this.label18);
 			this.groupBox5.Controls.Add(this.textBox_id_2);
 			this.groupBox5.Controls.Add(this.label19);
@@ -1185,22 +1194,22 @@
 			resources.ApplyResources(this.textBox_con_name_2, "textBox_con_name_2");
 			this.textBox_con_name_2.Name = "textBox_con_name_2";
 			// 
-			// button6
+			// button_polacz_modbus_2
 			// 
-			resources.ApplyResources(this.button6, "button6");
-			this.button6.Name = "button6";
-			this.button6.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.button_polacz_modbus_2, "button_polacz_modbus_2");
+			this.button_polacz_modbus_2.Name = "button_polacz_modbus_2";
+			this.button_polacz_modbus_2.UseVisualStyleBackColor = true;
 			// 
 			// textBox_adres_ip_2
 			// 
 			resources.ApplyResources(this.textBox_adres_ip_2, "textBox_adres_ip_2");
 			this.textBox_adres_ip_2.Name = "textBox_adres_ip_2";
 			// 
-			// button7
+			// button_rozlacz_modbus_2
 			// 
-			resources.ApplyResources(this.button7, "button7");
-			this.button7.Name = "button7";
-			this.button7.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.button_rozlacz_modbus_2, "button_rozlacz_modbus_2");
+			this.button_rozlacz_modbus_2.Name = "button_rozlacz_modbus_2";
+			this.button_rozlacz_modbus_2.UseVisualStyleBackColor = true;
 			// 
 			// label18
 			// 
@@ -1306,38 +1315,6 @@
 			this.textBox_id.TextChanged += new System.EventHandler(this.TextChanged_max_999);
 			this.textBox_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress_tylko_cyfra);
 			// 
-			// tabPage_mapa
-			// 
-			this.tabPage_mapa.Controls.Add(this.label2);
-			this.tabPage_mapa.Controls.Add(this.label1);
-			this.tabPage_mapa.Controls.Add(this.panel_wysylanie);
-			this.tabPage_mapa.Controls.Add(this.panel_odbieranie);
-			resources.ApplyResources(this.tabPage_mapa, "tabPage_mapa");
-			this.tabPage_mapa.Name = "tabPage_mapa";
-			this.tabPage_mapa.UseVisualStyleBackColor = true;
-			// 
-			// label2
-			// 
-			resources.ApplyResources(this.label2, "label2");
-			this.label2.Name = "label2";
-			// 
-			// label1
-			// 
-			resources.ApplyResources(this.label1, "label1");
-			this.label1.Name = "label1";
-			// 
-			// panel_wysylanie
-			// 
-			resources.ApplyResources(this.panel_wysylanie, "panel_wysylanie");
-			this.panel_wysylanie.BackColor = System.Drawing.Color.Transparent;
-			this.panel_wysylanie.Name = "panel_wysylanie";
-			// 
-			// panel_odbieranie
-			// 
-			resources.ApplyResources(this.panel_odbieranie, "panel_odbieranie");
-			this.panel_odbieranie.BackColor = System.Drawing.Color.Transparent;
-			this.panel_odbieranie.Name = "panel_odbieranie";
-			// 
 			// tabPage_DCS
 			// 
 			this.tabPage_DCS.Controls.Add(this.panel_scada);
@@ -1367,6 +1344,8 @@
 			// tabPage1
 			// 
 			this.tabPage1.BackColor = System.Drawing.Color.Bisque;
+			this.tabPage1.Controls.Add(this.comboBox_polaczenia);
+			this.tabPage1.Controls.Add(this.label56);
 			this.tabPage1.Controls.Add(this.wlasciwosci_comboBox_format);
 			this.tabPage1.Controls.Add(this.wlasciwosci_comboBox_wielkosc);
 			this.tabPage1.Controls.Add(this.label14);
@@ -1554,6 +1533,229 @@
 			this.button_dodaj_bit.UseVisualStyleBackColor = true;
 			this.button_dodaj_bit.Click += new System.EventHandler(this.button_dodaj_bit_Click);
 			// 
+			// tabPage4
+			// 
+			this.tabPage4.Controls.Add(this.groupBox_stat_1);
+			this.tabPage4.Controls.Add(this.groupBox_stat_2);
+			this.tabPage4.Controls.Add(this.groupBox_stat_3);
+			this.tabPage4.Controls.Add(this.panel);
+			this.tabPage4.Controls.Add(this.groupBox_stat_4);
+			this.tabPage4.Controls.Add(this.groupBox_stat_5);
+			resources.ApplyResources(this.tabPage4, "tabPage4");
+			this.tabPage4.Name = "tabPage4";
+			this.tabPage4.UseVisualStyleBackColor = true;
+			// 
+			// groupBox_stat_1
+			// 
+			resources.ApplyResources(this.groupBox_stat_1, "groupBox_stat_1");
+			this.groupBox_stat_1.Controls.Add(this.textBox_status_1);
+			this.groupBox_stat_1.Controls.Add(this.label46);
+			this.groupBox_stat_1.Controls.Add(this.label47);
+			this.groupBox_stat_1.Controls.Add(this.textBox_name_1);
+			this.groupBox_stat_1.Name = "groupBox_stat_1";
+			this.groupBox_stat_1.TabStop = false;
+			// 
+			// textBox_status_1
+			// 
+			this.textBox_status_1.BackColor = System.Drawing.SystemColors.Window;
+			resources.ApplyResources(this.textBox_status_1, "textBox_status_1");
+			this.textBox_status_1.Name = "textBox_status_1";
+			this.textBox_status_1.ReadOnly = true;
+			// 
+			// label46
+			// 
+			resources.ApplyResources(this.label46, "label46");
+			this.label46.Name = "label46";
+			// 
+			// label47
+			// 
+			resources.ApplyResources(this.label47, "label47");
+			this.label47.Name = "label47";
+			// 
+			// textBox_name_1
+			// 
+			this.textBox_name_1.BackColor = System.Drawing.SystemColors.Window;
+			resources.ApplyResources(this.textBox_name_1, "textBox_name_1");
+			this.textBox_name_1.Name = "textBox_name_1";
+			this.textBox_name_1.ReadOnly = true;
+			// 
+			// groupBox_stat_2
+			// 
+			resources.ApplyResources(this.groupBox_stat_2, "groupBox_stat_2");
+			this.groupBox_stat_2.BackColor = System.Drawing.Color.Transparent;
+			this.groupBox_stat_2.Controls.Add(this.textBox_status_2);
+			this.groupBox_stat_2.Controls.Add(this.label48);
+			this.groupBox_stat_2.Controls.Add(this.label49);
+			this.groupBox_stat_2.Controls.Add(this.textBox_name_2);
+			this.groupBox_stat_2.Name = "groupBox_stat_2";
+			this.groupBox_stat_2.TabStop = false;
+			// 
+			// textBox_status_2
+			// 
+			this.textBox_status_2.BackColor = System.Drawing.SystemColors.Window;
+			resources.ApplyResources(this.textBox_status_2, "textBox_status_2");
+			this.textBox_status_2.Name = "textBox_status_2";
+			this.textBox_status_2.ReadOnly = true;
+			// 
+			// label48
+			// 
+			resources.ApplyResources(this.label48, "label48");
+			this.label48.Name = "label48";
+			// 
+			// label49
+			// 
+			resources.ApplyResources(this.label49, "label49");
+			this.label49.Name = "label49";
+			// 
+			// textBox_name_2
+			// 
+			this.textBox_name_2.BackColor = System.Drawing.SystemColors.Window;
+			resources.ApplyResources(this.textBox_name_2, "textBox_name_2");
+			this.textBox_name_2.Name = "textBox_name_2";
+			this.textBox_name_2.ReadOnly = true;
+			// 
+			// groupBox_stat_3
+			// 
+			resources.ApplyResources(this.groupBox_stat_3, "groupBox_stat_3");
+			this.groupBox_stat_3.Controls.Add(this.textBox_status_3);
+			this.groupBox_stat_3.Controls.Add(this.label52);
+			this.groupBox_stat_3.Controls.Add(this.label53);
+			this.groupBox_stat_3.Controls.Add(this.textBox_name_3);
+			this.groupBox_stat_3.Name = "groupBox_stat_3";
+			this.groupBox_stat_3.TabStop = false;
+			// 
+			// textBox_status_3
+			// 
+			this.textBox_status_3.BackColor = System.Drawing.SystemColors.Window;
+			resources.ApplyResources(this.textBox_status_3, "textBox_status_3");
+			this.textBox_status_3.Name = "textBox_status_3";
+			this.textBox_status_3.ReadOnly = true;
+			// 
+			// label52
+			// 
+			resources.ApplyResources(this.label52, "label52");
+			this.label52.Name = "label52";
+			// 
+			// label53
+			// 
+			resources.ApplyResources(this.label53, "label53");
+			this.label53.Name = "label53";
+			// 
+			// textBox_name_3
+			// 
+			this.textBox_name_3.BackColor = System.Drawing.SystemColors.Window;
+			resources.ApplyResources(this.textBox_name_3, "textBox_name_3");
+			this.textBox_name_3.Name = "textBox_name_3";
+			this.textBox_name_3.ReadOnly = true;
+			// 
+			// panel
+			// 
+			resources.ApplyResources(this.panel, "panel");
+			this.panel.BackColor = System.Drawing.Color.LightGray;
+			this.panel.Name = "panel";
+			// 
+			// groupBox_stat_4
+			// 
+			resources.ApplyResources(this.groupBox_stat_4, "groupBox_stat_4");
+			this.groupBox_stat_4.BackColor = System.Drawing.Color.Transparent;
+			this.groupBox_stat_4.Controls.Add(this.textBox_status_4);
+			this.groupBox_stat_4.Controls.Add(this.label50);
+			this.groupBox_stat_4.Controls.Add(this.label51);
+			this.groupBox_stat_4.Controls.Add(this.textBox_name_4);
+			this.groupBox_stat_4.Name = "groupBox_stat_4";
+			this.groupBox_stat_4.TabStop = false;
+			// 
+			// textBox_status_4
+			// 
+			this.textBox_status_4.BackColor = System.Drawing.SystemColors.Window;
+			resources.ApplyResources(this.textBox_status_4, "textBox_status_4");
+			this.textBox_status_4.Name = "textBox_status_4";
+			this.textBox_status_4.ReadOnly = true;
+			// 
+			// label50
+			// 
+			resources.ApplyResources(this.label50, "label50");
+			this.label50.Name = "label50";
+			// 
+			// label51
+			// 
+			resources.ApplyResources(this.label51, "label51");
+			this.label51.Name = "label51";
+			// 
+			// textBox_name_4
+			// 
+			this.textBox_name_4.BackColor = System.Drawing.SystemColors.Window;
+			resources.ApplyResources(this.textBox_name_4, "textBox_name_4");
+			this.textBox_name_4.Name = "textBox_name_4";
+			this.textBox_name_4.ReadOnly = true;
+			// 
+			// groupBox_stat_5
+			// 
+			resources.ApplyResources(this.groupBox_stat_5, "groupBox_stat_5");
+			this.groupBox_stat_5.BackColor = System.Drawing.Color.Transparent;
+			this.groupBox_stat_5.Controls.Add(this.textBox_status_5);
+			this.groupBox_stat_5.Controls.Add(this.label54);
+			this.groupBox_stat_5.Controls.Add(this.label55);
+			this.groupBox_stat_5.Controls.Add(this.textBox_name_5);
+			this.groupBox_stat_5.Name = "groupBox_stat_5";
+			this.groupBox_stat_5.TabStop = false;
+			// 
+			// textBox_status_5
+			// 
+			this.textBox_status_5.BackColor = System.Drawing.SystemColors.Window;
+			resources.ApplyResources(this.textBox_status_5, "textBox_status_5");
+			this.textBox_status_5.Name = "textBox_status_5";
+			this.textBox_status_5.ReadOnly = true;
+			// 
+			// label54
+			// 
+			resources.ApplyResources(this.label54, "label54");
+			this.label54.Name = "label54";
+			// 
+			// label55
+			// 
+			resources.ApplyResources(this.label55, "label55");
+			this.label55.Name = "label55";
+			// 
+			// textBox_name_5
+			// 
+			this.textBox_name_5.BackColor = System.Drawing.SystemColors.Window;
+			resources.ApplyResources(this.textBox_name_5, "textBox_name_5");
+			this.textBox_name_5.Name = "textBox_name_5";
+			this.textBox_name_5.ReadOnly = true;
+			// 
+			// tabPage_mapa
+			// 
+			this.tabPage_mapa.Controls.Add(this.label2);
+			this.tabPage_mapa.Controls.Add(this.label1);
+			this.tabPage_mapa.Controls.Add(this.panel_wysylanie);
+			this.tabPage_mapa.Controls.Add(this.panel_odbieranie);
+			resources.ApplyResources(this.tabPage_mapa, "tabPage_mapa");
+			this.tabPage_mapa.Name = "tabPage_mapa";
+			this.tabPage_mapa.UseVisualStyleBackColor = true;
+			// 
+			// label2
+			// 
+			resources.ApplyResources(this.label2, "label2");
+			this.label2.Name = "label2";
+			// 
+			// label1
+			// 
+			resources.ApplyResources(this.label1, "label1");
+			this.label1.Name = "label1";
+			// 
+			// panel_wysylanie
+			// 
+			resources.ApplyResources(this.panel_wysylanie, "panel_wysylanie");
+			this.panel_wysylanie.BackColor = System.Drawing.Color.Transparent;
+			this.panel_wysylanie.Name = "panel_wysylanie";
+			// 
+			// panel_odbieranie
+			// 
+			resources.ApplyResources(this.panel_odbieranie, "panel_odbieranie");
+			this.panel_odbieranie.BackColor = System.Drawing.Color.Transparent;
+			this.panel_odbieranie.Name = "panel_odbieranie";
+			// 
 			// richTextBox_log
 			// 
 			resources.ApplyResources(this.richTextBox_log, "richTextBox_log");
@@ -1676,202 +1878,16 @@
 			this.saveFileDialog_log.FileName = "log.txt";
 			resources.ApplyResources(this.saveFileDialog_log, "saveFileDialog_log");
 			// 
-			// tabPage4
+			// comboBox_polaczenia
 			// 
-			this.tabPage4.Controls.Add(this.groupBox_stat_1);
-			this.tabPage4.Controls.Add(this.groupBox_stat_2);
-			this.tabPage4.Controls.Add(this.groupBox_stat_3);
-			this.tabPage4.Controls.Add(this.panel);
-			this.tabPage4.Controls.Add(this.groupBox_stat_4);
-			this.tabPage4.Controls.Add(this.groupBox_stat_5);
-			resources.ApplyResources(this.tabPage4, "tabPage4");
-			this.tabPage4.Name = "tabPage4";
-			this.tabPage4.UseVisualStyleBackColor = true;
+			this.comboBox_polaczenia.FormattingEnabled = true;
+			resources.ApplyResources(this.comboBox_polaczenia, "comboBox_polaczenia");
+			this.comboBox_polaczenia.Name = "comboBox_polaczenia";
 			// 
-			// panel
+			// label56
 			// 
-			resources.ApplyResources(this.panel, "panel");
-			this.panel.BackColor = System.Drawing.Color.LightGray;
-			this.panel.Name = "panel";
-			// 
-			// label46
-			// 
-			resources.ApplyResources(this.label46, "label46");
-			this.label46.Name = "label46";
-			// 
-			// textBox_name_1
-			// 
-			this.textBox_name_1.BackColor = System.Drawing.SystemColors.Window;
-			resources.ApplyResources(this.textBox_name_1, "textBox_name_1");
-			this.textBox_name_1.Name = "textBox_name_1";
-			this.textBox_name_1.ReadOnly = true;
-			// 
-			// label47
-			// 
-			resources.ApplyResources(this.label47, "label47");
-			this.label47.Name = "label47";
-			// 
-			// textBox_status_1
-			// 
-			this.textBox_status_1.BackColor = System.Drawing.SystemColors.Window;
-			resources.ApplyResources(this.textBox_status_1, "textBox_status_1");
-			this.textBox_status_1.Name = "textBox_status_1";
-			this.textBox_status_1.ReadOnly = true;
-			// 
-			// ToolStripMenuItem_odswiez
-			// 
-			this.ToolStripMenuItem_odswiez.Name = "ToolStripMenuItem_odswiez";
-			resources.ApplyResources(this.ToolStripMenuItem_odswiez, "ToolStripMenuItem_odswiez");
-			this.ToolStripMenuItem_odswiez.Click += new System.EventHandler(this.odświeżEkranToolStripMenuItem_Click);
-			// 
-			// groupBox_stat_1
-			// 
-			resources.ApplyResources(this.groupBox_stat_1, "groupBox_stat_1");
-			this.groupBox_stat_1.Controls.Add(this.textBox_status_1);
-			this.groupBox_stat_1.Controls.Add(this.label46);
-			this.groupBox_stat_1.Controls.Add(this.label47);
-			this.groupBox_stat_1.Controls.Add(this.textBox_name_1);
-			this.groupBox_stat_1.Name = "groupBox_stat_1";
-			this.groupBox_stat_1.TabStop = false;
-			// 
-			// groupBox_stat_2
-			// 
-			resources.ApplyResources(this.groupBox_stat_2, "groupBox_stat_2");
-			this.groupBox_stat_2.BackColor = System.Drawing.Color.Transparent;
-			this.groupBox_stat_2.Controls.Add(this.textBox_status_2);
-			this.groupBox_stat_2.Controls.Add(this.label48);
-			this.groupBox_stat_2.Controls.Add(this.label49);
-			this.groupBox_stat_2.Controls.Add(this.textBox_name_2);
-			this.groupBox_stat_2.Name = "groupBox_stat_2";
-			this.groupBox_stat_2.TabStop = false;
-			// 
-			// textBox_status_2
-			// 
-			this.textBox_status_2.BackColor = System.Drawing.SystemColors.Window;
-			resources.ApplyResources(this.textBox_status_2, "textBox_status_2");
-			this.textBox_status_2.Name = "textBox_status_2";
-			this.textBox_status_2.ReadOnly = true;
-			// 
-			// label48
-			// 
-			resources.ApplyResources(this.label48, "label48");
-			this.label48.Name = "label48";
-			// 
-			// label49
-			// 
-			resources.ApplyResources(this.label49, "label49");
-			this.label49.Name = "label49";
-			// 
-			// textBox_name_2
-			// 
-			this.textBox_name_2.BackColor = System.Drawing.SystemColors.Window;
-			resources.ApplyResources(this.textBox_name_2, "textBox_name_2");
-			this.textBox_name_2.Name = "textBox_name_2";
-			this.textBox_name_2.ReadOnly = true;
-			// 
-			// groupBox_stat_4
-			// 
-			resources.ApplyResources(this.groupBox_stat_4, "groupBox_stat_4");
-			this.groupBox_stat_4.BackColor = System.Drawing.Color.Transparent;
-			this.groupBox_stat_4.Controls.Add(this.textBox_status_4);
-			this.groupBox_stat_4.Controls.Add(this.label50);
-			this.groupBox_stat_4.Controls.Add(this.label51);
-			this.groupBox_stat_4.Controls.Add(this.textBox_name_4);
-			this.groupBox_stat_4.Name = "groupBox_stat_4";
-			this.groupBox_stat_4.TabStop = false;
-			// 
-			// textBox_status_4
-			// 
-			this.textBox_status_4.BackColor = System.Drawing.SystemColors.Window;
-			resources.ApplyResources(this.textBox_status_4, "textBox_status_4");
-			this.textBox_status_4.Name = "textBox_status_4";
-			this.textBox_status_4.ReadOnly = true;
-			// 
-			// label50
-			// 
-			resources.ApplyResources(this.label50, "label50");
-			this.label50.Name = "label50";
-			// 
-			// label51
-			// 
-			resources.ApplyResources(this.label51, "label51");
-			this.label51.Name = "label51";
-			// 
-			// textBox_name_4
-			// 
-			this.textBox_name_4.BackColor = System.Drawing.SystemColors.Window;
-			resources.ApplyResources(this.textBox_name_4, "textBox_name_4");
-			this.textBox_name_4.Name = "textBox_name_4";
-			this.textBox_name_4.ReadOnly = true;
-			// 
-			// groupBox_stat_3
-			// 
-			resources.ApplyResources(this.groupBox_stat_3, "groupBox_stat_3");
-			this.groupBox_stat_3.Controls.Add(this.textBox_status_3);
-			this.groupBox_stat_3.Controls.Add(this.label52);
-			this.groupBox_stat_3.Controls.Add(this.label53);
-			this.groupBox_stat_3.Controls.Add(this.textBox_name_3);
-			this.groupBox_stat_3.Name = "groupBox_stat_3";
-			this.groupBox_stat_3.TabStop = false;
-			// 
-			// textBox_status_3
-			// 
-			this.textBox_status_3.BackColor = System.Drawing.SystemColors.Window;
-			resources.ApplyResources(this.textBox_status_3, "textBox_status_3");
-			this.textBox_status_3.Name = "textBox_status_3";
-			this.textBox_status_3.ReadOnly = true;
-			// 
-			// label52
-			// 
-			resources.ApplyResources(this.label52, "label52");
-			this.label52.Name = "label52";
-			// 
-			// label53
-			// 
-			resources.ApplyResources(this.label53, "label53");
-			this.label53.Name = "label53";
-			// 
-			// textBox_name_3
-			// 
-			this.textBox_name_3.BackColor = System.Drawing.SystemColors.Window;
-			resources.ApplyResources(this.textBox_name_3, "textBox_name_3");
-			this.textBox_name_3.Name = "textBox_name_3";
-			this.textBox_name_3.ReadOnly = true;
-			// 
-			// groupBox_stat_5
-			// 
-			resources.ApplyResources(this.groupBox_stat_5, "groupBox_stat_5");
-			this.groupBox_stat_5.BackColor = System.Drawing.Color.Transparent;
-			this.groupBox_stat_5.Controls.Add(this.textBox_status_5);
-			this.groupBox_stat_5.Controls.Add(this.label54);
-			this.groupBox_stat_5.Controls.Add(this.label55);
-			this.groupBox_stat_5.Controls.Add(this.textBox_name_5);
-			this.groupBox_stat_5.Name = "groupBox_stat_5";
-			this.groupBox_stat_5.TabStop = false;
-			// 
-			// textBox_status_5
-			// 
-			this.textBox_status_5.BackColor = System.Drawing.SystemColors.Window;
-			resources.ApplyResources(this.textBox_status_5, "textBox_status_5");
-			this.textBox_status_5.Name = "textBox_status_5";
-			this.textBox_status_5.ReadOnly = true;
-			// 
-			// label54
-			// 
-			resources.ApplyResources(this.label54, "label54");
-			this.label54.Name = "label54";
-			// 
-			// label55
-			// 
-			resources.ApplyResources(this.label55, "label55");
-			this.label55.Name = "label55";
-			// 
-			// textBox_name_5
-			// 
-			this.textBox_name_5.BackColor = System.Drawing.SystemColors.Window;
-			resources.ApplyResources(this.textBox_name_5, "textBox_name_5");
-			this.textBox_name_5.Name = "textBox_name_5";
-			this.textBox_name_5.ReadOnly = true;
+			resources.ApplyResources(this.label56, "label56");
+			this.label56.Name = "label56";
 			// 
 			// Main
 			// 
@@ -1913,8 +1929,6 @@
 			this.groupBox5.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
-			this.tabPage_mapa.ResumeLayout(false);
-			this.tabPage_mapa.PerformLayout();
 			this.tabPage_DCS.ResumeLayout(false);
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
@@ -1922,19 +1936,21 @@
 			this.tabPage3.ResumeLayout(false);
 			this.tabPage3.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
-			this.contextMenuStrip_odebrane.ResumeLayout(false);
-			this.contextMenuStrip_wysylane.ResumeLayout(false);
 			this.tabPage4.ResumeLayout(false);
 			this.groupBox_stat_1.ResumeLayout(false);
 			this.groupBox_stat_1.PerformLayout();
 			this.groupBox_stat_2.ResumeLayout(false);
 			this.groupBox_stat_2.PerformLayout();
-			this.groupBox_stat_4.ResumeLayout(false);
-			this.groupBox_stat_4.PerformLayout();
 			this.groupBox_stat_3.ResumeLayout(false);
 			this.groupBox_stat_3.PerformLayout();
+			this.groupBox_stat_4.ResumeLayout(false);
+			this.groupBox_stat_4.PerformLayout();
 			this.groupBox_stat_5.ResumeLayout(false);
 			this.groupBox_stat_5.PerformLayout();
+			this.tabPage_mapa.ResumeLayout(false);
+			this.tabPage_mapa.PerformLayout();
+			this.contextMenuStrip_odebrane.ResumeLayout(false);
+			this.contextMenuStrip_wysylane.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -2006,7 +2022,6 @@
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.TextBox wlasciwosci_textBox_bajt;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.ComboBox wlasciwosci_comboBox_typ;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.TextBox wlasciwosci_textBox_nazwa;
 		private System.Windows.Forms.Label label3;
@@ -2048,8 +2063,8 @@
 		private System.Windows.Forms.TextBox textBox18;
 		private System.Windows.Forms.Button button17;
 		private System.Windows.Forms.GroupBox groupBox9;
-		private System.Windows.Forms.Button button18;
-		private System.Windows.Forms.Button button19;
+		private System.Windows.Forms.Button button_polacz_modbus_4;
+		private System.Windows.Forms.Button button_rozlacz_modbus_4;
 		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.TextBox textBox8;
 		private System.Windows.Forms.Label label20;
@@ -2064,8 +2079,8 @@
 		private System.Windows.Forms.TextBox textBox11;
 		private System.Windows.Forms.Button button11;
 		private System.Windows.Forms.GroupBox groupBox7;
-		private System.Windows.Forms.Button button12;
-		private System.Windows.Forms.Button button13;
+		private System.Windows.Forms.Button button_polacz_modbus_3;
+		private System.Windows.Forms.Button button_rozlacz_modbus_3;
 		private System.Windows.Forms.GroupBox groupBox4;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label6;
@@ -2081,8 +2096,8 @@
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.TextBox textBox_con_name;
-		private System.Windows.Forms.Button button6;
-		private System.Windows.Forms.Button button7;
+		private System.Windows.Forms.Button button_polacz_modbus_2;
+		private System.Windows.Forms.Button button_rozlacz_modbus_2;
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_uzupelnij;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip_odebrane;
@@ -2111,9 +2126,9 @@
 		private System.Windows.Forms.SaveFileDialog saveFileDialog_log;
 		private System.Windows.Forms.GroupBox groupBox11;
 		private System.Windows.Forms.CheckBox checkBox_active_con_5;
-		private System.Windows.Forms.Button button24;
+		private System.Windows.Forms.Button button_polacz_modbus_5;
 		private System.Windows.Forms.TextBox textBox_con_name_5;
-		private System.Windows.Forms.Button button25;
+		private System.Windows.Forms.Button button_rozlacz_modbus_5;
 		private System.Windows.Forms.TextBox textBox_adres_ip_5;
 		private System.Windows.Forms.TextBox textBox_id_5;
 		private System.Windows.Forms.Label label42;
@@ -2177,6 +2192,9 @@
 		private System.Windows.Forms.Label label54;
 		private System.Windows.Forms.Label label55;
 		private System.Windows.Forms.TextBox textBox_name_5;
+		private System.Windows.Forms.ComboBox comboBox_polaczenia;
+		private System.Windows.Forms.Label label56;
+		private System.Windows.Forms.ComboBox wlasciwosci_comboBox_typ;
 	}
 }
 
